@@ -3,7 +3,7 @@
 puts "CREATING COUNTRIES"
 
 switzerland = Country.find_or_initialize_by({
-  name: "Switzerland"
+  name: "Switzerland",
 })
 switzerland.save!
 
