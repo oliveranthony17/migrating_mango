@@ -35,59 +35,69 @@ work = Topic.find_or_initialize_by({
 work.content = "Here are the emergency phone numbers for Switzerland..."
 work.save!
 
-
-accomodation = Topic.find_or_initialize_by({
+accommodation = Topic.find_or_initialize_by({
   country: switzerland,
-  title: "Accomodation",
-  content: "Accomodation in Switzerland can be competitive if looking close to the cities...",
+  title: "Accommodation"
 })
 
-emergency.content = "Here are the emergency phone numbers for Switzerland..."
-emergency.save!
+accommodation.content = "Accommodation in Switzerland can be competitive if looking close to the cities..."
+accommodation.save!
 
 pets = Topic.find_or_initialize_by({
   country: switzerland,
-  title: "Pets",
-  content: "The requirements for bringing a pet to Switzerland can differ depending on the country you are travelling from...",
+  title: "Pets"
 })
+
+pets.content = "The requirements for bringing a pet to Switzerland can differ depending on the country you are travelling from..."
+pets.save!
 
 recycling = Topic.find_or_initialize_by({
   country: switzerland,
-  title: "Recycling",
-  content: "Recycling is an important part of Swiss life but can be daunting at first...",
+  title: "Recycling"
 })
+
+recycling.content = "Recycling is an important part of Swiss life but can be daunting at first..."
+recycling.save!
 
 transport = Topic.find_or_initialize_by({
   country: switzerland,
-  title: "Transport",
-  content: "Public transport is considered very good in Switzerland...",
+  title: "Transport"
 })
+
+transport.content = "Public transport is considered very good in Switzerland..."
+transport.save!
 
 health = Topic.find_or_initialize_by({
   country: switzerland,
-  title: "Health",
-  content: "When moving to Switzerland it is mandatory to purchase health insurance within 3 months of arrival...",
+  title: "Health"
 })
+
+health.content = "When moving to Switzerland it is mandatory to purchase health insurance within 3 months of arrival..."
+health.save!
 
 #? --- CATEGORIES ---
 
 puts "CREATING CATEGORIES BEFORE CREATING TASKS"
 
-work = Category.new({
+work = Category.find_or_initialize_by({
   title: "Work permit"
 })
+work.save!
 
-student = Category.new({
+student = Category.find_or_initialize_by({
   title: "Student permit"
 })
+student.save!
 
-married = Category.new({
+married = Category.find_or_initialize_by({
   title: "Family reunification (through marriage)"
 })
+married.save!
 
-all = Category.new({
+all = Category.find_or_initialize_by({
   title: "Applies to all"
 })
+all.save!
 
 #? --- TASKS ---
 
@@ -96,29 +106,34 @@ puts "CREATING TASKS (BANK) RELATED TO COUNTRY"
 task1 = Task.find_or_initialize_by({
   country: switzerland,
   title: "Apply for your work permit using the online forms",
-  content: "As you are a entering Switzerland for work, you can begin the process by completing the online application form and issuing this to your local migration office.",
-  order: 1,
-  scope: "non-eu",
-  category: work
+  order: 1
 })
+
+task1.content = "As you are a entering Switzerland for work, you can begin the process by completing the online application form and issuing this to your local migration office."
+task1.scope = "non-eu"
+task1.category = work
+task1.save!
 
 task2 = Task.find_or_initialize_by({
   country: switzerland,
   title: "Register as resident at local Gemeinde",
-  content: "In
-  order to attain your permit you will need to register at the local Gemeinde. This will depend on your postcode and exactly where you live. The suggested location below is based on your postcode however it is recommended to double check by contacting them first.",
-  order: 2,
-  scope: "both",
-  category: all
+  order: 2
 })
+
+task2.content = "In order to attain your permit you will need to register at the local Gemeinde. This will depend on your postcode and exactly where you live. The suggested location below is based on your postcode however it is recommended to double check by contacting them first."
+task2.scope = "both"
+task2.category = all
+task2.save!
 
 task3 = Task.find_or_initialize_by({
   country: switzerland,
   title: "Receive your appointment to have biometrics taken for your permit card",
-  content: "Once you have registered as a resident and your permit has been approved, you will receive a letter with an appointment date and time in order to have your biometric data taken, photo taken and receive additional information on life in Switzerland.",
-  order: 3,
-  scope: "both",
-  category: all
+  order: 3
 })
+
+task3.content = "Once you have registered as a resident and your permit has been approved, you will receive a letter with an appointment date and time in order to have your biometric data taken, photo taken and receive additional information on life in Switzerland."
+task3.scope = "both"
+task3.category = all
+task3.save!
 
 puts "FINISHED! P.S. MAKE USER PROFILES IN LIVE DEMO TO GENERATE TASKS!!"
