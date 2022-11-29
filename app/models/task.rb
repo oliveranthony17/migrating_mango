@@ -3,4 +3,7 @@ class Task < ApplicationRecord
   belongs_to :category
   has_many :user_tasks
   validates :title, presence: true
+  validates :content, presence: true
+  validates :scope, presence: true
+  validates :order, presence: true
 end
