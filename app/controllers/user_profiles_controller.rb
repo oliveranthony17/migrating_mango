@@ -1,4 +1,4 @@
-class UserProfileController < ApplicationController
+class UserProfilesController < ApplicationController
   def show
   end
 
