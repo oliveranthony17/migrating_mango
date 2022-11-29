@@ -1,3 +1,18 @@
+#? --- USERS ---
+
+puts "CREATING ADMIN USER (admin@lewagon.com)"
+
+admin = User.find_or_initialize_by({
+  email: "admin@lewagon.com"
+})
+
+
+admin.password = "lewagon"
+admin.admin = true
+admin.save!
+
+puts "CREATED ADMIN USER!"
+
 #? --- COUNTRIES ---
 
 puts "CREATING COUNTRIES"
