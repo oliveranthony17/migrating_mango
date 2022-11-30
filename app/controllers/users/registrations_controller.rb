@@ -12,6 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+    redirect_to user_profile_user_tasks_path(current_user)
     #! crazy logic
   end
 
