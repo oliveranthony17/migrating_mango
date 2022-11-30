@@ -9,45 +9,8 @@
   </div>
 
   <div class="row gy-5 justify-content-center">
-    <div class="col-6">
-      <div class="tile">My profile</div>
-    </div>
-
-     <div class="col-6">
-      <div class="tile">My tasks</div>
-    </div>
-
-     <div class="col-6">
-      <div class="tile">Permits</div>
-    </div>
-
-     <div class="col-6">
-      <div class="tile">Emergency</div>
-    </div>
-
-     <div class="col-6">
-      <div class="tile">Work</div>
-    </div>
-
-     <div class="col-6">
-      <div class="tile">Housing</div>
-    </div>
-
-     <div class="col-6">
-      <div class="tile">Pets</div>
-    </div>
-
-     <div class="col-6">
-      <div class="tile">Recycling</div>
-    </div>
-
-     <div class="col-6">
-      <div class="tile">Transport</div>
-    </div>
-
-     <div class="col-6">
-      <div class="tile">Health</div>
-    </div>
-
+    <%= Topic.all.each do |topic| %>
+      <%= render "countries/topic_card", topic: topic %>
+    <% end %>
   </div>
 </div>
