@@ -1,0 +1,7 @@
+<div class="card-product my-3">
+  <div class="card-product-infos">
+    <%= link_to ("<span></span>").html_safe, user_profile_user_task_path(current_user, task) %>
+    <h2><%= task.task.title %></h2>
+  </div>
+</div>
+<%# add javascript dropdown to add comment / mark as complete  %>
