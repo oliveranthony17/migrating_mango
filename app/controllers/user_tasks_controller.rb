@@ -10,5 +10,6 @@ class UserTasksController < ApplicationController
   end
 
   def show
+    @task = UserTask.find(params[:id])
   end
 end

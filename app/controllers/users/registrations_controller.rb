@@ -12,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    #! crazy logic
+    # redirect_to user_profiles_new_path
   end
 
   # GET /resource/edit
