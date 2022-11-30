@@ -10,11 +10,23 @@
 
   <div class="row gy-5 justify-content-center">
     <div class="col-6">
-      <div class="tile">My profile</div>
+      <div class="tile">
+        <% if user_signed_in? %>
+          <%= link_to "My Profile", user_profile_path(current_user) %>
+        <% else %>
+          <%= link_to "My Profile", new_user_registration_path %>
+        <% end %>
+      </div>
     </div>
 
      <div class="col-6">
-      <div class="tile">My tasks</div>
+      <div class="tile">
+        <% if user_signed_in? %>
+          <%= link_to "My Tasks", user_profile_user_tasks_path(current_user) %>
+        <% else %>
+          <%= link_to "My Tasks", new_user_registration_path %>
+        <% end %>
+      </div>
     </div>
 
      <div class="col-6">
