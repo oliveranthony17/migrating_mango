@@ -1,0 +1,21 @@
+<div class="tasks-container">
+  <h1>Active Tasks</h1>
+  <div>
+    <% @active_tasks.each do |task| %>
+      <%= render "user_tasks/task", task: task %>
+    <% end %>
+  </div>
+  <br>
+  <h1>Upcoming Tasks</h1>
+  <div>
+    <% @upcoming_tasks.each do |task| %>
+      <%= render "user_tasks/task", task: task %>
+    <% end %>
+  </div>
+  <br>
+  <h1>Completed Tasks</h1>
+  <div>
+    <% @completed_tasks.each do |task| %>
+      <%= render "user_tasks/task", task: task %>
+    <% end %>
+  </div>
