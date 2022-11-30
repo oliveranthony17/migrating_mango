@@ -1,6 +1,6 @@
 <div class="navigation">
   <div class="logo">
-    <a class="no-underline" href="#">
+    <a class="no-underline" href="/countries/1">
       Migrating Mango
     </a>
   </div>
@@ -31,8 +31,8 @@
     <a href="#" class="navigation-link">
       <i class="far fa-user-circle"></i>
     </a>
-    <a href="#" id="signout" class="navigation-link">
-      <i class="fas fa-sign-out-alt"></i>
+    <a>
+      <%= link_to ('<i class="fas fa-sign-out-alt"></i>').html_safe, destroy_user_session_path, data: {turbo_method: :delete}, class: "navigation-link", id: "signout" %>
     </a>
   </div>
   <script src="navbar.js"></script>
