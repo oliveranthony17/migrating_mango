@@ -9,7 +9,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
+  <body id="screen">
     <% unless controller_name == "pages" %>
         <%= render "shared/navbar"%>
 
