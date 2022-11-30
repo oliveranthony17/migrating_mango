@@ -1,9 +1,31 @@
+#? --- USERS ---
+
+puts "CREATING USER AND USER PROFILE"
+
+oliver = User.find_or_initialize_by({
+  email: "oliver@lewagon.com"
+  # password: "lewagon"
+})
+oliver.password = "lewagon"
+oliver.save!
+
+oliver_profile = UserProfile.find_or_initialize_by({
+  user: oliver
+})
+oliver_profile.foreign_address = "Schloesslistrasse, Ebikon, 6030"
+oliver_profile.eu_status = false
+oliver_profile.entry_method = "family"
+oliver_profile.has_job_offer = false
+oliver_profile.has_study_offer = false
+oliver_profile.has_relative = true
+oliver_profile.save!
+
 #? --- COUNTRIES ---
 
 puts "CREATING COUNTRIES"
 
 switzerland = Country.find_or_initialize_by({
-  name: "Switzerland"
+  name: "Switzerland",
 })
 switzerland.save!
 
@@ -136,4 +158,29 @@ task3.scope = "both"
 task3.category = all
 task3.save!
 
-puts "FINISHED! P.S. MAKE USER PROFILES IN LIVE DEMO TO GENERATE TASKS!!"
+#? --- USER TASKS ---
+
+puts "CREATING USER TASKS - ALL FOR NOW"
+
+usertask1 = UserTask.find_or_initialize_by({
+  task: task1,
+  user_profile: oliver_profile,
+})
+usertask1.status = "active"
+usertask1.save!
+
+usertask2 = UserTask.find_or_initialize_by({
+  task: task2,
+  user_profile: oliver_profile,
+})
+usertask2.status = "active"
+usertask2.save!
+
+usertask3 = UserTask.find_or_initialize_by({
+  task: task3,
+  user_profile: oliver_profile,
+})
+usertask3.status = "active"
+usertask3.save!
+
+puts "FINISHED!"
