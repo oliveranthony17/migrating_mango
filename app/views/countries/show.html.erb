@@ -10,7 +10,12 @@
 
   <div class="row gy-5 justify-content-center">
     <div class="col-6 topic-card">
-      <%= link_to "#" do %>
+      <% if current_user.nil? %>
+        <% path =  root_path %>
+      <% else %>
+        <% path = (current_user.user_profile.nil? ? new_user_profile_path :  user_profile_user_tasks_path(current_user.user_profile)) %>
+      <% end %>
+      <%= link_to path do %>
         <div class="tile">
           <div class="tile--icon">
             <i class="fa-solid fa-list-check"></i>
@@ -24,7 +29,12 @@
 
 
     <div class="col-6 topic-card">
-      <%= link_to (current_user.user_profile.nil? ? new_user_profile_path : edit_user_profile_path(current_user)) do %>
+      <% if current_user.nil? %>
+        <% path =  root_path %>
+      <% else %>
+        <% path = (current_user.user_profile.nil? ? new_user_profile_path : edit_user_profile_path(current_user)) %>
+      <% end %>
+      <%= link_to path do %>
         <div class="tile">
           <div class="tile--icon">
             <i class="fa-solid fa-user"></i>
