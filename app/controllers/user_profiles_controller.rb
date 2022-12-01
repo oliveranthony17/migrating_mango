@@ -21,6 +21,12 @@ class UserProfilesController < ApplicationController
   end
 
   def update
+    @user_profile = current_user.user_profile
+    if @user_profile.save
+      redirect_to country_path(Country.first)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private
