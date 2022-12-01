@@ -9,6 +9,33 @@
   </div>
 
   <div class="row gy-5 justify-content-center">
+    <div class="col-6 topic-card">
+      <%= link_to "#" do %>
+        <div class="tile">
+          <div class="tile--icon">
+            <i class="fa-solid fa-list-check"></i>
+          </div>
+          <div class="tile--title">
+            My tasks
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+
+    <div class="col-6 topic-card">
+      <%= link_to "#" do %>
+        <div class="tile">
+          <div class="tile--icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="tile--title">
+            My profile
+          </div>
+        </div>
+      <% end %>
+    </div>
+
     <% Topic.order(:title).each do |topic| %>
       <%= render "countries/topic_card", topic: topic %>
     <% end %>
