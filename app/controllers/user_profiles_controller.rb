@@ -6,8 +6,11 @@ class UserProfilesController < ApplicationController
   def create
     @user_profile = UserProfile.new(profile_params)
     @user_profile.user = current_user
-    @user_profile.save
-    redirect_to country_path(Country.first)
+    if @user_profile.save
+      redirect_to country_path(Country.first)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
