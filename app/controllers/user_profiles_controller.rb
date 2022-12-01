@@ -7,6 +7,7 @@ class UserProfilesController < ApplicationController
     @user_profile = UserProfile.new(profile_params)
     @user_profile.user = current_user
     @user_profile.save
+    redirect_to country_path(Country.first)
   end
 
   def show
