@@ -129,38 +129,105 @@ all.save!
 
 puts "CREATING TASKS (BANK) RELATED TO COUNTRY"
 
-task1 = Task.find_or_initialize_by({
+task1_work = Task.find_or_initialize_by({
   country: switzerland,
-  title: "Apply for your work permit using the online forms",
+  title: "Apply for jobs",
   order: 1
 })
 
-task1.content = "As you are a entering Switzerland for work, you can begin the process by completing the online application form and issuing this to your local migration office."
-task1.scope = "non-eu"
-task1.category = work
+task1_work.content = "Apply for jobs! As you are in the EU you can move to Switzerland now however we would recommend getting a job offer first."
+task1_work.scope = "work_find"
+task1_work.eu = "eu"
+task1_work.category = work
+task1_work.save!
+
+#? --- ************ ---
+
+task2_work = Task.find_or_initialize_by({
+  country: switzerland,
+  title: "Apply for jobs",
+  order: 1
+})
+
+task2_work.content = "Apply for jobs! As you are not in the EU you can only stay in the country for 3 months (as a tourist) and we would therefore recommend finding a job before moving."
+task2_work.scope = "work_find"
+task2_work.eu = "non-eu"
+task2_work.category = work
+task2_work.save!
+
+#? --- ************ ---
+
+task3_work = Task.find_or_initialize_by({
+  country: switzerland,
+  title: "Apply for your work permit",
+  order: 2
+})
+
+task3_work.content = "As you are a entering Switzerland for work, you will need to apply for a permit using your work contract. As an eu-member this should be accepted"
+task3_work.scope = "work"
+task3_work.eu = "eu"
+task3_work.category = work
+task3_work.save!
+
+#? --- ************ ---
+
+task4_work = Task.find_or_initialize_by({
+  country: switzerland,
+  title: "Apply for your work permit",
+  order: 2
+})
+
+task4_work.content = "As you are a entering Switzerland for work, you can begin the process by completing the online application form and issuing this to your local migration office. As a non-eu member there are many reqiurements such as..."
+task4_work.scope = "work"
+task4_work.eu = "non-eu"
+task4_work.category = work
+task4_work.save!
+
+#? --- ************ ---
+
+task1 = Task.find_or_initialize_by({
+  country: switzerland,
+  title: "Permit approved",
+  order: 3
+})
+
+task1.content = "Congratulations! Your permit has been approved. At this point you can begin the next tasks and start to think about the move to Switzerland!"
+task1.scope = "all"
+task1.eu = "both"
+task1.category = permits
 task1.save!
+
+#? --- ************ ---
 
 task2 = Task.find_or_initialize_by({
   country: switzerland,
   title: "Register as resident at local Gemeinde",
-  order: 2
+  order: 10
 })
 
-task2.content = "In order to attain your permit you will need to register at the local Gemeinde. This will depend on your postcode and exactly where you live. The suggested location below is based on your postcode however it is recommended to double check by contacting them first."
-task2.scope = "both"
-task2.category = all
+task2.content = "You will need to register at the local Gemeinde. This will depend on your postcode and exactly where you live. It is recommended to double check by contacting them first."
+task2.scope = "all"
+task1.eu = "both"
+task2.category = permits
 task2.save!
+
+#? --- ************ ---
 
 task3 = Task.find_or_initialize_by({
   country: switzerland,
   title: "Receive your appointment to have biometrics taken for your permit card",
-  order: 3
+  order: 11
 })
 
 task3.content = "Once you have registered as a resident and your permit has been approved, you will receive a letter with an appointment date and time in order to have your biometric data taken, photo taken and receive additional information on life in Switzerland."
-task3.scope = "both"
-task3.category = all
+task3.scope = "all"
+task1.eu = "non-eu"
+task3.category = permits
 task3.save!
+
+#? --- ************ ---
+
+# MORE TASKS
 
 #? --- USER TASKS ---
 
