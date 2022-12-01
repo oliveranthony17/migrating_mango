@@ -4,7 +4,6 @@ puts "CREATING USER AND USER PROFILE"
 
 oliver = User.find_or_initialize_by({
   email: "oliver@lewagon.com"
-  # password: "lewagon"
 })
 oliver.password = "lewagon"
 oliver.save!
@@ -35,7 +34,8 @@ puts "CREATING TOPICS FOR COUNTRY SHOW PAGES"
 
 permits = Topic.find_or_initialize_by({
   country: switzerland,
-  title: "Permits"
+  title: "Permits",
+  icon: "<i class='fas fa-file'></i>"
 })
 
 permits.content = "There are a variety of permits available in Switzerland..."
@@ -43,7 +43,8 @@ permits.save!
 
 emergency = Topic.find_or_initialize_by({
   country: switzerland,
-  title: "Emergency"
+  title: "Emergency",
+  icon: "<i class='fas fa-hospital-symbol'></i>"
 })
 
 emergency.content = "Here are the emergency phone numbers for Switzerland..."
@@ -51,7 +52,8 @@ emergency.save!
 
 work = Topic.find_or_initialize_by({
   country: switzerland,
-  title: "Work"
+  title: "Work",
+  icon: "<i class='fas fa-briefcase'></i>"
 })
 
 work.content = "Here are the emergency phone numbers for Switzerland..."
@@ -59,7 +61,8 @@ work.save!
 
 accommodation = Topic.find_or_initialize_by({
   country: switzerland,
-  title: "Accommodation"
+  title: "Accommodation",
+  icon: "<i class='fas fa-home'></i>"
 })
 
 accommodation.content = "Accommodation in Switzerland can be competitive if looking close to the cities..."
@@ -67,7 +70,8 @@ accommodation.save!
 
 pets = Topic.find_or_initialize_by({
   country: switzerland,
-  title: "Pets"
+  title: "Pets",
+  icon: "<i class='fas fa-paw'></i>"
 })
 
 pets.content = "The requirements for bringing a pet to Switzerland can differ depending on the country you are travelling from..."

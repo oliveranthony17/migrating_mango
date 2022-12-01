@@ -1,21 +1,33 @@
-<div class="tasks-container">
+<div class="tasks-container container">
   <h1>Active Tasks</h1>
   <div>
-    <% @active_tasks.each do |task| %>
-      <%= render "user_tasks/task", task: task %>
+    <% if @active_tasks.count == 0  %>
+      <p>You have no active tasks.</p>
+    <% else %>
+      <% @active_tasks.each do |task| %>
+        <%= render "user_tasks/task", task: task %>
+      <% end %>
     <% end %>
   </div>
   <br>
   <h1>Upcoming Tasks</h1>
   <div>
-    <% @upcoming_tasks.each do |task| %>
-      <%= render "user_tasks/task", task: task %>
+    <% if @upcoming_tasks.count == 0  %>
+      <p>You have no upcoming tasks.</p>
+    <% else %>
+      <% @upcoming_tasks.each do |task| %>
+        <%= render "user_tasks/task", task: task %>
+      <% end %>
     <% end %>
   </div>
   <br>
   <h1>Completed Tasks</h1>
   <div>
-    <% @completed_tasks.each do |task| %>
-      <%= render "user_tasks/task", task: task %>
+    <% if @completed_tasks.count == 0  %>
+      <p>You have not completed any tasks.</p>
+    <% else %>
+      <% @completed_tasks.each do |task| %>
+        <%= render "user_tasks/task", task: task %>
+    <% end %>
     <% end %>
   </div>
