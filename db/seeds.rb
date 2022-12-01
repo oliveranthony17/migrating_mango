@@ -98,27 +98,27 @@ health.save!
 
 #? --- CATEGORIES ---
 
-puts "CREATING CATEGORIES BEFORE CREATING TASKS"
+# puts "CREATING CATEGORIES BEFORE CREATING TASKS"
 
-work = Category.find_or_initialize_by({
-  title: "Work permit"
-})
-work.save!
+# work = Category.find_or_initialize_by({
+#   title: "Work permit"
+# })
+# work.save!
 
-student = Category.find_or_initialize_by({
-  title: "Student permit"
-})
-student.save!
+# student = Category.find_or_initialize_by({
+#   title: "Student permit"
+# })
+# student.save!
 
-married = Category.find_or_initialize_by({
-  title: "Family reunification (through marriage)"
-})
-married.save!
+# married = Category.find_or_initialize_by({
+#   title: "Family reunification (through marriage)"
+# })
+# married.save!
 
-all = Category.find_or_initialize_by({
-  title: "Applies to all"
-})
-all.save!
+# all = Category.find_or_initialize_by({
+#   title: "Applies to all"
+# })
+# all.save!
 
 #? --- TASKS ---
 
@@ -127,13 +127,12 @@ puts "CREATING TASKS (BANK) RELATED TO COUNTRY"
 task1_work = Task.find_or_initialize_by({
   country: switzerland,
   title: "Apply for jobs",
-  order: 1
+  eu: "eu"
 })
-
+task1_work.order = 1
 task1_work.content = "Apply for jobs! As you are in the EU you can move to Switzerland now however we would recommend getting a job offer first."
 task1_work.scope = "work_find"
-task1_work.eu = "eu"
-task1_work.category = work
+task1_work.topic = work
 task1_work.save!
 
 #? --- ************ ---
@@ -141,13 +140,12 @@ task1_work.save!
 task2_work = Task.find_or_initialize_by({
   country: switzerland,
   title: "Apply for jobs",
-  order: 1
+  eu: "non-eu"
 })
-
+task2_work.order = 1
 task2_work.content = "Apply for jobs! As you are not in the EU you can only stay in the country for 3 months (as a tourist) and we would therefore recommend finding a job before moving."
 task2_work.scope = "work_find"
-task2_work.eu = "non-eu"
-task2_work.category = work
+task2_work.topic = work
 task2_work.save!
 
 #? --- ************ ---
@@ -155,27 +153,27 @@ task2_work.save!
 task3_work = Task.find_or_initialize_by({
   country: switzerland,
   title: "Apply for your work permit",
-  order: 2
+  eu: "eu"
 })
-
+task3_work.order = 2
 task3_work.content = "As you are a entering Switzerland for work, you will need to apply for a permit using your work contract. As an eu-member this should be accepted"
 task3_work.scope = "work"
-task3_work.eu = "eu"
-task3_work.category = work
+task3_work.topic = work
 task3_work.save!
+
+# didn't get picked up in user with eu, work, job_offer
 
 #? --- ************ ---
 
 task4_work = Task.find_or_initialize_by({
   country: switzerland,
   title: "Apply for your work permit",
-  order: 2
+  eu: "non-eu"
 })
-
+task4_work.order = 2
 task4_work.content = "As you are a entering Switzerland for work, you can begin the process by completing the online application form and issuing this to your local migration office. As a non-eu member there are many reqiurements such as..."
 task4_work.scope = "work"
-task4_work.eu = "non-eu"
-task4_work.category = work
+task4_work.topic = work
 task4_work.save!
 
 #? --- ************ ---
@@ -183,13 +181,12 @@ task4_work.save!
 task1 = Task.find_or_initialize_by({
   country: switzerland,
   title: "Permit approved",
-  order: 3
+  eu: "both"
 })
-
+task1.order = 3
 task1.content = "Congratulations! Your permit has been approved. At this point you can begin the next tasks and start to think about the move to Switzerland!"
 task1.scope = "all"
-task1.eu = "both"
-task1.category = permits
+task1.topic = permits
 task1.save!
 
 #? --- ************ ---
@@ -197,13 +194,12 @@ task1.save!
 task2 = Task.find_or_initialize_by({
   country: switzerland,
   title: "Register as resident at local Gemeinde",
-  order: 10
+  eu: "both"
 })
-
+task2.order = 10
 task2.content = "You will need to register at the local Gemeinde. This will depend on your postcode and exactly where you live. It is recommended to double check by contacting them first."
 task2.scope = "all"
-task1.eu = "both"
-task2.category = permits
+task2.topic = permits
 task2.save!
 
 #? --- ************ ---
@@ -211,13 +207,12 @@ task2.save!
 task3 = Task.find_or_initialize_by({
   country: switzerland,
   title: "Receive your appointment to have biometrics taken for your permit card",
-  order: 11
+  eu: "non-eu"
 })
-
+task3.order = 11
 task3.content = "Once you have registered as a resident and your permit has been approved, you will receive a letter with an appointment date and time in order to have your biometric data taken, photo taken and receive additional information on life in Switzerland."
 task3.scope = "all"
-task1.eu = "non-eu"
-task3.category = permits
+task3.topic = permits
 task3.save!
 
 #? --- ************ ---
@@ -226,27 +221,27 @@ task3.save!
 
 #? --- USER TASKS ---
 
-puts "CREATING USER TASKS - ALL FOR NOW"
+# puts "CREATING USER TASKS - ALL FOR NOW"
 
-usertask1 = UserTask.find_or_initialize_by({
-  task: task1,
-  user_profile: oliver_profile,
-})
-usertask1.status = "active"
-usertask1.save!
+# usertask1 = UserTask.find_or_initialize_by({
+#   task: task1,
+#   user_profile: oliver_profile,
+# })
+# usertask1.status = "active"
+# usertask1.save!
 
-usertask2 = UserTask.find_or_initialize_by({
-  task: task2,
-  user_profile: oliver_profile,
-})
-usertask2.status = "active"
-usertask2.save!
+# usertask2 = UserTask.find_or_initialize_by({
+#   task: task2,
+#   user_profile: oliver_profile,
+# })
+# usertask2.status = "active"
+# usertask2.save!
 
-usertask3 = UserTask.find_or_initialize_by({
-  task: task3,
-  user_profile: oliver_profile,
-})
-usertask3.status = "active"
-usertask3.save!
+# usertask3 = UserTask.find_or_initialize_by({
+#   task: task3,
+#   user_profile: oliver_profile,
+# })
+# usertask3.status = "active"
+# usertask3.save!
 
 puts "FINISHED!"

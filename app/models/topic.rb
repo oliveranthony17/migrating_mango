@@ -1,5 +1,7 @@
 class Topic < ApplicationRecord
   belongs_to :country
+  has_many :tasks
+
   validates :title, presence: true
   validates :content, presence: true
 

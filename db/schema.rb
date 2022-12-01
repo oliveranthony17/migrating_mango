@@ -32,11 +32,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_160835) do
     t.text "content"
     t.integer "order"
     t.string "scope"
-    t.bigint "category_id", null: false
+    t.string "eu"
+    t.bigint "topic_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_tasks_on_category_id"
     t.index ["country_id"], name: "index_tasks_on_country_id"
+    t.index ["topic_id"], name: "index_tasks_on_topic_id"
   end
 
   create_table "topics", force: :cascade do |t|
@@ -85,8 +86,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_160835) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "tasks", "categories"
   add_foreign_key "tasks", "countries"
+  add_foreign_key "tasks", "topics"
   add_foreign_key "topics", "countries"
   add_foreign_key "user_profiles", "users"
   add_foreign_key "user_tasks", "tasks"
