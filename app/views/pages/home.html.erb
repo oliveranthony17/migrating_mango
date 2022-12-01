@@ -1,5 +1,6 @@
 
-
+        <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+          <%= user_signed_in? ? "current_user.email" : "User logged out" %>
 <div id="header"><h1>MIGRATING</h1></div>
 <div id="mango"><h1>Mango</h1></div>
 <div class="container container-home">
@@ -55,6 +56,13 @@
 		</div>
 	</div>
 </div>
+
+
+
+
+
+
+
 
 
 

@@ -14,12 +14,16 @@
   margin-left: 9rem;
 }
 
-body {
+#screen {
   min-height: 100vh;
   width: 100%;
   // display: flex;
   // align-items: center;
   // justify-content: center;
+  background-color: #03081b;
+}
+
+body{
   background-color: white;
 
 }
