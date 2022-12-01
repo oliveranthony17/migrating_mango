@@ -6,16 +6,27 @@ class UserProfilesController < ApplicationController
   def create
     @user_profile = UserProfile.new(profile_params)
     @user_profile.user = current_user
-    @user_profile.save
+    if @user_profile.save
+      redirect_to country_path(Country.first)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
   end
 
   def edit
+    @user_profile = current_user.user_profile
   end
 
   def update
+    @user_profile = current_user.user_profile
+    if @user_profile.update(profile_params)
+      redirect_to country_path(Country.first)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private
