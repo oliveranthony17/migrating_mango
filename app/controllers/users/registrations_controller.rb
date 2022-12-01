@@ -10,11 +10,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    super
-    # redirect_to user_profile_user_tasks_path(current_user)
-    #! crazy logic
-    # redirect_to new_user_profile_path(@user)
+  # def create
+  #   super
+  # end
+
+  def after_sign_up_path_for(resource)
+    '/user_profiles/new' # Or :prefix_to_your_route
   end
 
   # GET /resource/edit
