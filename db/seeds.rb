@@ -34,46 +34,41 @@ puts "CREATING TOPICS FOR COUNTRY SHOW PAGES"
 
 permits = Topic.find_or_initialize_by({
   country: switzerland,
-  title: "Permits",
-  icon: "<i class='fas fa-file'></i>"
+  title: "Permits"
 })
-
+permits.icon = '<i class="fa-solid fa-id-card"></i>'
 permits.content = "There are a variety of permits available in Switzerland..."
 permits.save!
 
 emergency = Topic.find_or_initialize_by({
   country: switzerland,
-  title: "Emergency",
-  icon: "<i class='fas fa-hospital-symbol'></i>"
+  title: "Emergency"
 })
-
+emergency.icon = "<i class='fas fa-hospital-symbol'></i>"
 emergency.content = "Here are the emergency phone numbers for Switzerland..."
 emergency.save!
 
 work = Topic.find_or_initialize_by({
   country: switzerland,
-  title: "Work",
-  icon: "<i class='fas fa-briefcase'></i>"
+  title: "Work"
 })
-
+work.icon = "<i class='fas fa-briefcase'></i>"
 work.content = "Here are the emergency phone numbers for Switzerland..."
 work.save!
 
 accommodation = Topic.find_or_initialize_by({
   country: switzerland,
-  title: "Accommodation",
-  icon: "<i class='fas fa-home'></i>"
+  title: "Accommodation"
 })
-
+accommodation.icon = "<i class='fas fa-home'></i>"
 accommodation.content = "Accommodation in Switzerland can be competitive if looking close to the cities..."
 accommodation.save!
 
 pets = Topic.find_or_initialize_by({
   country: switzerland,
-  title: "Pets",
-  icon: "<i class='fas fa-paw'></i>"
+  title: "Pets"
 })
-
+pets.icon = "<i class='fas fa-paw'></i>"
 pets.content = "The requirements for bringing a pet to Switzerland can differ depending on the country you are travelling from..."
 pets.save!
 
@@ -81,7 +76,7 @@ recycling = Topic.find_or_initialize_by({
   country: switzerland,
   title: "Recycling"
 })
-
+recycling.icon = "<i class='fa-solid fa-recycle'></i>"
 recycling.content = "Recycling is an important part of Swiss life but can be daunting at first..."
 recycling.save!
 
@@ -89,7 +84,7 @@ transport = Topic.find_or_initialize_by({
   country: switzerland,
   title: "Transport"
 })
-
+transport.icon = "<i class='fa-solid fa-train-tram'></i>"
 transport.content = "Public transport is considered very good in Switzerland..."
 transport.save!
 
@@ -97,7 +92,7 @@ health = Topic.find_or_initialize_by({
   country: switzerland,
   title: "Health"
 })
-
+health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
 health.content = "When moving to Switzerland it is mandatory to purchase health insurance within 3 months of arrival..."
 health.save!
 

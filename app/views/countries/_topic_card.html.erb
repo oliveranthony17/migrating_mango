@@ -1,8 +1,12 @@
 <div class="col-6 topic-card">
   <%= link_to country_topic_path(topic.country, topic) do %>
     <div class="tile">
-      <%= topic.title %>
-      <%= topic.icon %>
+      <div class="tile--icon">
+        <%= topic.icon %>
+      </div>
+      <div class="tile--title">
+        <%= topic.title %>
+      </div>
     </div>
   <% end %>
 </div>
