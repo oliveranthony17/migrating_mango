@@ -10,4 +10,8 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  def category_select_options
+    Category.all.map{|c| [c.name,c.id] }
+  end
 end

@@ -1,18 +1,13 @@
+
 #header{
   color: #ff9012;
-  font-size: 56px;
+  font-size: 36px;
   font-weight: bold;
-  margin-bottom: 1rem;
-  margin-left: 7rem;
+  margin-left: 34px;
+  margin-bottom: 6px;
+  font-family: 'IM Fell DW Pica', serif;
 }
-#mango{
-  color: #ff9012;
-  font-family:'arial';
-  font-size: 56px;
-  font-weight: bold;
-  margin-bottom: 3rem;
-  margin-left: 9rem;
-}
+
 
 #screen {
   min-height: 100vh;
@@ -313,9 +308,17 @@ body{
 //! LOGIN FORM
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
+input{
+  color: rgb(0, 0, 0) !important;
+}
+form, label, p{
+  color: rgb(255, 255, 255) !important;
+}
+
+
 
 .card{
-height: 250px;
+height: 300px;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;
@@ -323,7 +326,12 @@ background-color: #03081b !important;
 }
 
 .login{
-  margin-top: 66px;
+  margin-top: 26px;
+}
+#select-country{
+  color: white;
+  margin-left: 20px;
+  margin-bottom: 31px;
 }
 
 
