@@ -1,21 +1,22 @@
 
 #header{
+  text-align: center;
   color: #ff9012;
   font-size: 36px;
   font-weight: bold;
-  margin-left: 34px;
   margin-bottom: 6px;
   font-family: 'IM Fell DW Pica', serif;
 }
 
 
 #screen {
-  min-height: 100vh;
-  width: 100%;
+  min-height: 1000px;
+  width: 100-vw;
   // display: flex;
   // align-items: center;
   // justify-content: center;
   background-color: #03081b;
+  color: white;
 }
 
 body{
@@ -311,9 +312,6 @@ body{
 input{
   color: rgb(0, 0, 0) !important;
 }
-form, label, p{
-  color: rgb(255, 255, 255) !important;
-}
 
 
 
@@ -329,8 +327,8 @@ background-color: #03081b !important;
   margin-top: 26px;
 }
 #select-country{
+  text-align: center;
   color: white;
-  margin-left: 20px;
   margin-bottom: 31px;
 }
 
@@ -377,4 +375,9 @@ color: white;
 
 .links a{
 margin-left: 4px;
+}
+
+.log-in-button {
+  color: white !important;
+  border-color: white;
 }
