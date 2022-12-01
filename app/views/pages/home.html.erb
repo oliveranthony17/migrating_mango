@@ -1,97 +1,45 @@
-
-        <%= link_to 'logout', destroy_user_session_path, method: :delete %>
-          <%= user_signed_in? ? "current_user.email" : "User logged out" %>
-<div id="header"><h1>MIGRATING</h1></div>
-<div id="mango"><h1>Mango</h1></div>
-<div class="container container-home">
-  <div class="row justify-content-center">
-    <div class="col-12">
-      <div class="container container-home">
-        <div class="clouds"></div>
-        <div class="planet"></div>
-        <a href="countries/1"><div class="swiss"></div></a>
-        <div class="greece"></div>
-        <div class="romania"></div>
-        <div class="uk"></div>
-        <div class="lebanon"></div>
-        <div class="up"></div>
+<div id="screen">
+  <div id="header"><h1>MIGRATING MANGO</h1></div>
+  <div id="select-country"><em>Select your country by clicking on the flag</em></div>
+  <div class="container container-home">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="container container-home">
+          <div class="clouds"></div>
+          <div class="planet"></div>
+          <a href="countries/1"><div class="swiss"></div></a>
+          <div class="greece"></div>
+          <div class="romania"></div>
+          <div class="uk"></div>
+          <div class="lebanon"></div>
+          <div class="up"></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="container-home">
-	<div class="d-flex justify-content-center h-40 login">
-		<div class="card">
-			<div class="card-body">
-				<form>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
-						</div>
-						<input type="text" class="form-control" placeholder="username">
-
-					</div>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
-						</div>
-						<input type="password" class="form-control" placeholder="password">
-					</div>
-					<div class="row align-items-center remember">
-						<input type="checkbox">Remember Me
-					</div>
-					<div class="form-group">
-						<input type="submit" value="Login" class="btn float-right login_btn">
-					</div>
-				</form>
-			</div>
-			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="users/sign_up">Sign Up</a>
-				</div>
-				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <div class="container-home">
+    <div class="d-flex justify-content-center h-40 login">
+      <div class="card">
+        <div class="card-body">
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
+            <div class="form-inputs">
+              <span><i class="fas fa-user text-warning"></i></span>
+              <%= f.input :email,
+                          required: false,
+                          autofocus: true,
+                          autocomplete: "email" %>
+              <span><i class="fas fa-key text-warning"></i></span>
+              <%= f.input :password,
+                          required: false,
+                          autocomplete: "current-password"%>
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit, "Log in" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
