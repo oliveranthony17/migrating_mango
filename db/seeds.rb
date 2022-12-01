@@ -4,7 +4,6 @@ puts "CREATING USER AND USER PROFILE"
 
 oliver = User.find_or_initialize_by({
   email: "oliver@lewagon.com"
-  # password: "lewagon"
 })
 oliver.password = "lewagon"
 oliver.save!
@@ -62,7 +61,7 @@ work.save!
 
 accommodation = Topic.find_or_initialize_by({
   country: switzerland,
-  title: "Accommodation"
+  title: "Accommodation",
   icon: "<i class='fas fa-home'></i>"
 })
 
@@ -71,7 +70,7 @@ accommodation.save!
 
 pets = Topic.find_or_initialize_by({
   country: switzerland,
-  title: "Pets"
+  title: "Pets",
   icon: "<i class='fas fa-paw'></i>"
 })
 
