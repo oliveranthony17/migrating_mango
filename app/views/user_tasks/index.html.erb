@@ -1,3 +1,20 @@
+<%# <div class="input-group rounded mb-4">
+  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+  <span class="input-group-text border-0" id="search-addon">
+    <i class="fas fa-search"></i>
+  </span>
+</div> %>
+<div class="searchbar-topics">
+  <%= form_with url: user_profile_user_tasks_path(@user_profile), method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a task"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary text-white" %>
+  <% end %>
+</div>
+
 <div class="tasks-container container">
   <h1>Active Tasks</h1>
   <div>
