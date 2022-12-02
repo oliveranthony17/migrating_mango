@@ -20,7 +20,7 @@
 }
 
 body{
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 
 }
 
@@ -125,7 +125,6 @@ body{
   position: absolute;
   width:40px;
   height:40px;
-  background-color: #ed0000;
   box-shadow: inset -5px 5px rgba(0,0,0,0.2);
   border-radius:50%;
   top:-135px;
@@ -135,32 +134,13 @@ body{
   animation: move 11s linear infinite;
 }
 
-.swiss:before, .swiss:after {
-  content:"";
-  position: absolute;
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  box-shadow: inset 2px 2px rgba(0,0,0,0.2);
-  background-color: #e80000;
-}
-
-.swiss:before {
-  top:5px;
-  left:25px;
-}
-
-.swiss:after {
-  top:35px;
-  left:10px;
-}
 //! GREEK MOON
 
 .greece {
   position: absolute;
+  background-color: blue;
   width:40px;
   height:40px;
-  background-color: #2c87ff;
   box-shadow: inset -5px 5px rgba(0,0,0,0.2);
   border-radius:50%;
   top:-135px;
@@ -170,33 +150,14 @@ body{
   animation: move 10s linear infinite;
 }
 
-.greece:before, .greece:after {
-  content:"";
-  position: absolute;
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  box-shadow: inset 2px 2px rgba(0,0,0,0.2);
-  background-color: #082853;
-}
-
-.greece:before {
-  top:5px;
-  left:25px;
-}
-
-.greece:after {
-  top:35px;
-  left:10px;
-}
 
 //! Romania MOON
 
 .romania {
   position: absolute;
+  background-color: rgb(212, 247, 16);
   width:40px;
   height:40px;
-  background-color: #dfff2c;
   box-shadow: inset -5px 5px rgba(0,0,0,0.2);
   border-radius:50%;
   top:-135px;
@@ -206,33 +167,14 @@ body{
   animation: move 9s linear infinite;
 }
 
-.romania:before, .romania:after {
-  content:"";
-  position: absolute;
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  box-shadow: inset 2px 2px rgba(0,0,0,0.2);
-  background-color: #082853;
-}
-
-.romania:before {
-  top:5px;
-  left:25px;
-}
-
-.romania:after {
-  top:35px;
-  left:10px;
-}
 
 //! UK MOON
 
 .uk {
   position: absolute;
+  background-color: white;
   width:40px;
   height:40px;
-  background-color: #ffffff;
   box-shadow: inset -5px 5px rgba(0,0,0,0.2);
   border-radius:50%;
   top:-135px;
@@ -243,35 +185,13 @@ body{
   animation: move 8s linear infinite;
 }
 
-
-.uk:before, .uk:after {
-  content:"";
-  position: absolute;
-
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  box-shadow: inset 2px 2px rgba(0,0,0,0.2);
-  background-color: #082853;
-}
-
-.uk:before {
-  top:5px;
-  left:25px;
-}
-
-.uk:after {
-  top:35px;
-  left:10px;
-}
-
 //! LEBANON MOON
 
 .lebanon {
   position: absolute;
+  background-color: green;
   width:40px;
   height:40px;
-  background-color: #049609;
   box-shadow: inset -5px 5px rgba(0,0,0,0.2);
   border-radius:50%;
   top:-135px;
@@ -281,25 +201,6 @@ body{
   animation: move 7s linear infinite;
 }
 
-.lebanon:before, .lebanon:after {
-  content:"";
-  position: absolute;
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  box-shadow: inset 2px 2px rgba(0,0,0,0.2);
-  background-color: #082853;
-}
-
-.lebanon:before {
-  top:5px;
-  left:25px;
-}
-
-.lebanon:after {
-  top:35px;
-  left:10px;
-}
 
 @keyframes move {
   to {
