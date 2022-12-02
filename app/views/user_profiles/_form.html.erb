@@ -1,9 +1,12 @@
  <%= simple_form_for user_profile do |f| %>
-    <%= f.input :foreign_address %>
-    <%= f.input :eu_status %>
-    <%= f.input :entry_method %>
-    <%= f.input :has_job_offer %>
-    <%= f.input :has_study_offer %>
-    <%= f.input :has_relative %>
-    <%= f.button :submit, "Update profile" %>
+    <%#! maybe add "I have an address already" checkbox - can also skip out a few tasks (or mark as complete) if true %>
+    <%= f.input :foreign_address, label: "Please enter your foreign address or expected city of residence", placeholder: "1 Bahnhofstrasse, Zürich" %>
+    <%#! would be great if above did an autocomplete thing %>
+    <%= f.input :entry_method, label: "Permit type (work, study or family reunification)", collection: ["Work", "Study", "Family reunification"] %>
+    <%= f.input :eu_status, label: "I am an EU citizen" %>
+    <%= f.input :has_job_offer, label: "I have a job offer in Switzerland" %>
+    <%= f.input :has_study_offer, label: "I have an offer letter to study in Switzerland" %>
+    <%= f.input :has_relative, label: "I have a close relative who is a citizen of holds a permit in Switzerland" %>
+    <%#! can we add pop ups with further info? %>
+    <%= f.button :submit, "Submit", class: "btn other-button px-4" %>
   <% end %>
