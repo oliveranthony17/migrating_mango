@@ -4,12 +4,4 @@ class TopicsController < ApplicationController
   def show
     @topics = Topic.find(params[:id])
   end
-
-  def index
-    # if params[:query].present?
-    #   @topics = Topic.where("title ILIKE ?", "%#{params[:query]}%")
-    # else
-    #   @topics = Topic.all
-    # end
-  end
 end

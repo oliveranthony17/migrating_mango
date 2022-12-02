@@ -1,11 +1,15 @@
 <div class="container">
   <h1 class="my-3 text-center">Welcome to <%= @country.name.capitalize %>!</h1>
 
-  <div class="input-group rounded mb-4">
-    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-    <span class="input-group-text border-0" id="search-addon">
-      <i class="fas fa-search"></i>
-    </span>
+  <div class="searchbar-topics">
+    <%= form_with url: country_path(@country), method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a topic"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary text-white"%>
+    <% end %>
   </div>
 
   <div class="row gy-5 justify-content-center">
@@ -46,7 +50,7 @@
       <% end %>
     </div>
 
-    <% Topic.order(:title).each do |topic| %>
+    <% @topics.each do |topic| %>
       <%= render "countries/topic_card", topic: topic %>
     <% end %>
   </div>
