@@ -1,5 +1,6 @@
+
 .fflag {
-  background-image:url(chflag.png);
+  background-image:url(flagSprite60.png);
   background-repeat:no-repeat;
   background-size: 100% 49494%;
   display: inline-block;
@@ -8,7 +9,12 @@
   vertical-align: middle;
   box-sizing: content-box;
 }
-.fflag-CH {background-position:center 0.2287%}
+.fflag-GR {background-position:center 0.2287%}
+.fflag-RO {background-position:center 0.4524%}
+.fflag-CH {background-position:center 0.6721%}
+.fflag-GB {background-position:center 0.8958%}
+.fflag-LB {background-position:center 1.1162%}
+
 
 .fflag.ff-sm {width: 18px;height: 11px}
 .fflag.ff-md {width: 27px;height: 17px}
