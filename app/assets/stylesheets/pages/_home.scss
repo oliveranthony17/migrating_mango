@@ -10,8 +10,8 @@
 
 
 #screen {
-  min-height: 1000px;
-  width: 100-vw;
+  min-height: 100vh !important;
+  width: 100vw;
   // display: flex;
   // align-items: center;
   // justify-content: center;
@@ -21,6 +21,7 @@
 
 body{
   background-color: rgb(255, 255, 255);
+  height: 100-vh !important;
 
 }
 
