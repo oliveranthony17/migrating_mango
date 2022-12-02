@@ -19,9 +19,9 @@ class UserTasksController < ApplicationController
       @tasks = UserTask.where(user_profile: current_user.user_profile)
     end
 
-    @active_tasks = @tasks.where(status: "active")
-    @upcoming_tasks = @tasks.where(status: "upcoming")
-    @completed_tasks = @tasks.where(status: "completed")
+    @active_tasks = @tasks.where(status: "Active")
+    @upcoming_tasks = @tasks.where(status: "Upcoming")
+    @completed_tasks = @tasks.where(status: "Completed")
   end
 
   def show
