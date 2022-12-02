@@ -1,0 +1,47 @@
+.fflag {
+  background-image:url(chflag.png);
+  background-repeat:no-repeat;
+  background-size: 100% 49494%;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+  box-sizing: content-box;
+}
+.fflag-CH {background-position:center 0.2287%}
+
+.fflag.ff-sm {width: 18px;height: 11px}
+.fflag.ff-md {width: 27px;height: 17px}
+.fflag.ff-lg {width: 42px;height: 27px}
+.fflag.ff-xl {width: 80px;height: 80px}
+
+/* ff-sphere = spherical with specular highlight */
+.ff-sphere {
+background-size: 160%;
+background-clip: content-box;
+border-radius: 50%;
+}
+.ff-sphere:before {
+content: '';
+display: inline-block;
+width: inherit;
+height: inherit;
+position:absolute;
+top: 0;
+left: 0;
+background: radial-gradient(circle at 13% 58%, rgba(255,255,255,0) 68%, rgba(255,255,255,0.6) 82%, rgba(255,255,255,1) 100%),radial-gradient(circle at 50% -34%, rgba(0,0,0,0) 85%, rgba(0,0,0,.5) 94%, rgba(0,0,0,.4) 100%), radial-gradient(circle at 26% 26%, rgba(255,255,255,1) 7%, rgba(255,263,252,.6) 7%, rgba(255,255,255,0.8) 7%, rgba(255,255,255,.1) 29%, rgba(255,255,255,0) 30%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.45) 68%, rgba(0,0,0,1) 78%)
+}
+.ff-sphere:after {
+content: '';
+display: inline-block;
+width: inherit;
+height: inherit;
+position: absolute;
+top: 0;
+left: 0;
+border-radius: 50%;
+}
+.ff-sphere.ff-sm {width: 12px; height: 12px}
+.ff-sphere.ff-md {width: 18px; height: 18px}
+.ff-sphere.ff-lg {width: 24px; height: 24px}
+.ff-sphere.ff-xl {width: 40px; height: 40px}
