@@ -1,3 +1,4 @@
+<%= link_to ('<i class="fa-sharp fa-solid fa-hand-back-point-left"></i> Go back').html_safe, user_profile_user_tasks_path(current_user.user_profile), class: "btn form-actions" %>
 <div class="container">
   <h1><%= @task.task.title %></h1>
   <p><%= @task.task.content %></p>

@@ -53,7 +53,7 @@ work = Topic.find_or_initialize_by({
   title: "Work"
 })
 work.icon = "<i class='fas fa-briefcase'></i>"
-work.content = "Here are the emergency phone numbers for Switzerland..."
+work.content = "Gaining employment in Switzerland can be difficult..."
 work.save!
 
 accommodation = Topic.find_or_initialize_by({
