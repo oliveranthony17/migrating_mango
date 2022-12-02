@@ -1,40 +1,36 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <%= link_to "/countries/1", class: "navbar-brand" do %>
+      <%= image_tag "https://scontent-zrh1-1.xx.fbcdn.net/v/t39.30808-6/317290100_5625684957552378_7826073040937915706_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeG038ZPTB8bDkMM4QO5X_1FmZxze1FzJMWZnHN7UXMkxb-MOoqxn0By7cfgfvDfP_Mi6gkk3aMu7uecRPY8tzg9&_nc_ohc=Qp-KCnw1clgAX8IoxRP&_nc_ht=scontent-zrh1-1.xx&oh=00_AfAr2K89k7KW7-ecXuMFFvLYF_kZZG66c75v5YslMht8_w&oe=638E4745" %>
+    <% end %>
 
-<div class="navigation">
-  <div class="logo">
-    <a class="no-underline" href="/countries/1">
-      Migrating Mango
-    </a>
-  </div>
-  <div class="navigation-search-container">
-    <i class="fa fa-search"></i>
-    <input class="search-field" type="text" placeholder="Search">
-    <div class="search-container">
-      <div class="search-container-box">
-        <div class="search-results">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        </div>
-      </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "Home", "/countries/1", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Messages", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= image_tag "https://scontent-zrh1-1.xx.fbcdn.net/v/t39.30808-6/317290100_5625684957552378_7826073040937915706_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeG038ZPTB8bDkMM4QO5X_1FmZxze1FzJMWZnHN7UXMkxb-MOoqxn0By7cfgfvDfP_Mi6gkk3aMu7uecRPY8tzg9&_nc_ohc=Qp-KCnw1clgAX8IoxRP&_nc_ht=scontent-zrh1-1.xx&oh=00_AfAr2K89k7KW7-ecXuMFFvLYF_kZZG66c75v5YslMht8_w&oe=638E4745", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Favorites", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </li>
+        <% else %>
+          <!--li class="nav-item"-->
+            <%= link_to "Login", root_path, class: "nav-link" %>
+          <!--/li-->
+        <% end %>
+      </ul>
     </div>
   </div>
-  <div class="navigation-icons">
-    <a href="#" target ="_blank" class="navigation-link">
-      <i class="far fa-compass"></i>
-    </a>
-    <a class="navigation-link notifica">
-      <i class="far fa-heart">
-        <div class="notification-bubble-wrapper">
-          <div class="notification-bubble">
-            <span class="notifications-count">99</span>
-          </div>
-        </div>
-      </i>
-    </a>
-    <a href="#" class="navigation-link">
-      <i class="far fa-user-circle"></i>
-    </a>
-    <a>
-      <%= link_to ('<i class="fas fa-sign-out-alt"></i>').html_safe, destroy_user_session_path, data: {turbo_method: :delete}, class: "navigation-link", id: "signout" %>
-    </a>
-  </div>
-  <script src="navbar.js"></script>
 </div>

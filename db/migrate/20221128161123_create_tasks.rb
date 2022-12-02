@@ -6,7 +6,8 @@ class CreateTasks < ActiveRecord::Migration[7.0]
       t.text :content
       t.integer :order
       t.string :scope
-      t.references :category, null: false, foreign_key: true
+      t.string :eu
+      t.references :topic, null: false, foreign_key: true
 
       t.timestamps
     end

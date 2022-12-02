@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="mb-4">Welcome to Switzerland!</h1>
+  <h1 class="my-3 text-center">Welcome to <%= @country.name.capitalize %>!</h1>
 
   <div class="input-group rounded mb-4">
     <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
@@ -10,7 +10,12 @@
 
   <div class="row gy-5 justify-content-center">
     <div class="col-6 topic-card">
-      <%= link_to "#" do %>
+      <% if current_user.nil? %>
+        <% path =  new_user_registration_path %>
+      <% else %>
+        <% path = (current_user.user_profile.nil? ? new_user_profile_path :  user_profile_user_tasks_path(current_user.user_profile)) %>
+      <% end %>
+      <%= link_to path do %>
         <div class="tile">
           <div class="tile--icon">
             <i class="fa-solid fa-list-check"></i>
@@ -24,7 +29,12 @@
 
 
     <div class="col-6 topic-card">
-      <%= link_to (current_user.user_profile.nil? ? new_user_profile_path : edit_user_profile_path(current_user)) do %>
+      <% if current_user.nil? %>
+        <% path =  new_user_registration_path %>
+      <% else %>
+        <% path = (current_user.user_profile.nil? ? new_user_profile_path : edit_user_profile_path(current_user)) %>
+      <% end %>
+      <%= link_to path do %>
         <div class="tile">
           <div class="tile--icon">
             <i class="fa-solid fa-user"></i>
