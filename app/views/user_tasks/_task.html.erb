@@ -1,7 +1,28 @@
-<div class="card-product my-3">
-  <div class="card-product-infos">
-    <%= link_to ("<span></span>").html_safe, user_profile_user_task_path(current_user, task) %>
-    <h2><%= task.task.title %></h2>
+<div
+  data-controller="task-dropdown"
+  data-task-dropdown-target="card"
+  data-action="click->task-dropdown#revealEdit"
+  class="card-product my-3"
+>
+  <div class="card-product-infos row">
+    <%# <%= link_to ("<span></span>").html_safe, user_profile_user_task_path(current_user, task) %>
+    <div class="col-12" data-task-dropdown-target="title">
+      <h2><%= task.task.title %></h2>
+    </div>
+
+    <div
+    data-task-dropdown-target="edit"
+    class="d-none col-12">
+    <%# comment text box  %>
+    <h6><%= task.note %></h6>
+    <%# show task button  %>
+    <%= link_to "Go to task", user_profile_user_task_path(current_user, task), class: "btn other-button p-1" %>
+    <%# mark as active button  %>
+    <button class="btn other-button p-1">Make active</button>
+    <%# mark as complete button  %>
+    <button class="btn other-button p-1">Complete</button>
+    </div>
   </div>
+
+
 </div>
-<%# add javascript dropdown to add comment / mark as complete  %>
