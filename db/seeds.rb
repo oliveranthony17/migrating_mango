@@ -1,23 +1,23 @@
 #? --- USERS ---
 
-puts "CREATING USER AND USER PROFILE"
+# puts "CREATING USER AND USER PROFILE"
 
-oliver = User.find_or_initialize_by({
-  email: "oliver@lewagon.com"
-})
-oliver.password = "lewagon"
-oliver.save!
+# oliver = User.find_or_initialize_by({
+#   email: "oliver@lewagon.com"
+# })
+# oliver.password = "lewagon"
+# oliver.save!
 
-oliver_profile = UserProfile.find_or_initialize_by({
-  user: oliver
-})
-oliver_profile.foreign_address = "Schloesslistrasse, Ebikon, 6030"
-oliver_profile.eu_status = false
-oliver_profile.entry_method = "family"
-oliver_profile.has_job_offer = false
-oliver_profile.has_study_offer = false
-oliver_profile.has_relative = true
-oliver_profile.save!
+# oliver_profile = UserProfile.find_or_initialize_by({
+#   user: oliver
+# })
+# oliver_profile.foreign_address = "Schloesslistrasse, Ebikon, 6030"
+# oliver_profile.eu_status = false
+# oliver_profile.entry_method = "family"
+# oliver_profile.has_job_offer = false
+# oliver_profile.has_study_offer = false
+# oliver_profile.has_relative = true
+# oliver_profile.save!
 
 #? --- COUNTRIES ---
 
