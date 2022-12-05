@@ -17,15 +17,11 @@ Rails.application.routes.draw do
     end
   end
 
-<<<<<<< HEAD
+
   resources :countries, only: [:index, :show] do
     resources :topics, only: [:show] do
       resources :comments, only: [:create, :edit, :destroy, :new, :update]
     end
 
   end
-=======
-  p
-
->>>>>>> master
 end

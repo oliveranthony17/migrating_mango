@@ -1,0 +1,13 @@
+<%= turbo_frame_tag comment do %>
+  <h4><%= comment.title %></h4>
+  <p><%= comment.content %></p>
+
+  <% if current_user == comment.user || current_user&.admin? %>
+    <%= link_to "Edit",
+                edit_country_topic_comment_path(comment.topic.country, comment.topic, comment) %>
+    <%= button_to "Delete",
+                  country_topic_comment_path(comment.topic.country, comment.topic, comment),
+                  method: :delete,
+                  data: { turbo_confirm: "Are you sure?" } %>
+  <% end %>
+<% end %>

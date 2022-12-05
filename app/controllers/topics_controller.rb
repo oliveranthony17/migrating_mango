@@ -4,6 +4,6 @@ class TopicsController < ApplicationController
   def show
     @country = Country.find(params[:country_id])
     @topic = Topic.find(params[:id])
-    @comment = @topic.comments.build
+    # @comment = @topic.comments.new
   end
 end

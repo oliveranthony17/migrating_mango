@@ -1,1 +1,3 @@
-<%= render "comments/form", topic: @topic, comment: @comment %>
+<%= turbo_frame_tag "new_comment" do %>
+  <%= render "comments/form", topic: @topic, comment: @comment %>
+<% end %>
