@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_02_111941) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_090948) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,6 +18,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_111941) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "topic_id", null: false
+    t.bigint "user_id", null: false
+    t.text "content"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_comments_on_topic_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "countries", force: :cascade do |t|
@@ -87,6 +98,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_111941) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "topics"
+  add_foreign_key "comments", "users"
   add_foreign_key "tasks", "countries"
   add_foreign_key "tasks", "topics"
   add_foreign_key "topics", "countries"

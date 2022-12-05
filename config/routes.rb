@@ -21,4 +21,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :countries, only: [:index, :show] do
+    resources :topics, only: [:show] do
+      resources :comments, only: [:create, :edit, :destroy, :new, :update]
+    end
+  end
+
 end
