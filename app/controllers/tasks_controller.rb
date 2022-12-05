@@ -5,9 +5,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    # @country = Country.find(params[:country_id])
-    # @task.country = @country
-    @task.order = 0
+    @task.country = Country.first # where(name: "Switzerland")
     if @task.save
       @user_task = UserTask.create({
         task: @task,
@@ -24,7 +22,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :content)
+    params.require(:task).permit(:title, :content, :topic_id)
   end
 
 end
