@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_02_111941) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_113343) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "avatars", force: :cascade do |t|
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -60,7 +66,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_111941) do
     t.boolean "has_relative"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "avatar"
+    t.bigint "avatar_id"
+    t.index ["avatar_id"], name: "index_user_profiles_on_avatar_id"
     t.index ["user_id"], name: "index_user_profiles_on_user_id"
   end
 
@@ -90,6 +97,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_111941) do
   add_foreign_key "tasks", "countries"
   add_foreign_key "tasks", "topics"
   add_foreign_key "topics", "countries"
+  add_foreign_key "user_profiles", "avatars"
   add_foreign_key "user_profiles", "users"
   add_foreign_key "user_tasks", "tasks"
   add_foreign_key "user_tasks", "user_profiles"

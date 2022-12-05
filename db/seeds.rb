@@ -245,4 +245,29 @@ task3.save!
 # usertask3.status = "active"
 # usertask3.save!
 
+avatar1 = Avatar.find_or_initialize_by({
+  image_url: "mango1"
+})
+avatar1.save!
+
+avatar2 = Avatar.find_or_initialize_by({
+  image_url: "mango2"
+})
+avatar2.save!
+
+avatar3 = Avatar.find_or_initialize_by({
+  image_url: "mango3"
+})
+avatar3.save!
+
+avatar4 = Avatar.find_or_initialize_by({
+  image_url: "mango4"
+})
+avatar4.save!
+
+avatar5 = Avatar.find_or_initialize_by({
+  image_url: "mango5"
+})
+avatar5.save!
+
 puts "FINISHED!"
