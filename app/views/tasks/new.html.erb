@@ -1,0 +1,12 @@
+<div class="container container-form">
+  <h2>Create custom task</h2>
+
+
+  <%= simple_form_for @task, data: { turbo_frame: "_top" } do |f| %>
+    <%= f.input :title, label: "Add a title", placeholder: "Book appointment at the vets" %>
+    <%= f.input :content, label: "Add a description",  placeholder: "Need to book an appointment at the vets so that Larry has the required vaccinations for the health certificate" %>
+    <%= f.association :topic, label: "Add a topic" %>
+    <%= f.button :submit, "Create", class: "btn other-button px-4" %>
+  <% end %>
+
+</div>

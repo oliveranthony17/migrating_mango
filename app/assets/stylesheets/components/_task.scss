@@ -1,6 +1,10 @@
 .tasks-container {
   margin: 10px auto;
   text-align: center;
+
+  p {
+    font-weight: 300;
+  }
 }
 
 .tasks-container h1 {
@@ -10,31 +14,47 @@
 .card-product {
   overflow: hidden;
   position: relative;
+  z-index: 1;
   overflow: hidden;
   box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
   height: fit-content;
 
   h2 {
     font-weight: bold;
-    padding: 5px;
+    padding: 2px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     max-width: 100%;
     font-size: 17px;
+    margin: 0 2px;
   }
 
   .task-infos {
     position: relative;
+
+    .caret {
+      position: absolute;
+      right: 3%;
+      top: 20%;
+      z-index: 998;
+    }
   }
+
 
   .task-button {
     font-size: 12px;
     border-color: rgb(50,50,50);
     border-radius: 8px;
+    z-index: 999;
+    position: relative;
   }
 }
 
+.create-button {
+  border-color: rgb(50,50,50);
+  border-radius: 8px;
+}
 
 .task {
   line-height: 80px !important;

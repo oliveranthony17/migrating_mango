@@ -1,8 +1,32 @@
 class UserTasksController < ApplicationController
 
+  def new
+    @task = Task.new
+    @user_task = UserTask.new
+  end
+
+  def create
+    # creates a Task instance that then creates a UserTask assigned to the user
+    @task = Task.create(task_params)
+    @user_task = UserTask.new({
+      task: @task,
+      user_profile: current_user.user_profile,
+      status: "Active",
+      order: 0
+    })
+    raise
+    if @user_task.save
+      redirect_to user_profile_user_tasks_path(current_user.user_profile)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def index
     @user_profile = UserProfile.find(params[:user_profile_id])
     @tasks = UserTask.where(user_profile: current_user.user_profile)
+    # @country = @tasks.first.task.country
+    # @topic = @tasks.first.task.topic
 
     if params[:query].present?
       sql_query = <<~SQL
@@ -59,4 +83,5 @@ class UserTasksController < ApplicationController
   def user_task_params
     params.require(:user_task).permit(:status, :note)
   end
+
 end
