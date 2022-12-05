@@ -9,19 +9,42 @@
 
 .card-product {
   overflow: hidden;
-  height: 80px;
-  background: rgb(255,255,255);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  vertical-align: center !important;
   position: relative;
+  overflow: hidden;
+  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
+  height: fit-content;
+
+  h2 {
+    font-weight: bold;
+    padding: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+    font-size: 17px;
+  }
+
+  .task-infos {
+    position: relative;
+  }
+
+  .task-button {
+    font-size: 12px;
+    border-color: rgb(50,50,50);
+    border-radius: 8px;
+  }
 }
 
-.card-product-bigger {
-  height: 140px !important;
+
+.task {
+  line-height: 80px !important;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0;
+}
+
+.task-bigger {
+  height: 120px !important;
 }
 
 .card-product:hover {
@@ -37,11 +60,6 @@
   object-fit: cover;
 }
 
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-}
-
 .card-product p {
   font-size: 12px;
   line-height: 1.4;
@@ -49,10 +67,4 @@
   // margin-bottom: 0;
   // margin-top: 8px;
   text-align: center;
-}
-
-.card-product-infos {
-  padding: 16px;
-  text-align: center;
-
 }
