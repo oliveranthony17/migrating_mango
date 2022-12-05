@@ -1,9 +1,7 @@
 class CommentsController < ApplicationController
-
-
   def index
-
   end
+
   def new
     @topic = Topic.find(params[:topic_id])
     @comment = @topic.comments.new
@@ -13,6 +11,7 @@ class CommentsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @comment = @topic.comments.new(comment_params)
     @comment.user = current_user
+    
     respond_to do |format|
       if @comment.save
         format.html { redirect_to country_topic_path(@topic.country, @topic) }
@@ -31,6 +30,7 @@ class CommentsController < ApplicationController
   def update
     @topic = Topic.find(params[:topic_id])
     @comment = @topic.comments.find(params[:id])
+    
     respond_to do |format|
       if @comment.update(comment_params)
         format.html { redirect_to country_topic_path(@topic.country, @topic) }
@@ -46,6 +46,7 @@ class CommentsController < ApplicationController
     @comment = @topic.comments.find(params[:id])
 
     @comment.destroy
+    
     respond_to do |format|
       format.html { redirect_to country_topic_path(@topic.country, @topic) }
       format.turbo_stream
