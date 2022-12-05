@@ -67,7 +67,7 @@ class UserProfilesController < ApplicationController
         status: "Upcoming"
       })
     end
-    redirect_to user_profile_user_tasks_path(@user_profile)
+    redirect_to user_profile_user_tasks_path(user_profile)
   end
 
   def show
@@ -81,7 +81,13 @@ class UserProfilesController < ApplicationController
 
   def update
     @user_profile = current_user.user_profile
-    if @user_profile.update(profile_params)
+    
+    # Only update mango if user selects a new mango
+    unless params[:user_profile][:avatar].to_i == 0
+      @user_profile.update(avatar: Avatar.find(params[:user_profile][:avatar]))
+    end
+
+    if @user_profile.update(profile_params.reject { |param| param == "avatar"})
       redirect_to country_path(Country.first)
     else
       render :edit, status: :unprocessable_entity
@@ -91,6 +97,6 @@ class UserProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:user_profile).permit(:user_profile, :avatar_id, :foreign_address, :eu_status, :entry_method, :has_job_offer, :has_study_offer, :has_relative)
+    params.require(:user_profile).permit(:avatar, :foreign_address, :eu_status, :entry_method, :has_job_offer, :has_study_offer, :has_relative)
   end
 end
