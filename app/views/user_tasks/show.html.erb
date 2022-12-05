@@ -1,5 +1,20 @@
 <%= link_to ('<i class="fa-sharp fa-solid fa-hand-back-point-left"></i> Go back').html_safe, user_profile_user_tasks_path(current_user.user_profile), class: "btn form-actions" %>
 <div class="container">
-  <h1><%= @task.task.title %></h1>
-  <p><%= @task.task.content %></p>
+  <div>
+    <h1><%= @task.task.title %></h1>
+    <p><%= @task.task.content %></p>
+  </div>
+
+  <div>
+    <p>Status: <%= @task.status %></p>
+    <p>Notes: <%= @task.note %></p>
+  </div>
 </div>
+
+
+
+<%# <%= simple_form_for(@task) do |f| %>
+    <%# <%= f.input :note, placeholder: @task.note %>
+    <%# <%= f.input :status %>
+    <%# <%= f.submit "Update task", class: "btn btn-sm btn-primary btn-block mt-2" %>
+  <%# <% end %>

@@ -10,8 +10,8 @@
 
 
 #screen {
-  min-height: 1000px;
-  width: 100-vw;
+  min-height: 100vh !important;
+  width: 100vw;
   // display: flex;
   // align-items: center;
   // justify-content: center;
@@ -21,12 +21,17 @@
 
 body{
   background-color: rgb(255, 255, 255);
+<<<<<<< HEAD
   min-height: 100vh;
   margin: 0;
   padding: 0;
   /* what we're adding */
   display: flex;
   flex-direction: column;
+=======
+  height: 100-vh !important;
+
+>>>>>>> master
 }
 
 .container-home {
