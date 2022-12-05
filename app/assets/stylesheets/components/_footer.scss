@@ -1,0 +1,18 @@
+.footer-links {
+  font-size: 25px;
+  color: #000000;
+  margin: 3px;
+}
+.footer {
+  background: #eb0808;
+  padding: 3px 0px;
+  flex-grow: 1;
+  bottom: fixed;
+}
+.footer a {
+  color: inherit;
+}
+.footer-copyright {
+  font-size: 12px;
+  margin-bottom: 4px;
+}

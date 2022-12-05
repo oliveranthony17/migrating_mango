@@ -2,6 +2,8 @@ class TopicsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
 
   def show
-    @topics = Topic.find(params[:id])
+    @country = Country.find(params[:country_id])
+    @topic = Topic.find(params[:id])
+    @comment = @topic.comments.build
   end
 end
