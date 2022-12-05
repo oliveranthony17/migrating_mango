@@ -1,28 +1,54 @@
-<div
-  data-controller="task-dropdown"
-  data-task-dropdown-target="card"
-  data-action="click->task-dropdown#revealEdit"
-  class="card-product my-3"
->
-  <div class="card-product-infos row">
-    <%# <%= link_to ("<span></span>").html_safe, user_profile_user_task_path(current_user, task) %>
-    <div class="col-12" data-task-dropdown-target="title">
-      <h2><%= task.task.title %></h2>
-    </div>
+<div data-controller="task-dropdown" data-action="click->task-dropdown#revealEdit" class="card-product my-3">
 
-    <div
-    data-task-dropdown-target="edit"
-    class="d-none col-12">
-    <%# comment text box  %>
-    <h6><%= task.note %></h6>
-    <%# show task button  %>
-    <%= link_to "Go to task", user_profile_user_task_path(current_user, task), class: "btn other-button p-1" %>
-    <%# mark as active button  %>
-    <button class="btn other-button p-1">Make active</button>
-    <%# mark as complete button  %>
-    <button class="btn other-button p-1">Complete</button>
-    </div>
+  <div class="task-infos my-3" data-task-dropdown-target="card">
+    <h2><%= task.task.title %></h2><i data-task-dropdown-target="caret" class="fa-solid fa-caret-down caret"></i>
   </div>
 
+  <div data-task-dropdown-target="edit" class="d-none">
+
+    <%# <%= simple_form_for task,
+    html: {
+      data: {
+        task_dropdown_target: "form",
+        action: "submit->task-dropdown#update"
+      }
+    } do |f|
+    %>
+      <%# <%= f.input :note %>
+      <%# <%= f.input :status %>
+     <%#  <%= f.submit "Update task", class: "btn btn-sm btn-primary btn-block mt-2" %>
+    <%# <% end %>
+    <div class="row px-3 mb-3">
+
+      <div class="col p-0 m-1">
+        <%# show task button  %>
+        <%= link_to ('<i class="fa-solid fa-eye"></i> Show Task').html_safe, user_profile_user_task_path(current_user, task), class: "btn task-button p-1 col-12" %>
+      </div>
+
+      <% unless task.status == "Active" %>
+        <div class="col p-0 m-1" data-task-dropdown-target="active-button" data-action="click->task-dropdown#refresh" >
+          <%# mark as active button  %>
+          <%= button_to ('<i class="fa-solid fa-circle-exclamation"></i> Active').html_safe, active_user_profile_user_tasks_path(current_user, task), method: :post, class: "btn task-button p-1 col-12" %>
+        </div>
+      <% end %>
+
+      <% unless task.status == "Upcoming" %>
+        <div class="col p-0 m-1" data-task-dropdown-target="upcoming-button" data-action="click->task-dropdown#refresh" >
+          <%# mark as complete button  %>
+          <%= button_to ('<i class="fa-sharp fa-solid fa-bell"></i> Upcoming').html_safe, upcoming_user_profile_user_tasks_path(current_user, task), method: :post, class: "btn task-button p-1 col-12" %>
+        </div>
+      <% end %>
+
+      <% unless task.status == "Completed" %>
+        <div class="col p-0 m-1" data-task-dropdown-target="complete-button" data-action="click->task-dropdown#refresh" >
+          <%# mark as complete button  %>
+          <%= button_to ('<i class="fa-solid fa-square-check"></i> Complete').html_safe, complete_user_profile_user_tasks_path(current_user, task), method: :post, class: "btn task-button p-1 col-12" %>
+        </div>
+      <% end %>
+
+      <%#! buttons work but would be good to move straight away with javascript %>
+
+    </div>
+  </div>
 
 </div>

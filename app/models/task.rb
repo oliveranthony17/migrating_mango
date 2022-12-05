@@ -5,6 +5,4 @@ class Task < ApplicationRecord
 
   validates :title, presence: true
   validates :content, presence: true
-  validates :scope, presence: true
-  validates :order, presence: true
 end

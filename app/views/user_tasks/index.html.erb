@@ -4,6 +4,7 @@
     <i class="fas fa-search"></i>
   </span>
 </div> %>
+
 <div class="searchbar-topics">
   <%= form_with url: user_profile_user_tasks_path(@user_profile), method: :get, class: "d-flex" do %>
     <%= text_field_tag :query,
@@ -11,11 +12,16 @@
       class: "form-control",
       placeholder: "Find a task"
     %>
-    <%= submit_tag "Search", class: "btn btn-primary text-white" %>
+    <%= submit_tag "Search", class: "btn btn-primary text-white", style: "border-color: red;" %>
   <% end %>
 </div>
 
 <div class="tasks-container container">
+
+  <%= button_to ('<i class="fa-solid fa-plus"></i> Create custom task').html_safe, root_path, method: :get, class: "btn create-button p-1 mb-3 col-8" %>
+
+  <%# ABOVE NEEDS UPDATING  %>
+
   <h1>Active Tasks</h1>
   <div>
     <% if @active_tasks.count == 0  %>
@@ -26,7 +32,6 @@
       <% end %>
     <% end %>
   </div>
-  <br>
   <h1>Upcoming Tasks</h1>
   <div>
     <% if @upcoming_tasks.count == 0  %>
@@ -37,7 +42,6 @@
       <% end %>
     <% end %>
   </div>
-  <br>
   <h1>Completed Tasks</h1>
   <div>
     <% if @completed_tasks.count == 0  %>
