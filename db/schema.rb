@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_05_113343) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_103107) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -64,6 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_113343) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "icon"
+    t.string "image"
     t.index ["country_id"], name: "index_topics_on_country_id"
   end
 
@@ -77,7 +78,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_113343) do
     t.boolean "has_relative"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "avatar"
     t.bigint "avatar_id"
     t.index ["avatar_id"], name: "index_user_profiles_on_avatar_id"
     t.index ["user_id"], name: "index_user_profiles_on_user_id"

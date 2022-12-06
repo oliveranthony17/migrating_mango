@@ -36,7 +36,6 @@ puts "CREATING TOPICS FOR COUNTRY SHOW PAGES"
 permits = Topic.find_or_initialize_by({
   country: switzerland,
   title: "Permits"
-
 })
 permits.icon = '<i class="fa-solid fa-id-card"></i>'
 permits.content = "There are a variety of permits available in Switzerland..."
