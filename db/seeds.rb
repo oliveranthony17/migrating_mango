@@ -29,6 +29,8 @@ switzerland = Country.find_or_initialize_by({
 })
 switzerland.save!
 
+#! CREATE UNITED KINGDOM AS COUNTRY
+
 #? --- TOPICS ---
 
 puts "CREATING TOPICS FOR COUNTRY SHOW PAGES"
@@ -97,6 +99,10 @@ health = Topic.find_or_initialize_by({
 health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
 health.content = "When moving to Switzerland it is mandatory to purchase health insurance within 3 months of arrival. There are different levels of cover at corresponding cost. It is recommended to compare providers, cost and cover using one of the many comparison websites."
 health.save!
+
+
+#! COPY AND PASTE TOPICS BUT WITH COUNTRY: UNITED_KINGDOM
+
 
 #? --- CATEGORIES ---
 
