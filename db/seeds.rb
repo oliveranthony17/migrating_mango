@@ -41,6 +41,7 @@ permits = Topic.find_or_initialize_by({
 })
 permits.icon = '<i class="fa-solid fa-id-card"></i>'
 permits.content = "There are a variety of permits available in Switzerland for different circumstances. For moving to Switzerland, you will likely be looking at obtaining a B permit (residence permit). For more information visit the link below: \nhttps://www.ch.ch/en/documents-and-register-extracts/permits-for-living-in-switzerland/#overview-of-permits"
+permits.image = "topics/permits"
 permits.save!
 
 emergency = Topic.find_or_initialize_by({
@@ -49,6 +50,7 @@ emergency = Topic.find_or_initialize_by({
 })
 emergency.icon = "<i class='fas fa-hospital-symbol'></i>"
 emergency.content = "Here are the emergency phone numbers for Switzerland: \nPolice: 117 \nFire: 188 \nAmbulance: 144 \nSwiss Rescue: 1414. \n\nMore information on emergency care can be found here: \nhttps://www.myswitzerland.com/en-ch/planning/about-switzerland/general-facts/emergency/emergency-numbers/"
+emergency.image = "topics/emergency"
 emergency.save!
 
 work = Topic.find_or_initialize_by({
@@ -57,6 +59,7 @@ work = Topic.find_or_initialize_by({
 })
 work.icon = "<i class='fas fa-briefcase'></i>"
 work.content = "Gaining employment in Switzerland can be competitive and particularly difficult without a permit. Speaking multiple languages (a local language plus English) can be a good advantage. \n\nJobs can be found on the internet in particular LinkedIn and Jobs.ch. \n\nMore information on working in Switzerland can be found here: \nhttps://www.ch.ch/en/foreign-nationals-in-switzerland/working-in-switzerland/#"
+work.image = "topics/work"
 work.save!
 
 accommodation = Topic.find_or_initialize_by({
@@ -65,6 +68,7 @@ accommodation = Topic.find_or_initialize_by({
 })
 accommodation.icon = "<i class='fas fa-home'></i>"
 accommodation.content = "Accommodation in Switzerland can be competitive if looking close to the cities. It is also considered expensive compared to other countries. \n\nLiving in apartments is common in Switzerland, even for families, and most apartments come with storage, bike sheds and storage cellers. \n\nThere are multiple websites for finding accomodation including homegate.ch, comparis.ch and immoscout24.ch. Shared accomodation (WGs) are also common and can be found on wgzimmer.ch."
+accommodation.image = "topics/housing"
 accommodation.save!
 
 pets = Topic.find_or_initialize_by({
@@ -73,6 +77,7 @@ pets = Topic.find_or_initialize_by({
 })
 pets.icon = "<i class='fas fa-paw'></i>"
 pets.content = "The requirements for bringing a pet to Switzerland can differ depending on the country you are travelling from. If your pet already has an EU passport this should be relatively straightforward, otherwise you will need the correct vaccinations and health certificate from a vet which can take multiple months. \n\nMore information can be found here: https://www.blv.admin.ch/blv/en/home/tiere/reisen-mit-heimtieren/hunde-katzen-und-frettchen.html."
+pets.image = "topics/pets"
 pets.save!
 
 recycling = Topic.find_or_initialize_by({
@@ -81,6 +86,7 @@ recycling = Topic.find_or_initialize_by({
 })
 recycling.icon = "<i class='fa-solid fa-recycle'></i>"
 recycling.content = "Recycling is an important part of Swiss life but can be daunting at first. If recycling is done incorrectly, the waste can be refused. The exact rules depend on Kanton however the general rules are as follows: \n- General waste bags need to be purchased and can be left in the black bin or ready for collection on the correct day \nCardboard must be collected and left by the road for the collection day \nPaper can be left in the paper bin or tied together with string \nGlass and aluminium can be taken to a local area and needs to be sorted \nPlastics can be sorted at a local supermarket or bags can be bought for general plastic waste"
+recycling.image = "topics/recycle"
 recycling.save!
 
 transport = Topic.find_or_initialize_by({
@@ -89,6 +95,7 @@ transport = Topic.find_or_initialize_by({
 })
 transport.icon = "<i class='fa-solid fa-train-tram'></i>"
 transport.content = "Public transport is considered very good in Switzerland. Trains are good quality and usually on time. A variety of tickets can be purchased including supersaver tickets, weekly, monthly or annual passes, and a halbtax card for 50% off all tickets."
+transport.image = "topics/transport"
 transport.save!
 
 health = Topic.find_or_initialize_by({
@@ -97,6 +104,7 @@ health = Topic.find_or_initialize_by({
 })
 health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
 health.content = "When moving to Switzerland it is mandatory to purchase health insurance within 3 months of arrival. There are different levels of cover at corresponding cost. It is recommended to compare providers, cost and cover using one of the many comparison websites."
+health.image = "topics/health"
 health.save!
 
 
