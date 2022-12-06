@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="my-3 text-center">Welcome to <%= @country.name.capitalize %>!</h1>
 
-  <div class="searchbar-topics">
+  <div class="searchbar-topics my-3">
     <%= form_with url: country_path(@country), method: :get, class: "d-flex" do %>
     <%= text_field_tag :query,
       params[:query],

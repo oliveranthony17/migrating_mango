@@ -29,6 +29,8 @@ switzerland = Country.find_or_initialize_by({
 })
 switzerland.save!
 
+#! CREATE UNITED KINGDOM AS COUNTRY
+
 #? --- TOPICS ---
 
 puts "CREATING TOPICS FOR COUNTRY SHOW PAGES"
@@ -39,7 +41,7 @@ permits = Topic.find_or_initialize_by({
 
 })
 permits.icon = '<i class="fa-solid fa-id-card"></i>'
-permits.content = "There are a variety of permits available in Switzerland..."
+permits.content = "There are a variety of permits available in Switzerland for different circumstances. For moving to Switzerland, you will likely be looking at obtaining a B permit (residence permit). For more information visit the link below: \nhttps://www.ch.ch/en/documents-and-register-extracts/permits-for-living-in-switzerland/#overview-of-permits"
 permits.save!
 
 emergency = Topic.find_or_initialize_by({
@@ -47,7 +49,7 @@ emergency = Topic.find_or_initialize_by({
   title: "Emergency"
 })
 emergency.icon = "<i class='fas fa-hospital-symbol'></i>"
-emergency.content = "Here are the emergency phone numbers for Switzerland..."
+emergency.content = "Here are the emergency phone numbers for Switzerland: \nPolice: 117 \nFire: 188 \nAmbulance: 144 \nSwiss Rescue: 1414. \n\nMore information on emergency care can be found here: \nhttps://www.myswitzerland.com/en-ch/planning/about-switzerland/general-facts/emergency/emergency-numbers/"
 emergency.save!
 
 work = Topic.find_or_initialize_by({
@@ -55,7 +57,7 @@ work = Topic.find_or_initialize_by({
   title: "Work"
 })
 work.icon = "<i class='fas fa-briefcase'></i>"
-work.content = "Gaining employment in Switzerland can be difficult..."
+work.content = "Gaining employment in Switzerland can be competitive and particularly difficult without a permit. Speaking multiple languages (a local language plus English) can be a good advantage. \n\nJobs can be found on the internet in particular LinkedIn and Jobs.ch. \n\nMore information on working in Switzerland can be found here: \nhttps://www.ch.ch/en/foreign-nationals-in-switzerland/working-in-switzerland/#"
 work.save!
 
 accommodation = Topic.find_or_initialize_by({
@@ -63,7 +65,7 @@ accommodation = Topic.find_or_initialize_by({
   title: "Accommodation"
 })
 accommodation.icon = "<i class='fas fa-home'></i>"
-accommodation.content = "Accommodation in Switzerland can be competitive if looking close to the cities..."
+accommodation.content = "Accommodation in Switzerland can be competitive if looking close to the cities. It is also considered expensive compared to other countries. \n\nLiving in apartments is common in Switzerland, even for families, and most apartments come with storage, bike sheds and storage cellers. \n\nThere are multiple websites for finding accomodation including homegate.ch, comparis.ch and immoscout24.ch. Shared accomodation (WGs) are also common and can be found on wgzimmer.ch."
 accommodation.save!
 
 pets = Topic.find_or_initialize_by({
@@ -71,7 +73,7 @@ pets = Topic.find_or_initialize_by({
   title: "Pets"
 })
 pets.icon = "<i class='fas fa-paw'></i>"
-pets.content = "The requirements for bringing a pet to Switzerland can differ depending on the country you are travelling from..."
+pets.content = "The requirements for bringing a pet to Switzerland can differ depending on the country you are travelling from. If your pet already has an EU passport this should be relatively straightforward, otherwise you will need the correct vaccinations and health certificate from a vet which can take multiple months. \n\nMore information can be found here: https://www.blv.admin.ch/blv/en/home/tiere/reisen-mit-heimtieren/hunde-katzen-und-frettchen.html."
 pets.save!
 
 recycling = Topic.find_or_initialize_by({
@@ -79,7 +81,7 @@ recycling = Topic.find_or_initialize_by({
   title: "Recycling"
 })
 recycling.icon = "<i class='fa-solid fa-recycle'></i>"
-recycling.content = "Recycling is an important part of Swiss life but can be daunting at first..."
+recycling.content = "Recycling is an important part of Swiss life but can be daunting at first. If recycling is done incorrectly, the waste can be refused. The exact rules depend on Kanton however the general rules are as follows: \n- General waste bags need to be purchased and can be left in the black bin or ready for collection on the correct day \nCardboard must be collected and left by the road for the collection day \nPaper can be left in the paper bin or tied together with string \nGlass and aluminium can be taken to a local area and needs to be sorted \nPlastics can be sorted at a local supermarket or bags can be bought for general plastic waste"
 recycling.save!
 
 transport = Topic.find_or_initialize_by({
@@ -87,7 +89,7 @@ transport = Topic.find_or_initialize_by({
   title: "Transport"
 })
 transport.icon = "<i class='fa-solid fa-train-tram'></i>"
-transport.content = "Public transport is considered very good in Switzerland..."
+transport.content = "Public transport is considered very good in Switzerland. Trains are good quality and usually on time. A variety of tickets can be purchased including supersaver tickets, weekly, monthly or annual passes, and a halbtax card for 50% off all tickets."
 transport.save!
 
 health = Topic.find_or_initialize_by({
@@ -95,8 +97,12 @@ health = Topic.find_or_initialize_by({
   title: "Health"
 })
 health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
-health.content = "When moving to Switzerland it is mandatory to purchase health insurance within 3 months of arrival..."
+health.content = "When moving to Switzerland it is mandatory to purchase health insurance within 3 months of arrival. There are different levels of cover at corresponding cost. It is recommended to compare providers, cost and cover using one of the many comparison websites."
 health.save!
+
+
+#! COPY AND PASTE TOPICS BUT WITH COUNTRY: UNITED_KINGDOM
+
 
 #? --- CATEGORIES ---
 
@@ -134,7 +140,7 @@ task1_work = Task.find_or_initialize_by({
   eu: "eu"
 })
 task1_work.order = 1
-task1_work.content = "Apply for jobs! As you are in the EU you can move to Switzerland now however we would recommend getting a job offer first."
+task1_work.content = "Apply for jobs! As you are in the EU you can move to Switzerland for three months to look for work however we would recommend getting a job offer first."
 task1_work.scope = "work_find"
 task1_work.topic = work
 task1_work.save!
@@ -162,7 +168,7 @@ task3_work = Task.find_or_initialize_by({
   eu: "eu"
 })
 task3_work.order = 2
-task3_work.content = "As you are a entering Switzerland for work, you will need to apply for a permit using your work contract. As an eu-member this should be accepted"
+task3_work.content = "As you are a entering Switzerland for work, you will need to apply for a permit using your work contract. As an eu-member this should be accepted and there are no limit to permits issued to EU/EFTA citizens."
 task3_work.scope = "work"
 task3_work.topic = work
 task3_work.save!
@@ -175,7 +181,7 @@ task4_work = Task.find_or_initialize_by({
   eu: "non-eu"
 })
 task4_work.order = 2
-task4_work.content = "As you are a entering Switzerland for work, you can begin the process by completing the online application form and issuing this to your local migration office. As a non-eu member there are many reqiurements such as..."
+task4_work.content = "As you are a entering Switzerland for work, you can begin the process by completing the online application form and issuing this to your local migration office. As a non-eu member there are many reqiurements and a limit on the permits issued."
 task4_work.scope = "work"
 task4_work.topic = work
 task4_work.save!
@@ -202,7 +208,7 @@ task1_study_find_non_eu = Task.find_or_initialize_by({
 })
 task1_study_find_non_eu.order = 1
 task1_study_find_non_eu.content = "As you are in the EU you can move to Switzerland now however we would recommend getting a study offer first."
-task1_study_find_non_eu.scope = "study-find"
+task1_study_find_non_eu.scope = "study_find"
 task1_study_find_non_eu.topic = permits
 task1_study_find_non_eu.save!
 
@@ -223,7 +229,7 @@ task2_study_eu.save!
 
 task2_study_non_eu = Task.find_or_initialize_by({
   country: switzerland,
-  title: "Apply for further education",
+  title: "Apply for study permit",
   eu: "non-eu"
 })
 task2_study_non_eu.order = 2
@@ -236,11 +242,11 @@ task2_study_non_eu.save!
 
 task1_family_eu = Task.find_or_initialize_by({
   country: switzerland,
-  title: "Bringing your family",
-  eu: "eu"
+  title: "Check family reunification rules",
+  eu: "both"
 })
 task1_family_eu.order = 1
-task1_family_eu.content = "If you come from an EU/ETFA country, you may bring your Spouse or registered partner, your children or grandchildren under the age of 21 or dependent, and (unless you are in training) your dependent parents and grandparents"
+task1_family_eu.content = "If the permit holder is from an EU/ETFA country, they may bring their spouse or registered partner, children or grandchildren under the age of 21 or dependent, and (unless you are in training) your dependent parents and grandparents. Otherwise, it is not guaranteed that a spouse can be brought too. It is recommended to check the rules for your specific situation or speak to an adviser. \n\nMore information can be found here: https://www.ch.ch/en/foreign-nationals-in-switzerland/living-in-switzerland/family-reunification/"
 task1_family_eu.scope = "family"
 task1_family_eu.topic = permits
 task1_family_eu.save!
@@ -249,11 +255,11 @@ task1_family_eu.save!
 
 task1_family_non_eu = Task.find_or_initialize_by({
   country: switzerland,
-  title: "Apply for further education",
-  eu: "non-eu"
+  title: "Apply for family reunification permit",
+  eu: "both"
 })
-task1_family_non_eu.order = 1
-task1_family_non_eu.content = "If you come from a 'third country', you may bring your spouse/partner and your children under the age of 18"
+task1_family_non_eu.order = 2
+task1_family_non_eu.content = "After consulting the rules for your specific situation, a permit application can be opened using the correct form or by contacting the local Kanton. \n\nhttps://www.sem.admin.ch/sem/en/home/sem/kontakt/kantonale_behoerden/adressen_kantone_und.html"
 task1_family_non_eu.scope = "family"
 task1_family_non_eu.topic = permits
 task1_family_non_eu.save!
@@ -262,13 +268,6 @@ task1_family_non_eu.save!
 
 # study_find > study > family_find > family > all
 
-puts "creating tasks under 'study_find'"
-
-puts "creating tasks under 'study'"
-
-puts "creating tasks under 'family_find'"
-
-puts "creating tasks under 'family'"
 
 puts "creating tasks under 'all'"
 
@@ -287,13 +286,13 @@ task1.save!
 
 task4 = Task.find_or_initialize_by({
   country: switzerland,
-  title: "Plan move - storage, moving companies, mail forwarding",
+  title: "Plan move",
   eu: "both"
 })
 task4.order = 5
 task4.content = "Plan everything you would like to bring to Switzerland, and things you will either want to sell or keep in storage. Get in contact with a moving company and arrange the transfer. "
 task4.scope = "all"
-task4.topic = permits
+task4.topic = transport
 task4.save!
 
 #? --- ************ ---
@@ -304,7 +303,7 @@ task5 = Task.find_or_initialize_by({
   eu: "both"
 })
 task5.order = 6
-task5.content = "You must check whether the animal you are bringing to switzerland is considered a 'pet',  Dogs, cats and ferrets and birds are subject to particular animal health regulations when travelling because there is a danger of their introducing diseases from another country. Almost all pets that meet the definition can enter Switzerland from any country without approval from the veterinary health authority or a health certificate. Special conditions apply to dogs, cats, ferrets and birds. Not more than 5 pets may be imported from third countries."
+task5.content = "You must check whether the animal you are bringing to switzerland is considered a 'pet'. Dogs, cats and ferrets and birds are subject to particular animal health regulations when travelling because there is a danger of their introducing diseases from another country. Almost all pets that meet the definition can enter Switzerland from any country without approval from the veterinary health authority or a health certificate. Special conditions apply to dogs, cats, ferrets and birds. Not more than 5 pets may be imported from third countries."
 task5.scope = "all"
 task5.topic = pets
 task5.save!
@@ -319,7 +318,7 @@ task6 = Task.find_or_initialize_by({
 task6.order = 7
 task6.content = "In Switzerland it takes on average around 2 months for residents to find a home"
 task6.scope = "all"
-task6.topic = permits
+task6.topic = accommodation
 task6.save!
 
 #? --- ************ ---
@@ -330,9 +329,9 @@ task7 = Task.find_or_initialize_by({
   eu: "both"
 })
 task7.order = 8
-task7.content = "Call your existing energy supplier at least 48 hours before you move out to let them know the date of your move, as well as the address you are moving to, so they can send your final bill."
+task7.content = "Contact your local energy supplier before you move to let them know the date of your move as well as the address you are moving to."
 task7.scope = "all"
-task7.topic = permits
+task7.topic = accommodation
 task7.save!
 
 #? --- ************ ---
@@ -345,7 +344,7 @@ task8 = Task.find_or_initialize_by({
 task8.order = 9
 task8.content = "It is practically mandatory to have a current account in Switzerland, because it will be attached to a debit card, perhaps a credit card and access to the bank's secure online banking area or mobile app"
 task8.scope = "all"
-task8.topic = permits
+task8.topic = accommodation
 task8.save!
 
 #? --- ************ ---
@@ -371,46 +370,46 @@ task10 = Task.find_or_initialize_by({
 task10.order = 11
 task10.content = "After moving to Switzerland, you must register with the health insurer of your choice for compulsory basic insurance within three months"
 task10.scope = "all"
-task10.topic = permits
+task10.topic = health
 task10.save!
 
 #? --- ************ ---
 
 task11 = Task.find_or_initialize_by({
   country: switzerland,
-  title: "Set up mobile phone - optional but recommended",
+  title: "Set up mobile phone",
   eu: "both"
 })
 task11.order = 12
 task11.content = "A mobile phone is recommended for access to Swiss apps (Such as for weather or for public transport)"
 task11.scope = "all"
-task11.topic = permits
+task11.topic = accommodation
 task11.save!
 
 #? --- ************ ---
 
 task12 = Task.find_or_initialize_by({
   country: switzerland,
-  title: "Set up internet for living space - optional but recommended",
+  title: "Set up internet",
   eu: "both"
 })
 task12.order = 13
 task12.content = "Internet is recommeneded as it would not be possible to use the previously suggessted apps"
 task12.scope = "all"
-task12.topic = permits
+task12.topic = accommodation
 task12.save!
 
 #? --- ************ ---
 
 task13 = Task.find_or_initialize_by({
   country: switzerland,
-  title: "Sort out drivers license (optional)",
+  title: "Exchange driving license (optional)",
   eu: "both"
 })
 task13.order = 14
-task13.content = "Inorder to get your standard drivers liscense in Switzerland, must first attend a first aid class, pass a theoretical test and then take a set amount of driving exams before you can apply for the driving test. If you begin your driving training at 17, you must wait a whole year before you may apply for your driving test, meanwhile you can do everything else mentioned."
+task13.content = "Persons wishing to obtain a Swiss driving license in exchange for their foreign driving license are subject, with some exceptions, to an examination which consists of a test run for which a fee is charged and, if successful, a fee for the issue of the Swiss driving license."
 task13.scope = "all"
-task13.topic = permits
+task13.topic = transport
 task13.save!
 
 #? --- ************ ---
@@ -421,7 +420,7 @@ task14 = Task.find_or_initialize_by({
   eu: "both"
 })
 task14.order = 15
-task14.content = "???"
+task14.content = "Once you have registered as a resident and your permit has been approved, you will receive a letter with an appointment date and time in order to have your biometric data taken, photo taken and receive additional information on life in Switzerland."
 task14.scope = "all"
 task14.topic = permits
 task14.save!
@@ -434,7 +433,7 @@ task15 = Task.find_or_initialize_by({
   eu: "both"
 })
 task15.order = 16
-task15.content = "you must register your arrival within 14 days of arriving at your new home. Within these 14 days, you must also apply for a residence permit («Aufenthaltsbewilligung») if you have not done so before. Your registration office («Einwohnermeldeamt») will tell you about all the necessary documents and the related registration fees."
+task15.content = "You must register your arrival within 14 days of arriving at your new home. Within these 14 days, you must also apply for a residence permit («Aufenthaltsbewilligung») if you have not done so before. Your registration office will tell you about all the necessary documents and the related registration fees."
 task15.scope = "all"
 task15.topic = permits
 task15.save!
@@ -447,7 +446,7 @@ task16 = Task.find_or_initialize_by({
   eu: "both"
 })
 task16.order = 17
-task16.content = "Your Biometric residence permit will usually arrive within 10 working days(?)"
+task16.content = "Your Biometric residence permit will usually arrive within 5-10 working days to your registered address."
 task16.scope = "all"
 task16.topic = permits
 task16.save!
@@ -456,40 +455,14 @@ task16.save!
 
 task17 = Task.find_or_initialize_by({
   country: switzerland,
-  title: "Celebrate (Optional)",
+  title: "Celebrate!",
   eu: "both"
 })
 task17.order = 18
-task17.content = "Congratualtions, You've finished your tasks, time to celebrate!"
+task17.content = "Congratulations. You have finished your tasks and should be ready for your move - time to celebrate!"
 task17.scope = "all"
 task17.topic = permits
 task17.save!
-
-#? --- ************ ---
-
-task2 = Task.find_or_initialize_by({
-  country: switzerland,
-  title: "Register as resident at local Gemeinde",
-  eu: "both"
-})
-task2.order = 10
-task2.content = "You will need to register at the local Gemeinde. This will depend on your postcode and exactly where you live. It is recommended to double check by contacting them first."
-task2.scope = "all"
-task2.topic = permits
-task2.save!
-
-#? --- ************ ---
-
-task3 = Task.find_or_initialize_by({
-  country: switzerland,
-  title: "Receive your appointment to have biometrics taken for your permit card",
-  eu: "non-eu"
-})
-task3.order = 11
-task3.content = "Once you have registered as a resident and your permit has been approved, you will receive a letter with an appointment date and time in order to have your biometric data taken, photo taken and receive additional information on life in Switzerland."
-task3.scope = "all"
-task3.topic = permits
-task3.save!
 
 #? --- ************ ---
 

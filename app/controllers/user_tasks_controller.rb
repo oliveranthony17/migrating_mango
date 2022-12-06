@@ -54,18 +54,21 @@ class UserTasksController < ApplicationController
     @task = UserTask.find(params[:format])
     @task.status = "Active"
     @task.save
+    redirect_to user_profile_user_tasks_path(current_user.user_profile)
   end
 
   def upcoming
     @task = UserTask.find(params[:format])
     @task.status = "Upcoming"
     @task.save
+    redirect_to user_profile_user_tasks_path(current_user.user_profile)
   end
 
   def complete
     @task = UserTask.find(params[:format])
     @task.status = "Completed"
     @task.save
+    redirect_to user_profile_user_tasks_path(current_user.user_profile)
   end
 
   def update
