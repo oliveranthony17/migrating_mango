@@ -23,7 +23,7 @@ class UserTasksController < ApplicationController
   end
 
   def index
-    @user_profile = UserProfile.find(params[:user_profile_id])
+    @user_profile = UserProfile.find(current_user.user_profile.id)
     @tasks = UserTask.where(user_profile: current_user.user_profile)
     # @country = @tasks.first.task.country
     # @topic = @tasks.first.task.topic
@@ -51,32 +51,34 @@ class UserTasksController < ApplicationController
   end
 
   def active
+    @user_profile = current_user.user_profile
     @task = UserTask.find(params[:format])
     @task.status = "Active"
     @task.save
-    redirect_to user_profile_user_tasks_path(current_user.user_profile)
+    redirect_to(user_profile_user_tasks_path(@user_profile), alert: "Task marked as active!")
   end
 
   def upcoming
+    @user_profile = current_user.user_profile
     @task = UserTask.find(params[:format])
     @task.status = "Upcoming"
     @task.save
-    redirect_to user_profile_user_tasks_path(current_user.user_profile)
+    redirect_to(user_profile_user_tasks_path(@user_profile), alert: "Task moved to upcoming!")
   end
 
   def complete
+    @user_profile = current_user.user_profile
     @task = UserTask.find(params[:format])
     @task.status = "Completed"
     @task.save
-    redirect_to user_profile_user_tasks_path(current_user.user_profile)
+    redirect_to(user_profile_user_tasks_path(@user_profile), alert: "Congratulations! 🎉 Task completed!")
   end
 
   def update
     @task = UserTask.find(params[:id])
     @task.update(user_task_params)
-
     respond_to do |format|
-      format.html { redirect_to user_profile_user_tasks_path(current_user.user_profile) }
+      format.html { redirect_to user_profile_user_tasks_path(current_user.user_profile.id) }
       format.text { render partial: "user_tasks/task", locals: {task: @task}, formats: [:html] }
     end
   end
