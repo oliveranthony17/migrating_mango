@@ -29,7 +29,25 @@ switzerland = Country.find_or_initialize_by({
 })
 switzerland.save!
 
-#! CREATE UNITED KINGDOM AS COUNTRY
+united_kingdom = Country.find_or_initialize_by({
+  name: "United Kingdom",
+})
+united_kingdom.save!
+
+romania = Country.find_or_initialize_by({
+  name: "Romania"
+})
+romania.save!
+
+greece = Country.find_or_initialize_by({
+  name: "Greece"
+})
+greece.save!
+
+lebanon = Country.find_or_initialize_by({
+  name: "Lebanon"
+})
+lebanon.save!
 
 #? --- TOPICS ---
 
@@ -99,6 +117,268 @@ health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
 health.content = "When moving to Switzerland it is mandatory to purchase health insurance within 3 months of arrival. There are different levels of cover at corresponding cost. It is recommended to compare providers, cost and cover using one of the many comparison websites."
 health.save!
 
+permits = Topic.find_or_initialize_by({
+  country: united_kingdom,
+  title: "Permits"
+})
+permits.icon = '<i class="fa-solid fa-id-card"></i>'
+permits.content = "There are a variety of permits available in the United Kingdom..."
+permits.save!
+
+emergency = Topic.find_or_initialize_by({
+  country: united_kingdom,
+  title: "Emergency"
+})
+emergency.icon = "<i class='fas fa-hospital-symbol'></i>"
+emergency.content = "Here are the emergency phone numbers for the United Kingdom..."
+emergency.save!
+
+work = Topic.find_or_initialize_by({
+  country: united_kingdom,
+  title: "Work"
+})
+work.icon = "<i class='fas fa-briefcase'></i>"
+work.content = "Gaining employment in the United Kingdom can be difficult..."
+work.save!
+
+accommodation = Topic.find_or_initialize_by({
+  country: united_kingdom,
+  title: "Accommodation"
+})
+accommodation.icon = "<i class='fas fa-home'></i>"
+accommodation.content = "Accommodation in the United Kingdom can be competitive if looking close to the cities..."
+accommodation.save!
+
+pets = Topic.find_or_initialize_by({
+  country: united_kingdom,
+  title: "Pets"
+})
+pets.icon = "<i class='fas fa-paw'></i>"
+pets.content = "The requirements for bringing a pet to the United Kingdom can differ depending on the country you are travelling from..."
+pets.save!
+
+recycling = Topic.find_or_initialize_by({
+  country: united_kingdom,
+  title: "Recycling"
+})
+recycling.icon = "<i class='fa-solid fa-recycle'></i>"
+recycling.content = "Recycling is an important part of British life but can be daunting at first..."
+recycling.save!
+
+transport = Topic.find_or_initialize_by({
+  country: united_kingdom,
+  title: "Transport"
+})
+transport.icon = "<i class='fa-solid fa-train-tram'></i>"
+transport.content = "Public transport is considered very good in the United Kingdom..."
+transport.save!
+
+health = Topic.find_or_initialize_by({
+  country: united_kingdom,
+  title: "Health"
+})
+health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
+health.content = "When moving to the United Kingdom it is mandatory to purchase health insurance within 3 months of arrival..."
+health.save!
+
+#---------------------#
+
+permits = Topic.find_or_initialize_by({
+  country: romania,
+  title: "Permits"
+})
+permits.icon = '<i class="fa-solid fa-id-card"></i>'
+permits.content = "There are a variety of permits available in Romania..."
+permits.save!
+
+emergency = Topic.find_or_initialize_by({
+  country: romania,
+  title: "Emergency"
+})
+emergency.icon = "<i class='fas fa-hospital-symbol'></i>"
+emergency.content = "Here are the emergency phone numbers for Romania..."
+emergency.save!
+
+work = Topic.find_or_initialize_by({
+  country: romania,
+  title: "Work"
+})
+work.icon = "<i class='fas fa-briefcase'></i>"
+work.content = "Gaining employment in Romania can be difficult..."
+work.save!
+
+accommodation = Topic.find_or_initialize_by({
+  country: romania,
+  title: "Accommodation"
+})
+accommodation.icon = "<i class='fas fa-home'></i>"
+accommodation.content = "Accommodation in Romania can be competitive if looking close to the cities..."
+accommodation.save!
+
+pets = Topic.find_or_initialize_by({
+  country: romania,
+  title: "Pets"
+})
+pets.icon = "<i class='fas fa-paw'></i>"
+pets.content = "The requirements for bringing a pet to Romania can differ depending on the country you are travelling from..."
+pets.save!
+
+recycling = Topic.find_or_initialize_by({
+  country: romania,
+  title: "Recycling"
+})
+recycling.icon = "<i class='fa-solid fa-recycle'></i>"
+recycling.content = "Recycling is an important part of Romanian life but can be daunting at first..."
+recycling.save!
+
+transport = Topic.find_or_initialize_by({
+  country: romania,
+  title: "Transport"
+})
+transport.icon = "<i class='fa-solid fa-train-tram'></i>"
+transport.content = "Public transport is considered very good in Romania..."
+transport.save!
+
+health = Topic.find_or_initialize_by({
+  country: romania,
+  title: "Health"
+})
+health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
+health.content = "When moving to Romania it is mandatory to purchase health insurance within 3 months of arrival..."
+health.save!
+
+#---------------------#
+
+permits = Topic.find_or_initialize_by({
+  country: greece,
+  title: "Permits"
+})
+permits.icon = '<i class="fa-solid fa-id-card"></i>'
+permits.content = "There are a variety of permits available in Greece..."
+permits.save!
+
+emergency = Topic.find_or_initialize_by({
+  country: greece,
+  title: "Emergency"
+})
+emergency.icon = "<i class='fas fa-hospital-symbol'></i>"
+emergency.content = "Here are the emergency phone numbers for Greece..."
+emergency.save!
+
+work = Topic.find_or_initialize_by({
+  country: greece,
+  title: "Work"
+})
+work.icon = "<i class='fas fa-briefcase'></i>"
+work.content = "Gaining employment in Greece can be difficult..."
+work.save!
+
+accommodation = Topic.find_or_initialize_by({
+  country: greece,
+  title: "Accommodation"
+})
+accommodation.icon = "<i class='fas fa-home'></i>"
+accommodation.content = "Accommodation in Greece can be competitive if looking close to the cities..."
+accommodation.save!
+
+pets = Topic.find_or_initialize_by({
+  country: greece,
+  title: "Pets"
+})
+pets.icon = "<i class='fas fa-paw'></i>"
+pets.content = "The requirements for bringing a pet to greece can differ depending on the country you are travelling from..."
+pets.save!
+
+recycling = Topic.find_or_initialize_by({
+  country: greece,
+  title: "Recycling"
+})
+recycling.icon = "<i class='fa-solid fa-recycle'></i>"
+recycling.content = "Recycling is an important part of Greek life but can be daunting at first..."
+recycling.save!
+
+transport = Topic.find_or_initialize_by({
+  country: greece,
+  title: "Transport"
+})
+transport.icon = "<i class='fa-solid fa-train-tram'></i>"
+transport.content = "Public transport is considered very good in Greece..."
+transport.save!
+
+health = Topic.find_or_initialize_by({
+  country: greece,
+  title: "Health"
+})
+health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
+health.content = "When moving to Greece it is mandatory to purchase health insurance within 3 months of arrival..."
+health.save!
+
+#---------------------#
+
+permits = Topic.find_or_initialize_by({
+  country: lebanon,
+  title: "Permits"
+})
+permits.icon = '<i class="fa-solid fa-id-card"></i>'
+permits.content = "There are a variety of permits available in Lebanon..."
+permits.save!
+
+emergency = Topic.find_or_initialize_by({
+  country: lebanon,
+  title: "Emergency"
+})
+emergency.icon = "<i class='fas fa-hospital-symbol'></i>"
+emergency.content = "Here are the emergency phone numbers for Lebanon, you should not count on them"
+emergency.save!
+
+work = Topic.find_or_initialize_by({
+  country: lebanon,
+  title: "Work"
+})
+work.icon = "<i class='fas fa-briefcase'></i>"
+work.content = "Gaining employment in Lebanon can be difficult as owners will often only hire their relatives no matter if they are fit to do that job or not"
+work.save!
+
+accommodation = Topic.find_or_initialize_by({
+  country: lebanon,
+  title: "Accommodation"
+})
+accommodation.icon = "<i class='fas fa-home'></i>"
+accommodation.content = "Accommodation in Lebanon can be competitive if looking close to the cities..."
+accommodation.save!
+
+pets = Topic.find_or_initialize_by({
+  country: lebanon,
+  title: "Pets"
+})
+pets.icon = "<i class='fas fa-paw'></i>"
+pets.content = "The requirements for bringing a pet to Lebanon can differ depending on the country you are travelling from..."
+pets.save!
+
+recycling = Topic.find_or_initialize_by({
+  country: lebanon,
+  title: "Recycling"
+})
+recycling.icon = "<i class='fa-solid fa-recycle'></i>"
+recycling.content = "Recycling not is an important part of Lebanese life but can be daunting at first..."
+recycling.save!
+
+transport = Topic.find_or_initialize_by({
+  country: lebanon,
+  title: "Transport"
+})
+transport.icon = "<i class='fa-solid fa-train-tram'></i>"
+transport.content = "Public transport is considered very good in Lebanon..."
+transport.save!
+
+health = Topic.find_or_initialize_by({
+  country: lebanon,
+  title: "Health"
+})
+health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
+health.content = "When moving to Lebanon it is mandatory to purchase health insurance within 3 months of arrival..."
+health.save!
+=======
 
 #! COPY AND PASTE TOPICS BUT WITH COUNTRY: UNITED_KINGDOM
 
