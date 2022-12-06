@@ -48,7 +48,7 @@
       <p>You have not completed any tasks.</p>
     <% else %>
       <% @completed_tasks.each do |task| %>
-        <%= render "user_tasks/task", task: task %>
+        <%= render "user_tasks/completedtask", task: task %>
       <% end %>
     <% end %>
   </div>

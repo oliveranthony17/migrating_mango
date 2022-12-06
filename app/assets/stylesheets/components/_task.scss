@@ -41,13 +41,56 @@
     }
   }
 
+  .task-button {
+    font-size: 12px;
+    border-color: rgb(50,50,50);
+    border-radius: 8px;
+    z-index: 999;
+    padding: 4px 0px 2px 0px;
+    position: relative;
+  }
+}
+
+.card-product-completed {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
+  height: fit-content;
+  background-color: lightgrey;
+
+  h2 {
+    font-weight: bold;
+    padding: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+    font-size: 17px;
+    margin: 0 2px;
+    text-decoration: line-through;
+  }
+
+  .task-infos {
+    position: relative;
+
+    .caret {
+      position: absolute;
+      right: 3%;
+      top: 20%;
+      z-index: 998;
+    }
+  }
 
   .task-button {
     font-size: 12px;
     border-color: rgb(50,50,50);
     border-radius: 8px;
     z-index: 999;
+    padding: 4px 0px 2px 0px;
     position: relative;
+    background-color: white;
   }
 }
 
@@ -70,6 +113,12 @@
 .card-product:hover {
   box-shadow: 0 0 30px rgba(0,0,0,0.2);
   background: rgb(255,255,255);
+  transition: all .1s ease-in-out;
+  cursor: pointer;
+}
+
+.card-product-completed:hover {
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
   transition: all .1s ease-in-out;
   cursor: pointer;
 }
