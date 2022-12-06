@@ -38,7 +38,6 @@ puts "CREATING TOPICS FOR COUNTRY SHOW PAGES"
 permits = Topic.find_or_initialize_by({
   country: switzerland,
   title: "Permits"
-
 })
 permits.icon = '<i class="fa-solid fa-id-card"></i>'
 permits.content = "There are a variety of permits available in Switzerland for different circumstances. For moving to Switzerland, you will likely be looking at obtaining a B permit (residence permit). For more information visit the link below: \nhttps://www.ch.ch/en/documents-and-register-extracts/permits-for-living-in-switzerland/#overview-of-permits"

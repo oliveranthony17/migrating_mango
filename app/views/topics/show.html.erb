@@ -1,6 +1,8 @@
 <%= link_to ('<i class="fa-regular fa-hand-point-left"></i> Go back').html_safe, country_path(@topic.country), class: "btn form-actions my-3" %>
-<div class="card-category mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)">
-  <%# <img <%=@topic.image%>
+<div class="card-category mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+  <% @topic.image.each do |image| %>
+    <%= image_tag image %>
+  <% end %>
   <h1><%=@topic.title%></h1>
 </div>
 <div class="topics-content container">
