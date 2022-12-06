@@ -386,7 +386,6 @@ health = Topic.find_or_initialize_by({
 health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
 health.content = "When moving to Lebanon it is mandatory to purchase health insurance within 3 months of arrival..."
 health.save!
-=======
 
 #! COPY AND PASTE TOPICS BUT WITH COUNTRY: UNITED_KINGDOM
 
