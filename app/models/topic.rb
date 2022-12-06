@@ -1,6 +1,7 @@
 class Topic < ApplicationRecord
   belongs_to :country
   has_many :tasks
+  has_many_attached :image
   has_many :comments, dependent: :destroy
 
   validates :title, presence: true

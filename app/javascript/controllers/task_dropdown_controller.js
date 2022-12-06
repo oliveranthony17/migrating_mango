@@ -15,10 +15,4 @@ export default class extends Controller {
     this.caretTarget.classList.toggle("fa-caret-up")
   }
 
-  refresh() {
-    window.location = this.location;
-    location.reload(true);
-
-    console.log("refresh() called");
-  }
 }

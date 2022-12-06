@@ -4,10 +4,9 @@
       <% Avatar.all.each do |avatar| %>
         <%= image_tag avatar.image_url, class: "avatar", data: { image: avatar.id, action: "click->avatar#mark", target: "avatar.mango" } %>
       <% end %>
-      <%= f.input :avatar, :as => :hidden, :input_html => { :value => Avatar.first.id, data: { target: "avatar.input" } }  %>
+      <%= f.input :avatar_id, :as => :hidden, :input_html => {  data: { target: "avatar.input" } }  %>
     </div>
     <%#! maybe add "I have an address already" checkbox - can also skip out a few tasks (or mark as complete) if true %>
-    <%#= f.input :avatar, label: "Change your avatar"%>
     <%= f.input :foreign_address, label: "Please enter your foreign address or expected city of residence", placeholder: "1 Bahnhofstrasse, Zürich" %>
     <%#! would be great if above did an autocomplete thing %>
     <%= f.input :entry_method, label: "Permit type (work, study or family reunification)", collection: ["Work", "Study", "Family reunification"] %>

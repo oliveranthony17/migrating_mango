@@ -12,3 +12,6 @@ application.register("hello", HelloController)
 
 import TaskDropdownController from "./task_dropdown_controller"
 application.register("task-dropdown", TaskDropdownController)
+
+import TaskPopupController from "./task_popup_controller"
+application.register("task-popup", TaskPopupController)
