@@ -15,21 +15,21 @@
 
       <%# mark as active button  %>
       <% unless task.status == "Active" %>
-        <div class="col p-0 mb-1 mx-1" data-task-dropdown-target="active-button" data-action="click->task-dropdown#refresh" >
+        <div class="col p-0 mb-1 mx-1" >
           <%= button_to ('<i class="fa-solid fa-circle-exclamation"></i> Active').html_safe, active_user_profile_user_tasks_path(current_user, task), method: :post, class: "btn task-button col-12" %>
         </div>
       <% end %>
 
       <%# mark as complete button  %>
       <% unless task.status == "Upcoming" %>
-        <div class="col p-0 mb-1 mx-1" data-task-dropdown-target="upcoming-button" data-action="click->task-dropdown#refresh" >
+        <div class="col p-0 mb-1 mx-1" >
           <%= button_to ('<i class="fa-sharp fa-solid fa-bell"></i> Upcoming').html_safe, upcoming_user_profile_user_tasks_path(current_user, task), method: :post, class: "btn task-button col-12" %>
         </div>
       <% end %>
 
       <%# mark as complete button  %>
       <% unless task.status == "Completed" %>
-        <div class="col p-0 mb-1 mx-1" data-task-dropdown-target="complete-button" data-action="click->task-dropdown#refresh" >
+        <div class="col p-0 mb-1 mx-1" >
           <%= button_to ('<i class="fa-solid fa-square-check"></i> Complete').html_safe, complete_user_profile_user_tasks_path(current_user, task), method: :post, class: "btn task-button col-12" %>
         </div>
       <% end %>
