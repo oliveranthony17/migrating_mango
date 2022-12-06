@@ -1,20 +1,13 @@
 <%= link_to ('<i class="fa-sharp fa-solid fa-hand-back-point-left"></i> Go back').html_safe, user_profile_user_tasks_path(current_user.user_profile), class: "btn form-actions" %>
-<div class="container">
-  <div>
-    <h1><%= @task.task.title %></h1>
-    <p><%= @task.task.content %></p>
-  </div>
-
-  <div>
-    <p>Status: <%= @task.status %></p>
-    <p>Notes: <%= @task.note %></p>
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <div class="d-flex justify-content-between">
+        <h2><%= @task.task.title %></h2>
+        <span class="badge text-bg-danger text-white"><%= @task.status %></span>
+      </div>
+      <p><%= @task.task.content %></p>
+    </div>
   </div>
 </div>
-
-
-
-<%# <%= simple_form_for(@task) do |f| %>
-    <%# <%= f.input :note, placeholder: @task.note %>
-    <%# <%= f.input :status %>
-    <%# <%= f.submit "Update task", class: "btn btn-sm btn-primary btn-block mt-2" %>
-  <%# <% end %>
