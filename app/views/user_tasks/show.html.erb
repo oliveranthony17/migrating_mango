@@ -1,4 +1,7 @@
-<%= link_to ('<i class="fa-sharp fa-solid fa-hand-back-point-left"></i> Go back').html_safe, user_profile_user_tasks_path(current_user.user_profile), class: "btn form-actions" %>
+<%= link_to user_profile_user_tasks_path(current_user.user_profile), class: "btn form-actions" do %>
+  <i class="fa-sharp fa-solid fa-hand-back-point-left"></i>
+  Go back
+<% end %>
 <div class="card-trip">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-trip-infos">
