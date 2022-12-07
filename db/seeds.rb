@@ -25,12 +25,12 @@
 puts "CREATING COUNTRIES"
 
 switzerland = Country.find_or_initialize_by({
-  name: "Switzerland",
+  name: "Switzerland"
 })
 switzerland.save!
 
 united_kingdom = Country.find_or_initialize_by({
-  name: "United Kingdom",
+  name: "United Kingdom"
 })
 united_kingdom.save!
 
@@ -125,12 +125,15 @@ health.content = "When moving to Switzerland it is mandatory to purchase health 
 health.image = "topics/health"
 health.save!
 
+#------------------------------#
+
 permits = Topic.find_or_initialize_by({
   country: united_kingdom,
   title: "Permits"
 })
 permits.icon = '<i class="fa-solid fa-id-card"></i>'
 permits.content = "There are a variety of permits available in the United Kingdom..."
+permits.image = "topics/permits"
 permits.save!
 
 emergency = Topic.find_or_initialize_by({
@@ -139,6 +142,7 @@ emergency = Topic.find_or_initialize_by({
 })
 emergency.icon = "<i class='fas fa-hospital-symbol'></i>"
 emergency.content = "Here are the emergency phone numbers for the United Kingdom..."
+emergency.image = "topics/emergency"
 emergency.save!
 
 work = Topic.find_or_initialize_by({
@@ -147,6 +151,7 @@ work = Topic.find_or_initialize_by({
 })
 work.icon = "<i class='fas fa-briefcase'></i>"
 work.content = "Gaining employment in the United Kingdom can be difficult..."
+work.image = "topics/work"
 work.save!
 
 accommodation = Topic.find_or_initialize_by({
@@ -155,6 +160,7 @@ accommodation = Topic.find_or_initialize_by({
 })
 accommodation.icon = "<i class='fas fa-home'></i>"
 accommodation.content = "Accommodation in the United Kingdom can be competitive if looking close to the cities..."
+accommodation.image = "topics/housing"
 accommodation.save!
 
 pets = Topic.find_or_initialize_by({
@@ -163,6 +169,7 @@ pets = Topic.find_or_initialize_by({
 })
 pets.icon = "<i class='fas fa-paw'></i>"
 pets.content = "The requirements for bringing a pet to the United Kingdom can differ depending on the country you are travelling from..."
+pets.image = "topics/pets"
 pets.save!
 
 recycling = Topic.find_or_initialize_by({
@@ -171,6 +178,7 @@ recycling = Topic.find_or_initialize_by({
 })
 recycling.icon = "<i class='fa-solid fa-recycle'></i>"
 recycling.content = "Recycling is an important part of British life but can be daunting at first..."
+recycling.image = "topics/recycle"
 recycling.save!
 
 transport = Topic.find_or_initialize_by({
@@ -179,6 +187,7 @@ transport = Topic.find_or_initialize_by({
 })
 transport.icon = "<i class='fa-solid fa-train-tram'></i>"
 transport.content = "Public transport is considered very good in the United Kingdom..."
+transport.image = "topics/transport"
 transport.save!
 
 health = Topic.find_or_initialize_by({
@@ -187,6 +196,7 @@ health = Topic.find_or_initialize_by({
 })
 health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
 health.content = "When moving to the United Kingdom it is mandatory to purchase health insurance within 3 months of arrival..."
+health.image = "topics/health"
 health.save!
 
 #---------------------#
@@ -197,6 +207,7 @@ permits = Topic.find_or_initialize_by({
 })
 permits.icon = '<i class="fa-solid fa-id-card"></i>'
 permits.content = "There are a variety of permits available in Romania..."
+permits.image = "topics/permits"
 permits.save!
 
 emergency = Topic.find_or_initialize_by({
@@ -205,6 +216,7 @@ emergency = Topic.find_or_initialize_by({
 })
 emergency.icon = "<i class='fas fa-hospital-symbol'></i>"
 emergency.content = "Here are the emergency phone numbers for Romania..."
+emergency.image = "topics/emergency"
 emergency.save!
 
 work = Topic.find_or_initialize_by({
@@ -213,6 +225,7 @@ work = Topic.find_or_initialize_by({
 })
 work.icon = "<i class='fas fa-briefcase'></i>"
 work.content = "Gaining employment in Romania can be difficult..."
+work.image = "topics/work"
 work.save!
 
 accommodation = Topic.find_or_initialize_by({
@@ -221,6 +234,7 @@ accommodation = Topic.find_or_initialize_by({
 })
 accommodation.icon = "<i class='fas fa-home'></i>"
 accommodation.content = "Accommodation in Romania can be competitive if looking close to the cities..."
+accommodation.image = "topics/housing"
 accommodation.save!
 
 pets = Topic.find_or_initialize_by({
@@ -229,6 +243,7 @@ pets = Topic.find_or_initialize_by({
 })
 pets.icon = "<i class='fas fa-paw'></i>"
 pets.content = "The requirements for bringing a pet to Romania can differ depending on the country you are travelling from..."
+pets.image = "topics/pets"
 pets.save!
 
 recycling = Topic.find_or_initialize_by({
@@ -237,6 +252,7 @@ recycling = Topic.find_or_initialize_by({
 })
 recycling.icon = "<i class='fa-solid fa-recycle'></i>"
 recycling.content = "Recycling is an important part of Romanian life but can be daunting at first..."
+recycling.image = "topics/recycle"
 recycling.save!
 
 transport = Topic.find_or_initialize_by({
@@ -245,6 +261,7 @@ transport = Topic.find_or_initialize_by({
 })
 transport.icon = "<i class='fa-solid fa-train-tram'></i>"
 transport.content = "Public transport is considered very good in Romania..."
+transport.image = "topics/transport"
 transport.save!
 
 health = Topic.find_or_initialize_by({
@@ -253,6 +270,7 @@ health = Topic.find_or_initialize_by({
 })
 health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
 health.content = "When moving to Romania it is mandatory to purchase health insurance within 3 months of arrival..."
+health.image = "topics/health"
 health.save!
 
 #---------------------#
@@ -263,6 +281,7 @@ permits = Topic.find_or_initialize_by({
 })
 permits.icon = '<i class="fa-solid fa-id-card"></i>'
 permits.content = "There are a variety of permits available in Greece..."
+permits.image = "topics/permits"
 permits.save!
 
 emergency = Topic.find_or_initialize_by({
@@ -271,6 +290,7 @@ emergency = Topic.find_or_initialize_by({
 })
 emergency.icon = "<i class='fas fa-hospital-symbol'></i>"
 emergency.content = "Here are the emergency phone numbers for Greece..."
+emergency.image = "topics/emergency"
 emergency.save!
 
 work = Topic.find_or_initialize_by({
@@ -279,6 +299,7 @@ work = Topic.find_or_initialize_by({
 })
 work.icon = "<i class='fas fa-briefcase'></i>"
 work.content = "Gaining employment in Greece can be difficult..."
+work.image = "topics/work"
 work.save!
 
 accommodation = Topic.find_or_initialize_by({
@@ -287,6 +308,7 @@ accommodation = Topic.find_or_initialize_by({
 })
 accommodation.icon = "<i class='fas fa-home'></i>"
 accommodation.content = "Accommodation in Greece can be competitive if looking close to the cities..."
+accommodation.image = "topics/housing"
 accommodation.save!
 
 pets = Topic.find_or_initialize_by({
@@ -295,6 +317,7 @@ pets = Topic.find_or_initialize_by({
 })
 pets.icon = "<i class='fas fa-paw'></i>"
 pets.content = "The requirements for bringing a pet to greece can differ depending on the country you are travelling from..."
+pets.image = "topics/pets"
 pets.save!
 
 recycling = Topic.find_or_initialize_by({
@@ -303,6 +326,7 @@ recycling = Topic.find_or_initialize_by({
 })
 recycling.icon = "<i class='fa-solid fa-recycle'></i>"
 recycling.content = "Recycling is an important part of Greek life but can be daunting at first..."
+recycling.image = "topics/recycle"
 recycling.save!
 
 transport = Topic.find_or_initialize_by({
@@ -311,6 +335,7 @@ transport = Topic.find_or_initialize_by({
 })
 transport.icon = "<i class='fa-solid fa-train-tram'></i>"
 transport.content = "Public transport is considered very good in Greece..."
+transport.image = "topics/transport"
 transport.save!
 
 health = Topic.find_or_initialize_by({
@@ -319,6 +344,7 @@ health = Topic.find_or_initialize_by({
 })
 health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
 health.content = "When moving to Greece it is mandatory to purchase health insurance within 3 months of arrival..."
+health.image = "topics/health"
 health.save!
 
 #---------------------#
@@ -329,6 +355,7 @@ permits = Topic.find_or_initialize_by({
 })
 permits.icon = '<i class="fa-solid fa-id-card"></i>'
 permits.content = "There are a variety of permits available in Lebanon..."
+permits.image = "topics/permits"
 permits.save!
 
 emergency = Topic.find_or_initialize_by({
@@ -337,6 +364,7 @@ emergency = Topic.find_or_initialize_by({
 })
 emergency.icon = "<i class='fas fa-hospital-symbol'></i>"
 emergency.content = "Here are the emergency phone numbers for Lebanon, you should not count on them"
+emergency.image = "topics/emergency"
 emergency.save!
 
 work = Topic.find_or_initialize_by({
@@ -345,6 +373,7 @@ work = Topic.find_or_initialize_by({
 })
 work.icon = "<i class='fas fa-briefcase'></i>"
 work.content = "Gaining employment in Lebanon can be difficult as owners will often only hire their relatives no matter if they are fit to do that job or not"
+work.image = "topics/work"
 work.save!
 
 accommodation = Topic.find_or_initialize_by({
@@ -352,7 +381,8 @@ accommodation = Topic.find_or_initialize_by({
   title: "Accommodation"
 })
 accommodation.icon = "<i class='fas fa-home'></i>"
-accommodation.content = "Accommodation in Lebanon can be competitive if looking close to the cities..."
+accommodation.content = "Accommodation in Lebanon can be hard if looking close to the cities due to the massive amount of migrants"
+accommodation.image = "topics/housing"
 accommodation.save!
 
 pets = Topic.find_or_initialize_by({
@@ -361,6 +391,7 @@ pets = Topic.find_or_initialize_by({
 })
 pets.icon = "<i class='fas fa-paw'></i>"
 pets.content = "The requirements for bringing a pet to Lebanon can differ depending on the country you are travelling from..."
+pets.image = "topics/pets"
 pets.save!
 
 recycling = Topic.find_or_initialize_by({
@@ -369,6 +400,7 @@ recycling = Topic.find_or_initialize_by({
 })
 recycling.icon = "<i class='fa-solid fa-recycle'></i>"
 recycling.content = "Recycling not is an important part of Lebanese life but can be daunting at first..."
+recycling.image = "topics/recycle"
 recycling.save!
 
 transport = Topic.find_or_initialize_by({
@@ -376,7 +408,8 @@ transport = Topic.find_or_initialize_by({
   title: "Transport"
 })
 transport.icon = "<i class='fa-solid fa-train-tram'></i>"
-transport.content = "Public transport is considered very good in Lebanon..."
+transport.content = "Public transport only exists in the form of buses in Lebanon..."
+transport.image = "topics/transport"
 transport.save!
 
 health = Topic.find_or_initialize_by({
@@ -384,7 +417,8 @@ health = Topic.find_or_initialize_by({
   title: "Health"
 })
 health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
-health.content = "When moving to Lebanon it is mandatory to purchase health insurance within 3 months of arrival..."
+health.content = "Good luck"
+health.image = "topics/health"
 health.save!
 
 #! COPY AND PASTE TOPICS BUT WITH COUNTRY: UNITED_KINGDOM
