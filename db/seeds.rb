@@ -1,24 +1,91 @@
 #? --- USERS ---
+#USER 1
+puts "CREATING USER AND USER PROFILE"
 
-# puts "CREATING USER AND USER PROFILE"
+oliver = User.find_or_initialize_by({
+  email: "oliver@lewagon.com"
+})
+oliver.password = "lewagon"
+oliver.save!
 
-# oliver = User.find_or_initialize_by({
-#   email: "oliver@lewagon.com"
-# })
-# oliver.password = "lewagon"
-# oliver.save!
+oliver_profile = UserProfile.find_or_initialize_by({
+  user: oliver
+})
+oliver_profile.foreign_address = "Bahnhofstrasse 1, Zürich"
+oliver_profile.eu_status = false
+oliver_profile.entry_method = "Family"
+oliver_profile.has_job_offer = false
+oliver_profile.has_study_offer = false
+oliver_profile.has_relative = true
+olive_profile.username = "Oli_Poly17"
+oliver_profile.avatar = "/Users/oliveranthony/Code/oliveranthony17/migrating_mango/app/assets/images/mangologo.png"
+oliver_profile.save!
 
-# oliver_profile = UserProfile.find_or_initialize_by({
-#   user: oliver
-# })
-# oliver_profile.foreign_address = "1 Bahnhofstrasse, Zürich"
-# oliver_profile.eu_status = false
-# oliver_profile.entry_method = "Family"
-# oliver_profile.has_job_offer = false
-# oliver_profile.has_study_offer = false
-# oliver_profile.has_relative = true
-# oliver_profile.avatar = "/Users/oliveranthony/Code/oliveranthony17/migrating_mango/app/assets/images/mangologo.png"
-# oliver_profile.save!
+#USER 2
+puts "CREATING USER AND USER PROFILE"
+
+john = User.find_or_initialize_by({
+  email: "john@lewagon.com"
+})
+john.password = "lewagon"
+john.save!
+
+john_profile = UserProfile.find_or_initialize_by({
+  user: john
+})
+john_profile.foreign_address = "Mangostreet 24, Zürich"
+john_profile.eu_status = false
+john_profile.entry_method = "Family"
+john_profile.has_job_offer = false
+john_profile.has_study_offer = false
+john_profile.has_relative = true
+john_profile.username = "n00bMaStEr69"
+john_profile.avatar = "/Users/oliveranthony/Code/oliveranthony17/migrating_mango/app/assets/images/mango3.png"
+john_profile.save!
+
+#USER 3
+puts "CREATING USER AND USER PROFILE"
+
+marlin = User.find_or_initialize_by({
+  email: "marlin@lewagon.com"
+})
+marlin.password = "lewagon"
+marlin.save!
+
+marlin_profile = UserProfile.find_or_initialize_by({
+  user: marlin
+})
+marlin_profile.foreign_address = "1 Bahnhofstrasse, Zürich"
+marlin_profile.eu_status = false
+marlin_profile.entry_method = "Study"
+marlin_profile.has_job_offer = false
+marlin_profile.has_study_offer = true
+marlin_profile.has_relative = true
+marlin_profile = "Xx@MarlinDarling@xX"
+marlin_profile.avatar = "/Users/oliveranthony/Code/oliveranthony17/migrating_mango/app/assets/images/mango5.png"
+marlin_profile.save!
+
+#USER 4
+puts "CREATING USER AND USER PROFILE"
+
+omar = User.find_or_initialize_by({
+  email: "omar@lewagon.com"
+})
+omar.password = "lewagon"
+omar.save!
+
+omar_profile = UserProfile.find_or_initialize_by({
+  user: omar
+})
+omar_profile.foreign_address = "Badenerstrasse 626, Zürich"
+omar_profile.eu_status = false
+omar_profile.entry_method = "Work"
+omar_profile.has_job_offer = true
+omar_profile.username = "~LordPepe7~"
+omar_profile.has_study_offer = false
+omar_profile.has_relative = true
+omar_profile.avatar = "/Users/oliveranthony/Code/oliveranthony17/migrating_mango/app/assets/images/mango4.png"
+omar_profile.save!
 
 #? --- COUNTRIES ---
 

@@ -91,6 +91,6 @@ class UserProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:user_profile).permit(:foreign_address, :eu_status, :entry_method, :has_job_offer, :has_study_offer, :has_relative, :avatar_id)
+    params.require(:user_profile).permit(:foreign_address, :eu_status, :username, :entry_method, :has_job_offer, :has_study_offer, :has_relative, :avatar_id)
   end
 end
