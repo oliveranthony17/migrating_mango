@@ -4,6 +4,7 @@
     <i class="fas fa-search"></i>
   </span>
 </div> %>
+<%= link_to ('<i class="fa-regular fa-hand-point-left"></i> Go back').html_safe, country_path(@tasks.first.task.country), class: "btn form-actions my-3" %>
 
 <div class="searchbar-topics">
   <%= form_with url: user_profile_user_tasks_path(@user_profile), method: :get, class: "d-flex" do %>

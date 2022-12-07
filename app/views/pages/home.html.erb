@@ -38,6 +38,7 @@
     </div>
   </div>
   <div class="container-home">
+    <%# ! INSERT DROPDOWN HERE TO SELECT COUNTRY  %>
     <div class="d-flex justify-content-center h-40 login">
       <div class="card">
         <div class="card-body">
@@ -48,14 +49,14 @@
                                 required: false,
                                 autofocus: true,
                                 autocomplete: "email",
-                                label: ('<i class="fas fa-user text-warning"></i>').html_safe,
-                                class: "d-flex",
+                                label: ('<i class="fas fa-user text-warning mt-3" style="width: 25px;"></i>').html_safe,
+                                wrapper_html: { class: 'd-flex text-align-center align-middle' },
                                 placeholder: "Email" %>
                   <%= f.input :password,
                               required: false,
                               autocomplete: "current-password",
-                              label: ('<i class="fas fa-key text-warning"></i>').html_safe,
-                              class: "d-flex",
+                              label: ('<i class="fas fa-key text-warning mt-3" style="width: 25px;"></i>').html_safe,
+                              wrapper_html: { class: 'd-flex text-align-center align-middle' },
                               placeholder: "Password"%>
                   <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
               </div>
