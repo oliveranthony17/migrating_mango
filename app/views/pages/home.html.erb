@@ -1,5 +1,8 @@
+<div style="background-image: url('/assets/homepage2.jpeg'" class="background-home">
+</div>
+
 <div id="screen">
-  <div id="header"><h1 class="py-3">MIGRATING MANGO</h1></div>
+  <div id="header"><h1 class="pt-3">MIGRATING MANGO</h1></div>
   <div id="select-country"><em>Select your country by clicking on the flag</em></div>
   <div class="container container-home">
     <div class="row justify-content-center">
@@ -39,8 +42,24 @@
   </div>
   <div class="container-home">
     <%# ! INSERT DROPDOWN HERE TO SELECT COUNTRY  %>
-    <div class="d-flex justify-content-center h-40 login">
-      <div class="card">
+    <div>
+      <div class="dropdown text-center w-100">
+        <a class="btn btn-secondary dropdown-toggle dropdown w-75" id="country-dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Choose your country
+        </a>
+
+        <ul class="dropdown-menu">
+
+          <% @countries.each do |country| %>
+            <li>
+              <a class="dropdown-item" href="countries/<%= country.id %>"><%= country.name %></a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center login">
+      <div class="card card-transparent">
         <div class="card-body">
           <% if !current_user %>
             <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
@@ -68,8 +87,8 @@
               </div>
             <% end %>
           <% else %>
-            <div class="d-flex justify-content-center h-40 login">
-              <%= link_to "Continue", country_path(1), class: "btn log-in-button px-4 justify-content-center" %>
+            <div class="d-flex justify-content-center h-0 login">
+              <%= link_to "Continue", country_path(1), class: "btn log-in-button mt-5 px-4 justify-content-center" %>
             </div>
           <% end %>
         </div>

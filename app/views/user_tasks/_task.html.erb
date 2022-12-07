@@ -1,7 +1,9 @@
-<div data-controller="task-dropdown" data-action="click->task-dropdown#revealEdit" class="card-product my-3">
+<div data-controller="task-dropdown" data-action="click->task-dropdown#revealEdit" class="card-product my-3" data-task-dropdown-target="task">
 
-  <div class="task-infos my-3" data-task-dropdown-target="card">
-    <h2><%= task.task.title %></h2><i data-task-dropdown-target="caret" class="fa-solid fa-caret-down caret"></i>
+  <div class="task-infos my-3 d-flex justify-content-between" data-task-dropdown-target="card">
+    <div class="topic"><%= task.task.topic.icon  %></div>
+    <div class="title"><h2><%= task.task.title %></h2></div>
+    <div><i data-task-dropdown-target="caret" class="fa-solid fa-caret-down caret"></i></div>
   </div>
 
   <div data-task-dropdown-target="edit" class="d-none">

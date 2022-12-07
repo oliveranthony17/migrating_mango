@@ -27,26 +27,31 @@ puts "CREATING COUNTRIES"
 switzerland = Country.find_or_initialize_by({
   name: "Switzerland",
 })
+switzerland.background = "switzerland.jpg"
 switzerland.save!
 
 united_kingdom = Country.find_or_initialize_by({
   name: "United Kingdom",
 })
+united_kingdom.background = "united_kingdom.jpeg"
 united_kingdom.save!
 
 romania = Country.find_or_initialize_by({
   name: "Romania"
 })
+romania.background = "romania.jpg"
 romania.save!
 
 greece = Country.find_or_initialize_by({
   name: "Greece"
 })
+greece.background = "greece.jpg"
 greece.save!
 
 lebanon = Country.find_or_initialize_by({
   name: "Lebanon"
 })
+lebanon.background = "lebanon.jpeg"
 lebanon.save!
 
 #? --- TOPICS ---
@@ -59,7 +64,7 @@ permits = Topic.find_or_initialize_by({
 })
 permits.icon = '<i class="fa-solid fa-id-card"></i>'
 permits.content = "There are a variety of permits available in Switzerland for different circumstances. For moving to Switzerland, you will likely be looking at obtaining a B permit (residence permit). For more information visit the link below: \nhttps://www.ch.ch/en/documents-and-register-extracts/permits-for-living-in-switzerland/#overview-of-permits"
-permits.image = "topics/permits"
+permits.image = "topics/permits.png"
 permits.save!
 
 emergency = Topic.find_or_initialize_by({

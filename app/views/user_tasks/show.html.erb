@@ -1,3 +1,5 @@
+<div style="background-image: url('<%= asset_path @task.task.country.background %>'" class="background">
+</div>
 <div class="container">
   <%= link_to ('<i class="fa-regular fa-hand-point-left"></i> Go back').html_safe, user_profile_user_tasks_path(current_user.user_profile), class: "btn form-actions my-3" %>
   <div class="card-trip">

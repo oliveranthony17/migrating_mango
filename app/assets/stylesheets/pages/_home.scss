@@ -1,9 +1,10 @@
 
 #header{
   text-align: center;
-  color: #ff9012;
-  font-size: 36px;
-  font-weight: bold;
+  color: #f88c0f;
+  opacity: 100% !important;
+  font-size: 40px;
+  font-weight: bolder;
   margin-bottom: 6px;
   font-family: 'IM Fell DW Pica', serif;
 }
@@ -15,7 +16,7 @@
   // display: flex;
   // align-items: center;
   // justify-content: center;
-  background-color: #03081b;
+  background-color: rgba(0,0,0,0.7);
   color: white;
 }
 
@@ -39,9 +40,9 @@ body{
   width:7px;
   height: 7px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgb(255, 255, 255);
   top:-10px;
-  box-shadow: -100px 100px rgba(255,255,255,0.854), 130px 230px rgba(255,255,255,0.854), 50px 310px rgba(255,255,255,0.854), -130px 215px rgba(255,255,255,0.9), -100px 215px rgba(255,255,255,0.9), -90px 9px rgba(255,255,255,0.9);
+  box-shadow: -70px 130px rgba(255,255,255,0.854), 230px 130px rgba(255,255,255,0.854), 50px 310px rgba(255,255,255,0.854), 250px 100px rgba(255,255,255,0.9), 220px 15px rgba(255,255,255,0.9), -50px 9px rgba(255,255,255,0.9), 15px 200px rgba(255,255,255,0.9);
 }
 
 .clouds:after {
@@ -50,7 +51,7 @@ body{
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: rgba(254, 254, 254, 0.854);
+  background-color: rgb(254, 254, 254);
   left:50px;
   top:20px;
   box-shadow: -10px 100px rgba(255,255,255,0.854), 30px 130px rgba(255,255,255,0.854)
@@ -214,20 +215,23 @@ input{
 
 
 .card{
-height: 300px;
+height: 250px;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;
-background-color: #03081b !important;
+background-color: rgba(255,255,255,0) !important;
+border-radius: 10px;
 }
 
 .login{
-  margin-top: 26px;
+  margin: 0px auto;
 }
 #select-country{
   text-align: center;
   color: white;
-  margin-bottom: 31px;
+  margin: 5px auto 20px auto;
+  font-size: 20px;
+  font-weight: bolder;
 }
 
 
@@ -286,4 +290,22 @@ margin-left: 4px;
   border-color: black;
   border-radius: 8px;
   font-size: small;
+}
+
+#country-dropdown {
+  margin: 20px 0px 0px 15px !important;
+  text-align: center;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.background-home {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(255, 255, 255);
+  opacity: 1;
+  background-blend-mode: multiply;
+  background-size: cover;
+  z-index: -1;
 }
