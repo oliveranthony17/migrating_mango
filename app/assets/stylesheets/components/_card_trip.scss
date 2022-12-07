@@ -9,17 +9,17 @@
   object-fit: cover;
 }
 
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
+// .card-trip h2 {
+//   font-size: 16px;
+//   font-weight: bold;
+//   margin: 0;
+// }
 
-.card-trip p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
+// .card-trip p {
+//   font-size: 12px;
+//   opacity: .7;
+//   margin: 0;
+// }
 
 
 .card-trip .card-trip-infos {
@@ -35,4 +35,9 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.badge-card-show {
+  height: fit-content;
+  font-size: 1rem;
 }
