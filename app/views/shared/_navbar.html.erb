@@ -28,7 +28,7 @@
               <%= image_tag "mangologo", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <% if current_user.user_profile %>
+            <% unless current_user.user_profile == nil || current_user.user_profile.id == nil %>
               <%= link_to "Edit profile", edit_user_profile_path(current_user.user_profile), class: "dropdown-item" %>
             <% end %>
             <%= link_to("Logout", destroy_user_session_path, :method => :delete, class: "dropdown-item")  %>

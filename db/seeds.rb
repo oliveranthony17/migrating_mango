@@ -1,6 +1,6 @@
 #? --- USERS ---
 
-puts "creating avatars"
+puts "CREATING AVATARS"
 
 avatar1 = Avatar.find_or_initialize_by({
   image_url: "mango1.png"
@@ -26,94 +26,6 @@ avatar5 = Avatar.find_or_initialize_by({
   image_url: "mango5.png"
 })
 avatar5.save!
-
-#USER 1
-puts "CREATING USER AND USER PROFILE"
-
-oliver = User.find_or_initialize_by({
-  email: "oliver@lewagon.com"
-})
-oliver.password = "lewagon"
-oliver.save!
-
-oliver_profile = UserProfile.find_or_initialize_by({
-  user: oliver
-})
-oliver_profile.foreign_address = "Bahnhofstrasse 1, Zürich"
-oliver_profile.eu_status = false
-oliver_profile.entry_method = "Family reunification"
-oliver_profile.has_job_offer = false
-oliver_profile.has_study_offer = false
-oliver_profile.has_relative = true
-oliver_profile.username = "Oli_Poly17"
-oliver_profile.avatar = avatar1
-oliver_profile.save!
-
-#USER 2
-puts "CREATING USER AND USER PROFILE"
-
-john = User.find_or_initialize_by({
-  email: "john@lewagon.com"
-})
-john.password = "lewagon"
-john.save!
-
-john_profile = UserProfile.find_or_initialize_by({
-  user: john
-})
-john_profile.foreign_address = "Mangostreet 24, Zürich"
-john_profile.eu_status = false
-john_profile.entry_method = "Family reunification"
-john_profile.has_job_offer = false
-john_profile.has_study_offer = false
-john_profile.has_relative = true
-john_profile.username = "n00bMaStEr69"
-john_profile.avatar = avatar5
-john_profile.save!
-
-#USER 3
-puts "CREATING USER AND USER PROFILE"
-
-marlin = User.find_or_initialize_by({
-  email: "marlin@lewagon.com"
-})
-marlin.password = "lewagon"
-marlin.save!
-
-marlin_profile = UserProfile.find_or_initialize_by({
-  user: marlin
-})
-marlin_profile.foreign_address = "1 Bahnhofstrasse, Zürich"
-marlin_profile.eu_status = false
-marlin_profile.entry_method = "Study"
-marlin_profile.has_job_offer = false
-marlin_profile.has_study_offer = true
-marlin_profile.has_relative = true
-marlin_profile.username = "Xx@MarlinDarling@xX"
-marlin_profile.avatar = avatar3
-marlin_profile.save!
-
-#USER 4
-puts "CREATING USER AND USER PROFILE"
-
-omar = User.find_or_initialize_by({
-  email: "omar@lewagon.com"
-})
-omar.password = "lewagon"
-omar.save!
-
-omar_profile = UserProfile.find_or_initialize_by({
-  user: omar
-})
-omar_profile.foreign_address = "Badenerstrasse 626, Zürich"
-omar_profile.eu_status = false
-omar_profile.entry_method = "Work"
-omar_profile.has_job_offer = true
-omar_profile.username = "~LordPepe7~"
-omar_profile.has_study_offer = false
-omar_profile.has_relative = true
-omar_profile.avatar = avatar4
-omar_profile.save!
 
 #? --- COUNTRIES ---
 
@@ -599,30 +511,6 @@ leb_health.content = "Good luck"
 leb_health.image = "topics/health.png"
 leb_health.save!
 
-#? --- CATEGORIES ---
-
-# puts "CREATING CATEGORIES BEFORE CREATING TASKS"
-
-# work = Category.find_or_initialize_by({
-#   title: "Work permit"
-# })
-# work.save!
-
-# student = Category.find_or_initialize_by({
-#   title: "Student permit"
-# })
-# student.save!
-
-# married = Category.find_or_initialize_by({
-#   title: "Family reunification (through marriage)"
-# })
-# married.save!
-
-# all = Category.find_or_initialize_by({
-#   title: "Applies to all"
-# })
-# all.save!
-
 #? --- TASKS ---
 
 puts "CREATING TASKS (BANK) RELATED TO COUNTRY"
@@ -961,31 +849,161 @@ task17.save!
 
 #? --- ************ ---
 
-# MORE TASKS
 
-#? --- USER TASKS ---
+#USER 1
+puts "CREATING USER AND USER PROFILE"
 
-# puts "CREATING USER TASKS - ALL FOR NOW"
+oliver = User.find_or_initialize_by({
+  email: "oliver@lewagon.com"
+})
+oliver.password = "lewagon"
+oliver.save!
 
-# usertask1 = UserTask.find_or_initialize_by({
-#   task: task1,
-#   user_profile: oliver_profile,
-# })
-# usertask1.status = "active"
-# usertask1.save!
+oliver_profile = UserProfile.create({
+  user: oliver,
+  foreign_address: "Bahnhofstrasse 1, Zürich",
+  eu_status: false,
+  entry_method: "Family reunification",
+  has_job_offer: false,
+  has_study_offer: false,
+  has_relative: true,
+  username: "Oli_Poly17",
+  avatar: avatar1
+})
+oliver_profile.save!
 
-# usertask2 = UserTask.find_or_initialize_by({
-#   task: task2,
-#   user_profile: oliver_profile,
-# })
-# usertask2.status = "active"
-# usertask2.save!
+#USER 2
+puts "CREATING USER AND USER PROFILE"
 
-# usertask3 = UserTask.find_or_initialize_by({
-#   task: task3,
-#   user_profile: oliver_profile,
-# })
-# usertask3.status = "active"
-# usertask3.save!
+john = User.find_or_initialize_by({
+  email: "john@lewagon.com"
+})
+john.password = "lewagon"
+john.save!
+
+john_profile = UserProfile.create({
+  user: john,
+  foreign_address: "Mangostreet 24, Zürich",
+  eu_status: false,
+  entry_method: "Family reunification",
+  has_job_offer: false,
+  has_study_offer: false,
+  has_relative: true,
+  username: "n00bMaStEr69",
+  avatar: avatar5
+})
+john_profile.save!
+
+#USER 3
+puts "CREATING USER AND USER PROFILE"
+
+marlin = User.find_or_initialize_by({
+  email: "marlin@lewagon.com"
+})
+marlin.password = "lewagon"
+marlin.save!
+
+marlin_profile = UserProfile.create({
+  user: marlin,
+  foreign_address: "1 Bahnhofstrasse, Zürich",
+  eu_status: false,
+  entry_method: "Study",
+  has_job_offer: false,
+  has_study_offer: true,
+  has_relative: true,
+  username: "Xx@MarlinDarling@xX",
+  avatar: avatar3
+})
+marlin_profile.save!
+
+#USER 4
+puts "CREATING USER AND USER PROFILE"
+
+omar = User.find_or_initialize_by({
+  email: "omar@lewagon.com"
+})
+omar.password = "lewagon"
+omar.save!
+
+omar_profile = UserProfile.create({
+  user: omar,
+  foreign_address: "Badenerstrasse 626, Zürich",
+  eu_status: false,
+  entry_method: "Work",
+  has_job_offer: true,
+  username: "~LordPepe7~",
+  has_study_offer: false,
+  has_relative: true,
+  avatar: avatar4
+})
+omar_profile.save!
+
+
+puts "CREATING USER TASKS"
+
+def create_user_tasks(user_profile)
+  if user_profile.eu_status?
+    case user_profile.entry_method
+    when "Work"
+      if user_profile.has_job_offer?
+        @tasks = Task.where(scope: ["work", "all"], eu: ["eu", "both"]).order(order: :asc)
+      else
+        @tasks = Task.where(scope: ["work", "work_find", "all"], eu: ["eu", "both"]).order(order: :asc)
+      end
+    when "Study"
+      if user_profile.has_study_offer?
+        @tasks = Task.where(scope: ["study", "all"], eu: ["eu", "both"]).order(order: :asc)
+      else
+        @tasks = Task.where(scope: ["study", "study_find", "all"], eu: ["eu", "both"]).order(order: :asc)
+      end
+    else # family
+      if user_profile.has_relative?
+        @tasks = Task.where(scope: ["family", "all"], eu: ["eu", "both"]).order(order: :asc)
+      else
+        @tasks = Task.where(scope: ["family", "family_find", "all"], eu: ["eu", "both"]).order(order: :asc)
+      end
+    end
+  else
+    case user_profile.entry_method
+    when "Work"
+      if user_profile.has_job_offer
+        @tasks = Task.where(scope: ["work", "all"], eu: ["non-eu", "both"]).order(order: :asc)
+      else
+        @tasks = Task.where(scope: ["work", "work_find", "all"], eu: ["non-eu", "both"]).order(order: :asc)
+      end
+    when "Study"
+      if user_profile.has_study_offer
+        @tasks = Task.where(scope: ["study", "all"], eu: ["non-eu", "both"]).order(order: :asc)
+      else
+        @tasks = Task.where(scope: ["study", "study_find", "all"], eu: ["non-eu", "both"]).order(order: :asc)
+      end
+    else # family
+      if user_profile.has_relative
+        @tasks = Task.where(scope: ["family", "all"], eu: ["non-eu", "both"]).order(order: :asc)
+      else
+        @tasks = Task.where(scope: ["family", "family_find", "all"], eu: ["non-eu", "both"]).order(order: :asc)
+      end
+    end
+  end
+  @tasks.each do |task|
+      UserTask.create({
+      task: task,
+      user_profile: user_profile,
+      status: task.order == 1 || task.order == 2 ? "Active" : "Upcoming"
+    })
+  end
+end
+
+oliver_tasks = create_user_tasks(oliver_profile)
+oliver_profile.save!
+
+john_tasks = create_user_tasks(john_profile)
+john_profile.save!
+
+marlin_tasks = create_user_tasks(marlin_profile)
+marlin_profile.save!
+
+omar_tasks = create_user_tasks(omar_profile)
+omar_profile.save!
 
 puts "FINISHED!"
