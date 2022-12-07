@@ -14,19 +14,20 @@
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap" rel="stylesheet">
   </head>
 
+  <div class>
+    <body>
 
-  <body>
+      <% unless controller_name == "pages" %>
+          <%= render "shared/navbar"%>
+          <%= render "shared/flashes" %>
+      <% end %>
 
-    <% unless controller_name == "pages" %>
-        <%= render "shared/navbar"%>
-        <%= render "shared/flashes" %>
-    <% end %>
+      <%= yield %>
 
-    <%= yield %>
+      <% unless controller_name == "pages" %>
+          <%= render "shared/footer"%>
+      <% end %>
 
-    <% unless controller_name == "pages" %>
-        <%= render "shared/footer"%>
-    <% end %>
-
-  </body>
+    </body>
+  </div>
 </html>
