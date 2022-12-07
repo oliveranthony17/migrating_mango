@@ -94,26 +94,31 @@ puts "CREATING COUNTRIES"
 switzerland = Country.find_or_initialize_by({
   name: "Switzerland"
 })
+switzerland.background = "switzerland.jpg"
 switzerland.save!
 
 united_kingdom = Country.find_or_initialize_by({
   name: "United Kingdom"
 })
+united_kingdom.background = "united_kingdom.jpeg"
 united_kingdom.save!
 
 romania = Country.find_or_initialize_by({
   name: "Romania"
 })
+romania.background = "romania.jpg"
 romania.save!
 
 greece = Country.find_or_initialize_by({
   name: "Greece"
 })
+greece.background = "greece.jpg"
 greece.save!
 
 lebanon = Country.find_or_initialize_by({
   name: "Lebanon"
 })
+lebanon.background = "lebanon.jpeg"
 lebanon.save!
 
 #? --- TOPICS ---
@@ -125,6 +130,7 @@ permits = Topic.find_or_initialize_by({
   title: "Permits"
 })
 permits.icon = '<i class="fa-solid fa-id-card"></i>'
+
 permits.content = '<div>
 <div>
 <div>There are a variety of permits available in Switzerland for different circumstances.</div>
@@ -134,7 +140,7 @@ permits.content = '<div>
 <div>For more information visit the link below: <a href="https://www.ch.ch/en/documents-and-register-extracts/permits-for-living-in-switzerland/#overview-of-permits">https://www.ch.ch/en/documents-and-register-extracts/permits-for-living-in-switzerland/#overview-of-permits</a></div>
 </div>
 </div>'
-permits.image = "topics/permits"
+permits.image = "topics/permits.png"
 permits.save!
 
 emergency = Topic.find_or_initialize_by({

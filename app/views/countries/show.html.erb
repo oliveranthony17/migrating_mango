@@ -1,5 +1,7 @@
-<div class="container">
-  <h1 class="my-3 text-center">Welcome to <%= @country.name %>!</h1>
+<div style="background-image: url('<%= asset_path @country.background %>'" class="background">
+</div>
+  <div class="container">
+  <h1 class="my-3 text-center"><strong>Welcome to <br><%= @country.name %>!</strong></h1>
 
   <div class="searchbar-topics my-3">
     <%= form_with url: country_path(@country), method: :get, class: "d-flex" do %>
@@ -8,7 +10,7 @@
       class: "form-control",
       placeholder: "Find a topic"
     %>
-    <%= submit_tag "Search", class: "btn btn-primary text-white", style: "border-color: red;"%>
+    <%= submit_tag "Search", class: "btn btn-primary text-white" %>
     <% end %>
   </div>
 
