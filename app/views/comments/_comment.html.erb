@@ -13,10 +13,11 @@
                       <% if current_user == comment.user || current_user&.admin? %>
                       <div class="action d-flex mt-2 align-items-center">
                         <%= link_to edit_country_topic_comment_path(comment.topic.country, comment.topic, comment) do %>
-                          <i class="fa-solid fa-pen aria-hidden="true""></i>
+                          <i class="fa-solid fa-pen btn btn-primary"></i>
                         <% end %>
                         <%= button_to country_topic_comment_path(comment.topic.country, comment.topic, comment),
                                       method: :delete,
+                                      style: "border: none;",
                                       data: { turbo_confirm: "Are you sure?" } do %>
                           <i class="fa-solid fa-trash btn btn-primary"></i>
                         <% end %>
