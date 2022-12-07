@@ -1,4 +1,32 @@
 #? --- USERS ---
+
+puts "creating avatars"
+
+avatar1 = Avatar.find_or_initialize_by({
+  image_url: "mango1.png"
+})
+avatar1.save!
+
+avatar2 = Avatar.find_or_initialize_by({
+  image_url: "mango2.png"
+})
+avatar2.save!
+
+avatar3 = Avatar.find_or_initialize_by({
+  image_url: "mango3.png"
+})
+avatar3.save!
+
+avatar4 = Avatar.find_or_initialize_by({
+  image_url: "mango4.png"
+})
+avatar4.save!
+
+avatar5 = Avatar.find_or_initialize_by({
+  image_url: "mango5.png"
+})
+avatar5.save!
+
 #USER 1
 puts "CREATING USER AND USER PROFILE"
 
@@ -13,12 +41,12 @@ oliver_profile = UserProfile.find_or_initialize_by({
 })
 oliver_profile.foreign_address = "Bahnhofstrasse 1, Zürich"
 oliver_profile.eu_status = false
-oliver_profile.entry_method = "Family"
+oliver_profile.entry_method = "Family reunification"
 oliver_profile.has_job_offer = false
 oliver_profile.has_study_offer = false
 oliver_profile.has_relative = true
-olive_profile.username = "Oli_Poly17"
-oliver_profile.avatar = "/Users/oliveranthony/Code/oliveranthony17/migrating_mango/app/assets/images/mangologo.png"
+oliver_profile.username = "Oli_Poly17"
+oliver_profile.avatar = avatar1
 oliver_profile.save!
 
 #USER 2
@@ -35,12 +63,12 @@ john_profile = UserProfile.find_or_initialize_by({
 })
 john_profile.foreign_address = "Mangostreet 24, Zürich"
 john_profile.eu_status = false
-john_profile.entry_method = "Family"
+john_profile.entry_method = "Family reunification"
 john_profile.has_job_offer = false
 john_profile.has_study_offer = false
 john_profile.has_relative = true
 john_profile.username = "n00bMaStEr69"
-john_profile.avatar = "/Users/oliveranthony/Code/oliveranthony17/migrating_mango/app/assets/images/mango3.png"
+john_profile.avatar = avatar5
 john_profile.save!
 
 #USER 3
@@ -61,8 +89,8 @@ marlin_profile.entry_method = "Study"
 marlin_profile.has_job_offer = false
 marlin_profile.has_study_offer = true
 marlin_profile.has_relative = true
-marlin_profile = "Xx@MarlinDarling@xX"
-marlin_profile.avatar = "/Users/oliveranthony/Code/oliveranthony17/migrating_mango/app/assets/images/mango5.png"
+marlin_profile.username = "Xx@MarlinDarling@xX"
+marlin_profile.avatar = avatar3
 marlin_profile.save!
 
 #USER 4
@@ -84,7 +112,7 @@ omar_profile.has_job_offer = true
 omar_profile.username = "~LordPepe7~"
 omar_profile.has_study_offer = false
 omar_profile.has_relative = true
-omar_profile.avatar = "/Users/oliveranthony/Code/oliveranthony17/migrating_mango/app/assets/images/mango4.png"
+omar_profile.avatar = avatar4
 omar_profile.save!
 
 #? --- COUNTRIES ---
@@ -876,30 +904,5 @@ task17.save!
 # })
 # usertask3.status = "active"
 # usertask3.save!
-
-avatar1 = Avatar.find_or_initialize_by({
-  image_url: "mango1.png"
-})
-avatar1.save!
-
-avatar2 = Avatar.find_or_initialize_by({
-  image_url: "mango2.png"
-})
-avatar2.save!
-
-avatar3 = Avatar.find_or_initialize_by({
-  image_url: "mango3.png"
-})
-avatar3.save!
-
-avatar4 = Avatar.find_or_initialize_by({
-  image_url: "mango4.png"
-})
-avatar4.save!
-
-avatar5 = Avatar.find_or_initialize_by({
-  image_url: "mango5.png"
-})
-avatar5.save!
 
 puts "FINISHED!"
