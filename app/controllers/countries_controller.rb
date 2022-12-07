@@ -4,7 +4,8 @@ class CountriesController < ApplicationController
   def show
     @country = Country.find(params[:id])
     if params[:query].present?
-      @topics = Topic.where("title ILIKE ?", "%#{params[:query]}%")
+      sql_query = "title ILIKE :query AND country_id = :country_id"
+      @topics = Topic.where(sql_query, query: "%#{params[:query]}%", country_id: @country.id)
     else
       @topics = Topic.where(country_id: @country.id)
     end

@@ -33,8 +33,6 @@ class UserTasksController < ApplicationController
         (tasks.title ILIKE :query
          OR tasks.content ILIKE :query)
          AND user_tasks.user_profile_id = :user_profile_id
-        -- OR directors.first_name ILIKE :query
-        -- OR directors.last_name ILIKE :query
       SQL
       @tasks = UserTask.joins(:task).where(sql_query, query: "%#{params[:query]}%", user_profile_id: params[:user_profile_id].to_i)
     else
@@ -55,7 +53,7 @@ class UserTasksController < ApplicationController
     @task = UserTask.find(params[:format])
     @task.status = "Active"
     @task.save
-    redirect_to(user_profile_user_tasks_path(@user_profile), alert: "Task marked as active!")
+    redirect_back fallback_location: user_profile_user_tasks_path(@user_profile), alert: "Task marked as active!"
   end
 
   def upcoming
@@ -63,7 +61,7 @@ class UserTasksController < ApplicationController
     @task = UserTask.find(params[:format])
     @task.status = "Upcoming"
     @task.save
-    redirect_to(user_profile_user_tasks_path(@user_profile), alert: "Task moved to upcoming!")
+    redirect_back fallback_location: user_profile_user_tasks_path(@user_profile), alert: "Task moved to upcoming!"
   end
 
   def complete
@@ -71,7 +69,7 @@ class UserTasksController < ApplicationController
     @task = UserTask.find(params[:format])
     @task.status = "Completed"
     @task.save
-    redirect_to(user_profile_user_tasks_path(@user_profile), alert: "Congratulations! 🎉 Task completed!")
+    redirect_back fallback_location: user_profile_user_tasks_path(@user_profile), alert: "Congratulations! 🎉 Task completed!"
   end
 
   def update

@@ -3,6 +3,8 @@
   <head>
     <title>MigratingMango</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -14,9 +16,9 @@
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap" rel="stylesheet">
   </head>
 
-
   <body>
     <div class="mountains">
+
       <% unless controller_name == "pages" %>
           <%= render "shared/navbar"%>
           <%= render "shared/flashes" %>
@@ -27,5 +29,8 @@
       <% unless controller_name == "pages" %>
           <%= render "shared/footer"%>
       <% end %>
+    </div>
   </body>
+   
+  
 </html>

@@ -6,7 +6,7 @@
   <h1><%=@topic.title%></h1>
 </div>
 <div class="topics-content container">
-  <p><%= @topic.content %></p>
+  <p><%= sanitize @topic.content %></p>
 </div>
 <hr>
 

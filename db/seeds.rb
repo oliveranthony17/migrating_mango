@@ -1,37 +1,104 @@
 #? --- USERS ---
+#USER 1
+puts "CREATING USER AND USER PROFILE"
 
-# puts "CREATING USER AND USER PROFILE"
+oliver = User.find_or_initialize_by({
+  email: "oliver@lewagon.com"
+})
+oliver.password = "lewagon"
+oliver.save!
 
-# oliver = User.find_or_initialize_by({
-#   email: "oliver@lewagon.com"
-# })
-# oliver.password = "lewagon"
-# oliver.save!
+oliver_profile = UserProfile.find_or_initialize_by({
+  user: oliver
+})
+oliver_profile.foreign_address = "Bahnhofstrasse 1, Zürich"
+oliver_profile.eu_status = false
+oliver_profile.entry_method = "Family"
+oliver_profile.has_job_offer = false
+oliver_profile.has_study_offer = false
+oliver_profile.has_relative = true
+olive_profile.username = "Oli_Poly17"
+oliver_profile.avatar = "/Users/oliveranthony/Code/oliveranthony17/migrating_mango/app/assets/images/mangologo.png"
+oliver_profile.save!
 
-# oliver_profile = UserProfile.find_or_initialize_by({
-#   user: oliver
-# })
-# oliver_profile.foreign_address = "1 Bahnhofstrasse, Zürich"
-# oliver_profile.eu_status = false
-# oliver_profile.entry_method = "Family"
-# oliver_profile.has_job_offer = false
-# oliver_profile.has_study_offer = false
-# oliver_profile.has_relative = true
-# oliver_profile.avatar = "/Users/oliveranthony/Code/oliveranthony17/migrating_mango/app/assets/images/mangologo.png"
-# oliver_profile.save!
+#USER 2
+puts "CREATING USER AND USER PROFILE"
+
+john = User.find_or_initialize_by({
+  email: "john@lewagon.com"
+})
+john.password = "lewagon"
+john.save!
+
+john_profile = UserProfile.find_or_initialize_by({
+  user: john
+})
+john_profile.foreign_address = "Mangostreet 24, Zürich"
+john_profile.eu_status = false
+john_profile.entry_method = "Family"
+john_profile.has_job_offer = false
+john_profile.has_study_offer = false
+john_profile.has_relative = true
+john_profile.username = "n00bMaStEr69"
+john_profile.avatar = "/Users/oliveranthony/Code/oliveranthony17/migrating_mango/app/assets/images/mango3.png"
+john_profile.save!
+
+#USER 3
+puts "CREATING USER AND USER PROFILE"
+
+marlin = User.find_or_initialize_by({
+  email: "marlin@lewagon.com"
+})
+marlin.password = "lewagon"
+marlin.save!
+
+marlin_profile = UserProfile.find_or_initialize_by({
+  user: marlin
+})
+marlin_profile.foreign_address = "1 Bahnhofstrasse, Zürich"
+marlin_profile.eu_status = false
+marlin_profile.entry_method = "Study"
+marlin_profile.has_job_offer = false
+marlin_profile.has_study_offer = true
+marlin_profile.has_relative = true
+marlin_profile = "Xx@MarlinDarling@xX"
+marlin_profile.avatar = "/Users/oliveranthony/Code/oliveranthony17/migrating_mango/app/assets/images/mango5.png"
+marlin_profile.save!
+
+#USER 4
+puts "CREATING USER AND USER PROFILE"
+
+omar = User.find_or_initialize_by({
+  email: "omar@lewagon.com"
+})
+omar.password = "lewagon"
+omar.save!
+
+omar_profile = UserProfile.find_or_initialize_by({
+  user: omar
+})
+omar_profile.foreign_address = "Badenerstrasse 626, Zürich"
+omar_profile.eu_status = false
+omar_profile.entry_method = "Work"
+omar_profile.has_job_offer = true
+omar_profile.username = "~LordPepe7~"
+omar_profile.has_study_offer = false
+omar_profile.has_relative = true
+omar_profile.avatar = "/Users/oliveranthony/Code/oliveranthony17/migrating_mango/app/assets/images/mango4.png"
+omar_profile.save!
 
 #? --- COUNTRIES ---
 
 puts "CREATING COUNTRIES"
 
 switzerland = Country.find_or_initialize_by({
-  name: "Switzerland",
+  name: "Switzerland"
 })
 switzerland.background = "switzerland.jpg"
 switzerland.save!
 
 united_kingdom = Country.find_or_initialize_by({
-  name: "United Kingdom",
+  name: "United Kingdom"
 })
 united_kingdom.background = "united_kingdom.jpeg"
 united_kingdom.save!
@@ -63,7 +130,16 @@ permits = Topic.find_or_initialize_by({
   title: "Permits"
 })
 permits.icon = '<i class="fa-solid fa-id-card"></i>'
-permits.content = "There are a variety of permits available in Switzerland for different circumstances. For moving to Switzerland, you will likely be looking at obtaining a B permit (residence permit). For more information visit the link below: \nhttps://www.ch.ch/en/documents-and-register-extracts/permits-for-living-in-switzerland/#overview-of-permits"
+
+permits.content = '<div>
+<div>
+<div>There are a variety of permits available in Switzerland for different circumstances.</div>
+<div>&nbsp;</div>
+<div>For moving to Switzerland, you will likely be looking at obtaining a B permit (residence permit).</div>
+<div>&nbsp;</div>
+<div>For more information visit the link below: <a href="https://www.ch.ch/en/documents-and-register-extracts/permits-for-living-in-switzerland/#overview-of-permits">https://www.ch.ch/en/documents-and-register-extracts/permits-for-living-in-switzerland/#overview-of-permits</a></div>
+</div>
+</div>'
 permits.image = "topics/permits.png"
 permits.save!
 
@@ -72,7 +148,16 @@ emergency = Topic.find_or_initialize_by({
   title: "Emergency"
 })
 emergency.icon = "<i class='fas fa-hospital-symbol'></i>"
-emergency.content = "Here are the emergency phone numbers for Switzerland: \nPolice: 117 \nFire: 188 \nAmbulance: 144 \nSwiss Rescue: 1414. \n\nMore information on emergency care can be found here: \nhttps://www.myswitzerland.com/en-ch/planning/about-switzerland/general-facts/emergency/emergency-numbers/"
+emergency.content = '<div>
+<div>Here are the emergency phone numbers for Switzerland:</div>
+<ul>
+<li>Police: 117</li>
+<li>Fire: 188</li>
+<li>Ambulance: 144</li>
+<li>Swiss Rescue: 1414</li>
+</ul>
+<div>More information on emergency care can be found here: <a href="https://www.myswitzerland.com/en-ch/planning/about-switzerland/general-facts/emergency/emergency-numbers/">https://www.myswitzerland.com/en-ch/planning/about-switzerland/general-facts/emergency/emergency-numbers/</a></div>
+</div>'
 emergency.image = "topics/emergency"
 emergency.save!
 
@@ -81,7 +166,12 @@ work = Topic.find_or_initialize_by({
   title: "Work"
 })
 work.icon = "<i class='fas fa-briefcase'></i>"
-work.content = "Gaining employment in Switzerland can be competitive and particularly difficult without a permit. Speaking multiple languages (a local language plus English) can be a good advantage. \n\nJobs can be found on the internet in particular LinkedIn and Jobs.ch. \n\nMore information on working in Switzerland can be found here: \nhttps://www.ch.ch/en/foreign-nationals-in-switzerland/working-in-switzerland/#"
+work.content = '<div>
+<div>Gaining employment in Switzerland can be competitive and particularly difficult without a permit.</div>
+<div>Speaking multiple languages (one of the 4 official languages and English) can be a good advantage.</div>
+<div>Jobs can be found on the internet in particular on <a href="https://www.linkedin.com/">linkedin.com</a> and <a href="https://www.jobs.ch">jobs.ch</a></div>
+<div>More information on working in Switzerland can be found here: <a href="https://www.ch.ch/en/foreign-nationals-in-switzerland/working-in-switzerland/">https://www.ch.ch/en/foreign-nationals-in-switzerland/working-in-switzerland/</a></div>
+</div>'
 work.image = "topics/work"
 work.save!
 
@@ -90,7 +180,19 @@ accommodation = Topic.find_or_initialize_by({
   title: "Accommodation"
 })
 accommodation.icon = "<i class='fas fa-home'></i>"
-accommodation.content = "Accommodation in Switzerland can be competitive if looking close to the cities. It is also considered expensive compared to other countries. \n\nLiving in apartments is common in Switzerland, even for families, and most apartments come with storage, bike sheds and storage cellers. \n\nThere are multiple websites for finding accomodation including homegate.ch, comparis.ch and immoscout24.ch. Shared accomodation (WGs) are also common and can be found on wgzimmer.ch."
+accommodation.content = '<div>
+<div>Finding accommodation in Switzerland can be quite a challenge when it comes to big cities.</div>
+<div>&nbsp;</div>
+<div>Living in a shared apartment is common among young professionals or students.</div>
+<div>&nbsp;</div>
+<div>A big majority of the apartments comes with a storage space which is either the attic or the basement.</div>
+<div>&nbsp;</div>
+<div>Bike parking spaces are also provided in most of the areas.</div>
+<div>&nbsp;</div>
+<div>It is reccomended to start looking for and apartment with minimum 6 months in advance.</div>
+<div>&nbsp;</div>
+<div>There are multiple websites for finding accommodation including <a href="https://www.homegate.ch">homegate.ch</a>, <a href="https://www.comparis.ch">comparis.ch</a>, <a href="https://www.flatfox.ch">flatfox.ch</a>, <a href="https://www.immoscout24.ch">immoscout24.ch</a>, etc. Shared accommodation options can be found on <a href="https://www.wgzimmer.ch">wgzimmer.ch</a>."</div>
+</div>'
 accommodation.image = "topics/housing"
 accommodation.save!
 
@@ -99,7 +201,14 @@ pets = Topic.find_or_initialize_by({
   title: "Pets"
 })
 pets.icon = "<i class='fas fa-paw'></i>"
-pets.content = "The requirements for bringing a pet to Switzerland can differ depending on the country you are travelling from. If your pet already has an EU passport this should be relatively straightforward, otherwise you will need the correct vaccinations and health certificate from a vet which can take multiple months. \n\nMore information can be found here: https://www.blv.admin.ch/blv/en/home/tiere/reisen-mit-heimtieren/hunde-katzen-und-frettchen.html."
+pets.content = '<div>
+<div>The requirements for bringing a pet to Switzerland can differ depending on the country you are travelling from.</div>
+<div>&nbsp;</div>
+<div>If your pet already has an EU passport this should be relatively straightforward, otherwise you will need the correct vaccinations and health certificate from a vet (this process can take several months, it&rsquo;s recommended to start as soon as you decide to move).</div>
+<div>&nbsp;</div>
+<div>More information can be found here:&nbsp;</div>
+<div><a href="https://www.blv.admin.ch/blv/en/home/tiere/reisen-mit-heimtieren/online-hilfe-hunde-katzen-frettchen.html">https://www.blv.admin.ch/blv/en/home/tiere/reisen-mit-heimtieren/online-hilfe-hunde-katzen-frettchen.html</a></div>
+</div>'
 pets.image = "topics/pets"
 pets.save!
 
@@ -108,7 +217,25 @@ recycling = Topic.find_or_initialize_by({
   title: "Recycling"
 })
 recycling.icon = "<i class='fa-solid fa-recycle'></i>"
-recycling.content = "Recycling is an important part of Swiss life but can be daunting at first. If recycling is done incorrectly, the waste can be refused. The exact rules depend on Kanton however the general rules are as follows: \n- General waste bags need to be purchased and can be left in the black bin or ready for collection on the correct day \nCardboard must be collected and left by the road for the collection day \nPaper can be left in the paper bin or tied together with string \nGlass and aluminium can be taken to a local area and needs to be sorted \nPlastics can be sorted at a local supermarket or bags can be bought for general plastic waste"
+recycling.content = '<div>
+<div>Recycling is an important part of Swiss life but can be daunting at first.</div>
+<div>&nbsp;</div>
+<div>If recycling is done incorrectly, the waste can be refused.</div>
+<div>&nbsp;</div>
+<div>The exact requirements depend on each canton, however the general rules are as follows:</div>
+<div>&nbsp;</div>
+<div>General waste bags need to be purchased and can be left in the black bin or ready for collection on the correct day</div>
+<div>&nbsp;</div>
+<div>Cardboard must be collected and left by the road for the collection day</div>
+<div>&nbsp;</div>
+<div>Paper can be left in the paper bin (depends on where you live) or tied together with string and placed outside on the correct day</div>
+<div>&nbsp;</div>
+<div>Glass and aluminium can be taken to a local area and needs to be sorted upon recycling</div>
+<div>&nbsp;</div>
+<div>Plastics can be sorted at a local supermarket or bags can be bought for general plastic waste</div>
+<div>&nbsp;</div>
+<div>For more information regarding recycling please take a look here : <a href="https://www.expatica.com/ch/living/household/recycling-in-switzerland-102695/#:~:text=Recycling%20paper%20and%20cardboard%20in%20Switzerland,-90%25%20of%20the&amp;text=Since%20paper%20and%20cardboard%20are,and%20dry%20to%20be%20recycled.">https://www.expatica.com/ch/living/household/recycling-in-switzerland-102695/#:~:text=Recycling%20paper%20and%20cardboard%20in%20Switzerland,-90%25%20of%20the&amp;text=Since%20paper%20and%20cardboard%20are,and%20dry%20to%20be%20recycled.</a></div>
+</div>'
 recycling.image = "topics/recycle"
 recycling.save!
 
@@ -117,7 +244,16 @@ transport = Topic.find_or_initialize_by({
   title: "Transport"
 })
 transport.icon = "<i class='fa-solid fa-train-tram'></i>"
-transport.content = "Public transport is considered very good in Switzerland. Trains are good quality and usually on time. A variety of tickets can be purchased including supersaver tickets, weekly, monthly or annual passes, and a halbtax card for 50% off all tickets."
+transport.content = '<div>Switzerland has one of the best-developed public transport networks in the world.</div>
+<div>&nbsp;</div>
+<div>Almost any part of the country can be reached by bus or by train - even remote mountain areas.</div>
+<div>&nbsp;</div>
+<div>Switzerland is one of the countries where people use public transport the most, especially the train.</div>
+<div>&nbsp;</div>
+<div>A variety of tickets can be purchased including supersaver tickets, weekly, monthly or annual passes, and a half fare travelcard for 50% off all tickets.</div>
+<div>&nbsp;</div>
+<div>You can find everything regarding the public transport in Switzerland accesing the link below:&nbsp;</div>
+<div><a href="https://www.sbb.ch/en">sbb.ch/en</a></div>'
 transport.image = "topics/transport"
 transport.save!
 
@@ -126,9 +262,19 @@ health = Topic.find_or_initialize_by({
   title: "Health"
 })
 health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
-health.content = "When moving to Switzerland it is mandatory to purchase health insurance within 3 months of arrival. There are different levels of cover at corresponding cost. It is recommended to compare providers, cost and cover using one of the many comparison websites."
+health.content = '<div>
+<div>When moving to Switzerland it is mandatory to purchase health insurance within 3 months of arrival.</div>
+<div>&nbsp;</div>
+<div>There are different levels of cover at corresponding cost.</div>
+<div>&nbsp;</div>
+<div>It is recommended to compare providers, cost and cover using one of the many comparison websites. Among the most visited are:</div>
+<div><a href="https://en.comparis.ch/">comparis.ch/</a></div>
+<div><a href="https://www.versicherung-schweiz.ch/">versicherung-schweiz.ch/</a></div>
+</div>'
 health.image = "topics/health"
 health.save!
+
+#------------------------------#
 
 permits = Topic.find_or_initialize_by({
   country: united_kingdom,
@@ -136,6 +282,7 @@ permits = Topic.find_or_initialize_by({
 })
 permits.icon = '<i class="fa-solid fa-id-card"></i>'
 permits.content = "There are a variety of permits available in the United Kingdom..."
+permits.image = "topics/permits"
 permits.save!
 
 emergency = Topic.find_or_initialize_by({
@@ -144,6 +291,7 @@ emergency = Topic.find_or_initialize_by({
 })
 emergency.icon = "<i class='fas fa-hospital-symbol'></i>"
 emergency.content = "Here are the emergency phone numbers for the United Kingdom..."
+emergency.image = "topics/emergency"
 emergency.save!
 
 work = Topic.find_or_initialize_by({
@@ -152,6 +300,7 @@ work = Topic.find_or_initialize_by({
 })
 work.icon = "<i class='fas fa-briefcase'></i>"
 work.content = "Gaining employment in the United Kingdom can be difficult..."
+work.image = "topics/work"
 work.save!
 
 accommodation = Topic.find_or_initialize_by({
@@ -160,6 +309,7 @@ accommodation = Topic.find_or_initialize_by({
 })
 accommodation.icon = "<i class='fas fa-home'></i>"
 accommodation.content = "Accommodation in the United Kingdom can be competitive if looking close to the cities..."
+accommodation.image = "topics/housing"
 accommodation.save!
 
 pets = Topic.find_or_initialize_by({
@@ -168,6 +318,7 @@ pets = Topic.find_or_initialize_by({
 })
 pets.icon = "<i class='fas fa-paw'></i>"
 pets.content = "The requirements for bringing a pet to the United Kingdom can differ depending on the country you are travelling from..."
+pets.image = "topics/pets"
 pets.save!
 
 recycling = Topic.find_or_initialize_by({
@@ -176,6 +327,7 @@ recycling = Topic.find_or_initialize_by({
 })
 recycling.icon = "<i class='fa-solid fa-recycle'></i>"
 recycling.content = "Recycling is an important part of British life but can be daunting at first..."
+recycling.image = "topics/recycle"
 recycling.save!
 
 transport = Topic.find_or_initialize_by({
@@ -184,6 +336,7 @@ transport = Topic.find_or_initialize_by({
 })
 transport.icon = "<i class='fa-solid fa-train-tram'></i>"
 transport.content = "Public transport is considered very good in the United Kingdom..."
+transport.image = "topics/transport"
 transport.save!
 
 health = Topic.find_or_initialize_by({
@@ -192,6 +345,7 @@ health = Topic.find_or_initialize_by({
 })
 health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
 health.content = "When moving to the United Kingdom it is mandatory to purchase health insurance within 3 months of arrival..."
+health.image = "topics/health"
 health.save!
 
 #---------------------#
@@ -202,6 +356,7 @@ permits = Topic.find_or_initialize_by({
 })
 permits.icon = '<i class="fa-solid fa-id-card"></i>'
 permits.content = "There are a variety of permits available in Romania..."
+permits.image = "topics/permits"
 permits.save!
 
 emergency = Topic.find_or_initialize_by({
@@ -210,6 +365,7 @@ emergency = Topic.find_or_initialize_by({
 })
 emergency.icon = "<i class='fas fa-hospital-symbol'></i>"
 emergency.content = "Here are the emergency phone numbers for Romania..."
+emergency.image = "topics/emergency"
 emergency.save!
 
 work = Topic.find_or_initialize_by({
@@ -218,6 +374,7 @@ work = Topic.find_or_initialize_by({
 })
 work.icon = "<i class='fas fa-briefcase'></i>"
 work.content = "Gaining employment in Romania can be difficult..."
+work.image = "topics/work"
 work.save!
 
 accommodation = Topic.find_or_initialize_by({
@@ -226,6 +383,7 @@ accommodation = Topic.find_or_initialize_by({
 })
 accommodation.icon = "<i class='fas fa-home'></i>"
 accommodation.content = "Accommodation in Romania can be competitive if looking close to the cities..."
+accommodation.image = "topics/housing"
 accommodation.save!
 
 pets = Topic.find_or_initialize_by({
@@ -234,6 +392,7 @@ pets = Topic.find_or_initialize_by({
 })
 pets.icon = "<i class='fas fa-paw'></i>"
 pets.content = "The requirements for bringing a pet to Romania can differ depending on the country you are travelling from..."
+pets.image = "topics/pets"
 pets.save!
 
 recycling = Topic.find_or_initialize_by({
@@ -242,6 +401,7 @@ recycling = Topic.find_or_initialize_by({
 })
 recycling.icon = "<i class='fa-solid fa-recycle'></i>"
 recycling.content = "Recycling is an important part of Romanian life but can be daunting at first..."
+recycling.image = "topics/recycle"
 recycling.save!
 
 transport = Topic.find_or_initialize_by({
@@ -250,6 +410,7 @@ transport = Topic.find_or_initialize_by({
 })
 transport.icon = "<i class='fa-solid fa-train-tram'></i>"
 transport.content = "Public transport is considered very good in Romania..."
+transport.image = "topics/transport"
 transport.save!
 
 health = Topic.find_or_initialize_by({
@@ -258,6 +419,7 @@ health = Topic.find_or_initialize_by({
 })
 health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
 health.content = "When moving to Romania it is mandatory to purchase health insurance within 3 months of arrival..."
+health.image = "topics/health"
 health.save!
 
 #---------------------#
@@ -268,6 +430,7 @@ permits = Topic.find_or_initialize_by({
 })
 permits.icon = '<i class="fa-solid fa-id-card"></i>'
 permits.content = "There are a variety of permits available in Greece..."
+permits.image = "topics/permits"
 permits.save!
 
 emergency = Topic.find_or_initialize_by({
@@ -276,6 +439,7 @@ emergency = Topic.find_or_initialize_by({
 })
 emergency.icon = "<i class='fas fa-hospital-symbol'></i>"
 emergency.content = "Here are the emergency phone numbers for Greece..."
+emergency.image = "topics/emergency"
 emergency.save!
 
 work = Topic.find_or_initialize_by({
@@ -284,6 +448,7 @@ work = Topic.find_or_initialize_by({
 })
 work.icon = "<i class='fas fa-briefcase'></i>"
 work.content = "Gaining employment in Greece can be difficult..."
+work.image = "topics/work"
 work.save!
 
 accommodation = Topic.find_or_initialize_by({
@@ -292,6 +457,7 @@ accommodation = Topic.find_or_initialize_by({
 })
 accommodation.icon = "<i class='fas fa-home'></i>"
 accommodation.content = "Accommodation in Greece can be competitive if looking close to the cities..."
+accommodation.image = "topics/housing"
 accommodation.save!
 
 pets = Topic.find_or_initialize_by({
@@ -300,6 +466,7 @@ pets = Topic.find_or_initialize_by({
 })
 pets.icon = "<i class='fas fa-paw'></i>"
 pets.content = "The requirements for bringing a pet to greece can differ depending on the country you are travelling from..."
+pets.image = "topics/pets"
 pets.save!
 
 recycling = Topic.find_or_initialize_by({
@@ -308,6 +475,7 @@ recycling = Topic.find_or_initialize_by({
 })
 recycling.icon = "<i class='fa-solid fa-recycle'></i>"
 recycling.content = "Recycling is an important part of Greek life but can be daunting at first..."
+recycling.image = "topics/recycle"
 recycling.save!
 
 transport = Topic.find_or_initialize_by({
@@ -316,6 +484,7 @@ transport = Topic.find_or_initialize_by({
 })
 transport.icon = "<i class='fa-solid fa-train-tram'></i>"
 transport.content = "Public transport is considered very good in Greece..."
+transport.image = "topics/transport"
 transport.save!
 
 health = Topic.find_or_initialize_by({
@@ -324,6 +493,7 @@ health = Topic.find_or_initialize_by({
 })
 health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
 health.content = "When moving to Greece it is mandatory to purchase health insurance within 3 months of arrival..."
+health.image = "topics/health"
 health.save!
 
 #---------------------#
@@ -334,6 +504,7 @@ permits = Topic.find_or_initialize_by({
 })
 permits.icon = '<i class="fa-solid fa-id-card"></i>'
 permits.content = "There are a variety of permits available in Lebanon..."
+permits.image = "topics/permits"
 permits.save!
 
 emergency = Topic.find_or_initialize_by({
@@ -342,6 +513,7 @@ emergency = Topic.find_or_initialize_by({
 })
 emergency.icon = "<i class='fas fa-hospital-symbol'></i>"
 emergency.content = "Here are the emergency phone numbers for Lebanon, you should not count on them"
+emergency.image = "topics/emergency"
 emergency.save!
 
 work = Topic.find_or_initialize_by({
@@ -350,6 +522,7 @@ work = Topic.find_or_initialize_by({
 })
 work.icon = "<i class='fas fa-briefcase'></i>"
 work.content = "Gaining employment in Lebanon can be difficult as owners will often only hire their relatives no matter if they are fit to do that job or not"
+work.image = "topics/work"
 work.save!
 
 accommodation = Topic.find_or_initialize_by({
@@ -357,7 +530,8 @@ accommodation = Topic.find_or_initialize_by({
   title: "Accommodation"
 })
 accommodation.icon = "<i class='fas fa-home'></i>"
-accommodation.content = "Accommodation in Lebanon can be competitive if looking close to the cities..."
+accommodation.content = "Accommodation in Lebanon can be hard if looking close to the cities due to the massive amount of migrants"
+accommodation.image = "topics/housing"
 accommodation.save!
 
 pets = Topic.find_or_initialize_by({
@@ -366,6 +540,7 @@ pets = Topic.find_or_initialize_by({
 })
 pets.icon = "<i class='fas fa-paw'></i>"
 pets.content = "The requirements for bringing a pet to Lebanon can differ depending on the country you are travelling from..."
+pets.image = "topics/pets"
 pets.save!
 
 recycling = Topic.find_or_initialize_by({
@@ -374,6 +549,7 @@ recycling = Topic.find_or_initialize_by({
 })
 recycling.icon = "<i class='fa-solid fa-recycle'></i>"
 recycling.content = "Recycling not is an important part of Lebanese life but can be daunting at first..."
+recycling.image = "topics/recycle"
 recycling.save!
 
 transport = Topic.find_or_initialize_by({
@@ -381,7 +557,8 @@ transport = Topic.find_or_initialize_by({
   title: "Transport"
 })
 transport.icon = "<i class='fa-solid fa-train-tram'></i>"
-transport.content = "Public transport is considered very good in Lebanon..."
+transport.content = "Public transport only exists in the form of buses in Lebanon..."
+transport.image = "topics/transport"
 transport.save!
 
 health = Topic.find_or_initialize_by({
@@ -389,7 +566,8 @@ health = Topic.find_or_initialize_by({
   title: "Health"
 })
 health.icon = '<i class="fa-solid fa-heart-pulse"></i>'
-health.content = "When moving to Lebanon it is mandatory to purchase health insurance within 3 months of arrival..."
+health.content = "Good luck"
+health.image = "topics/health"
 health.save!
 
 #! COPY AND PASTE TOPICS BUT WITH COUNTRY: UNITED_KINGDOM
