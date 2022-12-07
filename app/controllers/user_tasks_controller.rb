@@ -33,8 +33,6 @@ class UserTasksController < ApplicationController
         (tasks.title ILIKE :query
          OR tasks.content ILIKE :query)
          AND user_tasks.user_profile_id = :user_profile_id
-        -- OR directors.first_name ILIKE :query
-        -- OR directors.last_name ILIKE :query
       SQL
       @tasks = UserTask.joins(:task).where(sql_query, query: "%#{params[:query]}%", user_profile_id: params[:user_profile_id].to_i)
     else
