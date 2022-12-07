@@ -76,7 +76,7 @@ work = Topic.find_or_initialize_by({
   title: "Work"
 })
 work.icon = "<i class='fas fa-briefcase'></i>"
-work.content = "Gaining employment in Switzerland can be competitive and particularly difficult without a permit. Speaking multiple languages (a local language plus English) can be a good advantage. \n\nJobs can be found on the internet in particular LinkedIn and Jobs.ch. \n\nMore information on working in Switzerland can be found here: \nhttps://www.ch.ch/en/foreign-nationals-in-switzerland/working-in-switzerland/#"
+work.content = "Gaining employment in Switzerland can be competitive and particularly difficult without a permit. Speaking multiple languages (one of the 4 official languages and English) can be a good advantage. \n\nJobs can be found on the internet in particular LinkedIn and Jobs.ch. \n\nMore information on working in Switzerland can be found here: \nhttps://www.ch.ch/en/foreign-nationals-in-switzerland/working-in-switzerland/#"
 work.image = "topics/work"
 work.save!
 
@@ -85,7 +85,7 @@ accommodation = Topic.find_or_initialize_by({
   title: "Accommodation"
 })
 accommodation.icon = "<i class='fas fa-home'></i>"
-accommodation.content = "Accommodation in Switzerland can be competitive if looking close to the cities. It is also considered expensive compared to other countries. \n\nLiving in apartments is common in Switzerland, even for families, and most apartments come with storage, bike sheds and storage cellers. \n\nThere are multiple websites for finding accomodation including homegate.ch, comparis.ch and immoscout24.ch. Shared accomodation (WGs) are also common and can be found on wgzimmer.ch."
+accommodation.content = "Finding accommodation in Switzerland can be quite a challenge when it comes to big cities. Living in a shared apartment is common among young professionals or students. A big majority of the apartments comes with a storage space which is either the attic or the basement. Bike parking spaces are also provided in most of the areas. It is reccomended to start looking for and apartment with minimum 6 months in advance. \n\nThere are multiple websites for finding accommodation including homegate.ch, comparis.ch, https://flatfox.ch/, immoscout24.ch, etc. Shared accommodation options can be found on wgzimmer.ch."
 accommodation.image = "topics/housing"
 accommodation.save!
 
@@ -103,7 +103,7 @@ recycling = Topic.find_or_initialize_by({
   title: "Recycling"
 })
 recycling.icon = "<i class='fa-solid fa-recycle'></i>"
-recycling.content = "Recycling is an important part of Swiss life but can be daunting at first. If recycling is done incorrectly, the waste can be refused. The exact rules depend on Kanton however the general rules are as follows: \n- General waste bags need to be purchased and can be left in the black bin or ready for collection on the correct day \nCardboard must be collected and left by the road for the collection day \nPaper can be left in the paper bin or tied together with string \nGlass and aluminium can be taken to a local area and needs to be sorted \nPlastics can be sorted at a local supermarket or bags can be bought for general plastic waste"
+recycling.content = "Recycling is an important part of Swiss life but can be daunting at first. If recycling is done incorrectly, the waste can be refused. The exact rules depend on each Kanton however the general rules are as follows: \n- General waste bags need to be purchased and can be left in the black bin or ready for collection on the correct day \nCardboard must be collected and left by the road for the collection day \nPaper can be left in the paper bin or tied together with string \nGlass and aluminium can be taken to a local area and needs to be sorted \nPlastics can be sorted at a local supermarket or bags can be bought for general plastic waste"
 recycling.image = "topics/recycle"
 recycling.save!
 
@@ -112,7 +112,7 @@ transport = Topic.find_or_initialize_by({
   title: "Transport"
 })
 transport.icon = "<i class='fa-solid fa-train-tram'></i>"
-transport.content = "Public transport is considered very good in Switzerland. Trains are good quality and usually on time. A variety of tickets can be purchased including supersaver tickets, weekly, monthly or annual passes, and a halbtax card for 50% off all tickets."
+transport.content = "Public transport is considered to be very good in Switzerland. Trains are good quality and usually on time. A variety of tickets can be purchased including supersaver tickets, weekly, monthly or annual passes, and a halbtax card for 50% off all tickets."
 transport.image = "topics/transport"
 transport.save!
 
