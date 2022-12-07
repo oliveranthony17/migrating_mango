@@ -1,10 +1,12 @@
+<div style="background-image: url('<%= asset_path @topic.country.background %>'" class="background">
+</div>
 <%= link_to ('<i class="fa-regular fa-hand-point-left"></i> Go back').html_safe, country_path(@topic.country), class: "btn form-actions my-3" %>
 <div class="card-category mb-3" style="background-image: url('<%= asset_path @topic.image %>')">
   <%# <%= image_tag @topic.image %>
   <h1><%=@topic.title%></h1>
 </div>
 <div class="topics-content container">
-  <p><%= @topic.content %></p>
+  <p><%= sanitize @topic.content %></p>
 </div>
 <hr>
 
