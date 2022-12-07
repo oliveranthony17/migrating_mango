@@ -3,14 +3,16 @@
     <div class="row d-flex justify-content-center">
       <div class="col-sm-12">
             <div class="cardo p-3">
+                <h4><%= comment.user.user_profile.username unless comment.user.user_profile == nil %></h4>
+                <h4><%= "Guest" if comment.user.user_profile == nil %></h4>
               <div class="d-flex justify-content-between align-items-center">
-                <div class="user d-flex justify-content-between align-items-center">
+                <div class="user justify-content-between align-items-center">
                   <img src="https://scontent-fra5-2.xx.fbcdn.net/v/t39.30808-6/317290100_5625684957552378_7826073040937915706_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeG038ZPTB8bDkMM4QO5X_1FmZxze1FzJMWZnHN7UXMkxb-MOoqxn0By7cfgfvDfP_Mi6gkk3aMu7uecRPY8tzg9&_nc_ohc=36ytxkZkpTsAX8GFoDE&_nc_ht=scontent-fra5-2.xx&oh=00_AfCmCHYWcFHe74dAJV4IzRxV_0Y_FEKbX5T1q-thPLIu6w&oe=63923BC5" width="60" class="user-img rounded-circle">
-                  <div class="container px-5">
+                  <div class="containe py-3">
                     <big class="font-weight-bold">
-                      <h4><%= comment.title %></h4>
+                      <h5><strong><%= comment.title %></strong></h5>
                       <p><%= comment.content %></p>
-                      <% if current_user == comment.user || current_user&.admin? %>
+                      <% if current_user == comment.user %>
                       <div class="action d-flex mt-2 align-items-center">
                         <%= link_to edit_country_topic_comment_path(comment.topic.country, comment.topic, comment) do %>
                           <i class="fa-solid fa-pen btn btn-primary"></i>

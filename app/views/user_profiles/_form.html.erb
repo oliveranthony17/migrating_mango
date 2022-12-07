@@ -6,8 +6,9 @@
       <% end %>
       <%= f.input :avatar_id, :as => :hidden, :input_html => {  data: { target: "avatar.input" } }  %>
     </div>
+    <%= f.input :username, label: "Choose a username", placeholder: "Username" %>
     <%#! maybe add "I have an address already" checkbox - can also skip out a few tasks (or mark as complete) if true %>
-    <%= f.input :foreign_address, label: "Please enter your foreign address or expected city of residence", placeholder: "1 Bahnhofstrasse, Zürich" %>
+    <%= f.input :foreign_address, label: "Please enter your foreign address or expected city of residence", placeholder: "Bahnhofstrasse 1, Zürich" %>
     <%#! would be great if above did an autocomplete thing %>
     <%= f.input :entry_method, label: "Permit type (work, study or family reunification)", collection: ["Work", "Study", "Family reunification"] %>
     <%= f.input :eu_status, label: "I am an EU citizen" %>
