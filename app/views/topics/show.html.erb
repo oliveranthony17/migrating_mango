@@ -14,7 +14,6 @@
   </div>
   <hr>
 
-
   <div class="container comment-section">
     <h5 class="text-center">Comment Section</h5></div>
     <div class="text-center py-3">
@@ -27,8 +26,14 @@
       <% else %>
         <%= link_to "Log in to comment", root_path, class: "btn btn-primary" %>
       <% end %>
-
+      
       <%= turbo_frame_tag "new_comment" %>
+      
+      <%= turbo_frame_tag "comments" do %>
+
+      <% @topic.comments.each do |comment| %>
+        <%= render "comments/comment", comment: comment %>
+      <% end %>
 
       <%= turbo_frame_tag "comments" do %>
         <%#= render @topic.comments.mango_order %>

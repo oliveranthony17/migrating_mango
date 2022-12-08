@@ -12,8 +12,8 @@ body {
 
 .cardo {
 
-  border: #D32F2F;
-  box-shadow: 2px 2px 2px 2px #e40400;
+  border: #f88c0f;
+  box-shadow: 2px 2px 2px 2px #d9790c;
   border-radius: 8px;
 }
 
@@ -26,7 +26,7 @@ body {
 .check-icon{
 
   font-size: 17px;
-  color: #ff0000;
+  color: #f08914;
   top: 1px;
   position: relative;
   margin-left: 3px;
