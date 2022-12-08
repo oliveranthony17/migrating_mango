@@ -20,7 +20,7 @@
 
   <%# ABOVE NEEDS UPDATING  %>
 
-  <h1>Active Tasks</h1>
+  <h1><strong>Active Tasks</strong></h1>
   <div>
     <% if @active_tasks.count == 0  %>
       <p>You have no active tasks.</p>
@@ -30,7 +30,7 @@
       <% end %>
     <% end %>
   </div>
-  <h1>Upcoming Tasks</h1>
+  <h1><strong>Upcoming Tasks</strong></h1>
   <div>
     <% if @upcoming_tasks.count == 0  %>
       <p>You have no upcoming tasks.</p>
@@ -40,7 +40,7 @@
       <% end %>
     <% end %>
   </div>
-  <h1>Completed Tasks</h1>
+  <h1><strong>Completed Tasks</strong></h1>
   <div>
     <% if @completed_tasks.count == 0  %>
       <p>You have not completed any tasks.</p>
