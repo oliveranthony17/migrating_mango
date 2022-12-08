@@ -28,7 +28,7 @@
 
     <%= turbo_frame_tag "comments" do %>
       <%#= render @topic.comments.mango_order %>
-      <% @topic.comments.mango_order.each do |comment| %>
+      <% @topic.comments.each do |comment| %>
         <%= render "comments/comment", comment: comment %>
       <% end %>
     <% end %>
