@@ -1,49 +1,47 @@
 
 <div style="background-image: url('<%= asset_path @task.task.country.background %>'" class="background">
 </div>
-<div class="container">
 
-      
-<%= link_to user_profile_user_tasks_path(current_user.user_profile), class: "btn form-actions" do %>
-  <i class="fa-regular fa-hand-point-left"></i>
-  Go back
-<% end %>
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <div class="d-flex justify-content-between">
-        <h2><%= @task.task.title %></h2>
-        
-        <span class="badge text-bg-danger text-white badge-card-show"><%= @task.status %></span>
-        <p><%= @task.task.content %></p>
+<%= link_to ('<i class="fa-regular fa-hand-point-left"></i> Go back').html_safe, user_profile_user_tasks_path(current_user.user_profile), class: "btn form-actions my-3" %>
 
+<div class="card-category" style="background-image: url('<%= asset_path @task.task.topic.image %>')">
+  <%# <%= image_tag @topic.image %>
+  <h1 class="text-center px-3"><%= @task.task.title %></h1>
+</div>
+
+<div style="background-color: rgba(255,255,255,0.5)">
+
+  <div class="container card-trip">
+    <div class="card-trip-infos">
+      <div>
+        <div class="w-100">
+          <span class="badge text-bg-danger text-white badge-card-show col-12 mb-3 pt-2">Status: <%= @task.status %></span>
+          <p><%= @task.task.content %></p>
+        </div>
       </div>
     </div>
-  </div>
-
-
-  <%= link_to "Go to relevant topic: #{@task.task.topic.title}", country_topic_path(@task.task.country, @task.task.topic), class: "btn create-button p-1 my-3 col-12" %>
 
      <div class="row px-3 mb-3">
 
       <% unless @task.status == "Active" %>
         <div class="col p-0 mb-1 mx-1" >
-          <%= button_to ('<i class="fa-solid fa-circle-exclamation"></i> Active').html_safe, active_user_profile_user_tasks_path(current_user, @task), method: :post, class: "btn task-button task-show-action-button col-12" %>
+          <%= button_to ('<i class="fa-solid fa-circle-exclamation"></i> Active').html_safe, active_user_profile_user_tasks_path(current_user, @task), method: :post, class: "btn task-button task-show-action-button col-12 pb-1" %>
         </div>
       <% end %>
 
       <% unless @task.status == "Upcoming" %>
         <div class="col p-0 mb-1 mx-1" >
-          <%= button_to ('<i class="fa-sharp fa-solid fa-bell"></i> Upcoming').html_safe, upcoming_user_profile_user_tasks_path(current_user, @task), method: :post, class: "btn task-button task-show-action-button col-12" %>
+          <%= button_to ('<i class="fa-sharp fa-solid fa-bell"></i> Upcoming').html_safe, upcoming_user_profile_user_tasks_path(current_user, @task), method: :post, class: "btn task-button task-show-action-button col-12 pb-1" %>
         </div>
       <% end %>
 
       <% unless @task.status == "Completed" %>
         <div class="col p-0 mb-1 mx-1" >
-          <%= button_to ('<i class="fa-solid fa-square-check"></i> Complete').html_safe, complete_user_profile_user_tasks_path(current_user, @task), method: :post, class: "btn task-button task-show-action-button col-12" %>
+          <%= button_to ('<i class="fa-solid fa-square-check"></i> Complete').html_safe, complete_user_profile_user_tasks_path(current_user, @task), method: :post, class: "btn task-button task-show-action-button col-12 pb-1" %>
         </div>
       <% end %>
+
+      <%= link_to "Go to relevant topic: #{@task.task.topic.title}", country_topic_path(@task.task.country, @task.task.topic), class: "btn task-show-action-button pb-1 my-3 col-12" %>
 
     </div>
 
