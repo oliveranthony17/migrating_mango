@@ -79,6 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_151726) do
     t.boolean "has_relative"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar"
     t.bigint "avatar_id"
     t.string "username"
     t.index ["avatar_id"], name: "index_user_profiles_on_avatar_id"

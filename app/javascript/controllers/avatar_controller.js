@@ -5,11 +5,15 @@ export default class extends Controller {
   static targets = ["mango", "input"]
 
   connect() {
-    console.log("hi")
+    this.mangoTargets.forEach(mango => {
+      if (mango.dataset.image == this.inputTarget.dataset.avatar) {
+        mango.classList.add("marked")
+        this.inputTarget.value = this.inputTarget.dataset.avatar
+      }
+    })
   }
 
   mark() {
-    // console.log(this.mangoTargets)
     this.mangoTargets.forEach(mango => {
       mango.classList.remove("marked")
     })

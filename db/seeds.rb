@@ -93,7 +93,7 @@ emergency.content = '<div>
 <div>Here are the emergency phone numbers for Switzerland:</div>
 <ul>
 <li>Police: 117</li>
-<li>Fire: 188</li>
+<li>Fire Department: 118</li>
 <li>Ambulance: 144</li>
 <li>Swiss Rescue: 1414</li>
 </ul>
@@ -920,7 +920,7 @@ marlin_profile.save!
 puts "CREATING USER AND USER PROFILE"
 
 omar = User.find_or_initialize_by({
-  email: "omar@lewagon.com"
+  email: "jeff@lewagon.com"
 })
 omar.password = "lewagon"
 omar.save!
@@ -1005,5 +1005,86 @@ marlin_profile.save!
 
 omar_tasks = create_user_tasks(omar_profile)
 omar_profile.save!
+
+puts "CREATING COMMENTS!"
+
+comment1 = Comment.find_or_initialize_by({
+  title: "Exotic Bird"
+})
+comment1.content = "Hello everyone. Im moving from Bali to Switzerland in a few months and i was wondering if I could bring my parrot. What are the requirements for such a category?"
+comment1.user = marlin
+comment1.topic = pets
+comment1.save!
+
+comment2 = Comment.find_or_initialize_by({
+  title: "Looking for flat in oerlikon!"
+})
+comment2.content = "Holla everybody!! Im looking for a nice flat in Oerlikon. 30sqm will do1"
+comment2.user = marlin
+comment2.topic = accommodation
+comment2.save!
+
+comment3 = Comment.find_or_initialize_by({
+  title: "Whats the number for poisoning...I need helllnyndtty"
+})
+comment3.content = "blank"
+comment3.user = oliver
+comment3.topic = emergency
+comment3.save!
+
+
+comment4 = Comment.find_or_initialize_by({
+  title: "Permit Approval"
+})
+comment4.content = "Anyone knows how many days the permit needs to get approved?"
+comment4.user = john
+comment4.topic = permits
+comment4.save!
+
+
+comment5 = Comment.find_or_initialize_by({
+  title: "RE: Exotic Bird"
+})
+comment5.content = "@~LordPepe7~: Well i think you can. You can check on the website above. But why not a goat?"
+comment5.user = omar
+comment5.topic = pets
+comment5.save!
+
+
+comment6 = Comment.find_or_initialize_by({
+  title: "RE: Whats the number for poisoning...I need helllnyndtty"
+})
+comment6.content = "I dont know if im late but its :145"
+comment6.user = john
+comment6.topic = emergency
+comment6.save!
+
+
+comment7 = Comment.find_or_initialize_by({
+  title: "Trams crash everyday"
+})
+comment7.content = "Why the hell do the trams crash everyday?"
+comment7.user = oliver
+comment7.topic = transport
+comment7.save!
+
+
+comment8 = Comment.find_or_initialize_by({
+  title: "RE: Trams crash everyday"
+})
+comment8.content = "@Oli_Poli17 Well maybe if you drive like you want to rush to the toilet..."
+comment8.user = oliver
+comment8.topic = transport
+comment8.save!
+
+
+comment9 = Comment.find_or_initialize_by({
+  title: "RE:RE: Trams crash everyday"
+})
+comment9.content = "Admin : Please keep it civilizated or it will lead to a ban."
+comment9.user = john
+comment9.topic = transport
+comment9.save!
+
 
 puts "FINISHED!"

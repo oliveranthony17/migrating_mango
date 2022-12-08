@@ -6,4 +6,8 @@ class UserProfile < ApplicationRecord
   validates :foreign_address, presence: true
   # validates :foreign_address, length: { minimum: 5 }
   validates :entry_method, presence: true, inclusion: { in: ["Work", "Study", "Family reunification"] }
+
+  def country
+    self.user_tasks.first.task.country
+  end
 end
