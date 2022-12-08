@@ -6,7 +6,9 @@
   font-size: 40px;
   font-weight: bolder;
   margin-bottom: 6px;
-  font-family: 'IM Fell DW Pica', serif;
+  // font-family: 'IM Fell DW Pica', serif;
+  font-family: 'Skranji', sans-serif !important;
+
 }
 
 
@@ -24,6 +26,9 @@ body{
   background-color: rgb(255, 255, 255);
   height: 100-vh !important;
 
+  p {
+    font-family: 'Teen', sans-serif !important;
+  }
 }
 
 .container-planet {
