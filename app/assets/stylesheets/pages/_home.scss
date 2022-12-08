@@ -26,10 +26,17 @@ body{
 
 }
 
+.container-planet {
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+  margin: 10px auto;
+}
+
 .container-home {
   position: relative;
-  width: 95%;
-  max-width: 249px;
+  width: 100%;
+  max-width: 270px;
   margin: 0 auto;
 }
 
@@ -229,8 +236,9 @@ border-radius: 10px;
 #select-country{
   text-align: center;
   color: white;
-  margin: 5px auto 20px auto;
-  font-size: 20px;
+  margin: 20px auto 20px auto;
+  padding: 0px;
+  font-size: 18px;
   font-weight: bolder;
 }
 
@@ -282,6 +290,7 @@ margin-left: 4px;
 .log-in-button {
   color: white !important;
   border-color: white;
+  background-color: rgba(0,0,0,0.5);
 }
 
 
@@ -293,9 +302,11 @@ margin-left: 4px;
 }
 
 #country-dropdown {
-  margin: 20px 0px 0px 15px !important;
+  color: white !important;
+  border-color: white;
+  margin: 0px 0px 0px 0px !important;
   text-align: center;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.5);
 }
 
 .background-home {

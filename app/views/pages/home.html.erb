@@ -3,8 +3,7 @@
 
 <div id="screen">
   <div id="header"><h1 class="pt-3">MIGRATING MANGO</h1></div>
-  <div id="select-country"><em>Select your country by clicking on the flag</em></div>
-  <div class="container container-home">
+  <div class="container container-planet">
     <div class="row justify-content-center">
       <div class="col-12">
         <div class="container container-home">
@@ -41,11 +40,11 @@
     </div>
   </div>
   <div class="container-home">
-    <%# ! INSERT DROPDOWN HERE TO SELECT COUNTRY  %>
     <div>
+      <div id="select-country" class="w-100"><em>Click on the flag or use the dropdown to select your country...</em></div>
       <div class="dropdown text-center w-100">
-        <a class="btn btn-secondary dropdown-toggle dropdown w-75" id="country-dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Choose your country
+        <a class="btn btn-secondary dropdown-toggle dropdown w-80" id="country-dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Country
         </a>
 
         <ul class="dropdown-menu">
@@ -79,7 +78,7 @@
                               placeholder: "Password"%>
                   <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
               </div>
-              <div class="d-inline-flex w-100 justify-content-between">
+              <div class="d-inline-flex w-100 justify-content-around">
                 <div class="form-actions">
                   <%= f.button :submit, "Log in", class: "log-in-button px-4" %>
                 </div>

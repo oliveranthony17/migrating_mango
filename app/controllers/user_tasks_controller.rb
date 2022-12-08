@@ -14,7 +14,6 @@ class UserTasksController < ApplicationController
       status: "Active",
       order: 0
     })
-    raise
     if @user_task.save
       redirect_to user_profile_user_tasks_path(current_user.user_profile)
     else
