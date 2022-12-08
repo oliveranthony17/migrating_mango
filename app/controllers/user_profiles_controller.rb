@@ -63,7 +63,7 @@ class UserProfilesController < ApplicationController
         UserTask.create({
         task: task,
         user_profile: user_profile,
-        status: task.order == 1 || task.order == 2 ? "Active" : "Upcoming"
+        status: task.order == 1 ? "Active" : "Upcoming"
       })
     end
     redirect_to user_profile_user_tasks_path(user_profile)
