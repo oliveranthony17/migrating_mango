@@ -2,9 +2,9 @@
     <p>Choose your avatar</p>
     <div data-controller="avatar">
       <% Avatar.all.each do |avatar| %>
-        <%= image_tag avatar.image_url, class: "avatar", data: { image: avatar.id, action: "click->avatar#mark", target: "avatar.mango" } %>
+        <%= image_tag avatar.image_url, class: "avatar", data: { image: avatar.id, action: "click->avatar#mark", "avatar-target": "mango" } %>
       <% end %>
-      <%= f.input :avatar_id, :as => :hidden, :input_html => {  data: { target: "avatar.input" } }  %>
+      <%= f.input :avatar_id, :as => :hidden, :input_html => { "data-avatar": @user_profile.avatar ? @user_profile.avatar.id : rand(1..Avatar.all.count), "data-avatar-target": "input" } %>
     </div>
     <%= f.input :username, label: "Choose a username", placeholder: "Username" %>
     <%#! maybe add "I have an address already" checkbox - can also skip out a few tasks (or mark as complete) if true %>
