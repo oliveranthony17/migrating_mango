@@ -22,24 +22,17 @@
                             new_country_topic_comment_path(@country, @topic, @comment),
                             class: "btn btn-primary",
                             data: { turbo_frame: "new_comment" } %>
-    </div>
       <% else %>
         <%= link_to "Log in to comment", root_path, class: "btn btn-primary" %>
       <% end %>
-      
-      <%= turbo_frame_tag "new_comment" %>
-      
-      <%= turbo_frame_tag "comments" do %>
+    </div>
 
+    <%= turbo_frame_tag "new_comment" %>
+
+    <%= turbo_frame_tag "comments" do %>
       <% @topic.comments.each do |comment| %>
         <%= render "comments/comment", comment: comment %>
       <% end %>
-
-      <%= turbo_frame_tag "comments" do %>
-        <%#= render @topic.comments.mango_order %>
-        <% @topic.comments.mango_order.each do |comment| %>
-          <%= render "comments/comment", comment: comment %>
-        <% end %>
-      <% end %>
+    <% end %>
   </div>
 </div>
