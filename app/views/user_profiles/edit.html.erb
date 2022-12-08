@@ -1,4 +1,5 @@
 <%= link_to ('<i class="fa-regular fa-hand-point-left"></i> Go back').html_safe, country_path(@user_profile.country), class: "btn form-actions my-3" %>
+
 <div class="new-user-profile-form container">
   <h2>Your details</h2>
   <%= render "form", user_profile: @user_profile %>
