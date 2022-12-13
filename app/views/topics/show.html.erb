@@ -14,8 +14,19 @@
   </div>
   <hr>
 
+  <div class="container comment-section">
+    <h5 class="text-center">Comment Section</h5></div>
+    <div class="text-center py-3">
+      <% if user_signed_in? %>
+        <%= link_to "New comment",
+                            new_country_topic_comment_path(@country, @topic, @comment),
+                            class: "btn btn-primary",
+                            data: { turbo_frame: "new_comment" } %>
+      <% else %>
+        <%= link_to "Log in to comment", root_path, class: "btn btn-primary" %>
+      <% end %>
+    </div>
 
-<<<<<<< HEAD
   <div class="container comment-section">
     <h5 class="text-center">Comment Section</h5></div>
     <div class="text-center py-3">
@@ -27,21 +38,10 @@
     </div>
       <% else %>
         <%= link_to "Log in to comment", root_path, class: "btn btn-primary" %>
-=======
     <%= turbo_frame_tag "comments" do %>
-      <%#= render @topic.comments.mango_order %>
       <% @topic.comments.each do |comment| %>
         <%= render "comments/comment", comment: comment %>
->>>>>>> 93452c1 (made seed comments)
       <% end %>
-
-      <%= turbo_frame_tag "new_comment" %>
-
-      <%= turbo_frame_tag "comments" do %>
-        <%#= render @topic.comments.mango_order %>
-        <% @topic.comments.mango_order.each do |comment| %>
-          <%= render "comments/comment", comment: comment %>
-        <% end %>
-      <% end %>
+    <% end %>
   </div>
 </div>
