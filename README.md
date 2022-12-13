@@ -19,7 +19,7 @@ The logic for the above sits within the "user_profile_controller.rb" file and is
 Feel free to test this functionality by creating a new user profile, otherwise you can log in using the below credentials.
 <br>
 <li>Email: test@lewagon.com</li>
-<li>Password: LeWagon</li>
+<li>Password: lewagon</li>
 <br>
 Either way, you will now have access to the "My Tasks" page where you can view the aforementioned "user tasks". Clicking on a task will reveal additional edit options (task dropdown functionality created using Stimulus JavaScript) where you can view the user task show page, or change the status of the task using dynamic buttons. The page automatically reloads when the status of a task is changed, at which point it will appear in the correct section (greyed out if marked as complete).
 <br>
